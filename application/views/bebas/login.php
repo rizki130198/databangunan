@@ -15,9 +15,9 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
 .main-div {
   background: #ffffff none repeat scroll 0 0;
   border-radius: 2px;
-  margin: 10px auto 30px;
-  max-width: 38%;
-  padding: 50px 70px 70px 71px;
+  margin: 4% auto 30px;
+  max-width: 42%;
+  padding: 40px 70px 40px 70px;
 }
 
 .login-form .form-group {
@@ -25,7 +25,6 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
 }
 .login-form{ 
   text-align:center;
-  margin:10% auto;
 }
 .forgot a {
   color: #777777;
@@ -62,8 +61,9 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
     <div class="login-form">
       <div class="main-div">
         <div class="panel">
-         <h2>Admin Login</h2>
-         <p>Please enter your username and password</p>
+          <img src="<?php echo base_url('assets/images/jaya-raya.png'); ?>" width="80" style="margin-bottom: 20px;">
+          <h2>Sistem Registrasi Bangunan</h2>
+          <p>Pengawasan Terpadu Sumur Resapan dan Instalasi Pengolahan Air Limbah serta Pemanfaaan Air Tanah</p>
        </div>
        <form id="Login" method="post" action="<?php echo site_url('welcome/act_log') ?>">
         <div class="form-group">
@@ -76,6 +76,7 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
           <a href="reset.html">Forgot password?</a>
         </div>
         <button type="submit" class="btn btn-primary">Login</button>
+        <h5 style="margin-top: 20px;">Pemerintah Provinsi DKI Jakarta</h5>
       </form>
     </div>
   </div>

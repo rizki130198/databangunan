@@ -148,6 +148,81 @@ body{
 		color: #fff;
 		background-color: #337ab7;
 	}
+	.active{
+		display: block;
+	}
+	#sipa1{
+		display: none;
+	}
+	#sipa2{
+		display: none;
+	}
+	#sipa3{
+		display: none;
+	}
+	#sipa4{
+		display: none;
+	}
+	#sipa5{
+		display: none;
+	}
+	#sipa6{
+		display: none;
+	}
+	#sipapantek1{
+		display: none;
+	}
+	#sipapantek2{
+		display: none;
+	}
+	#sipapantek3{
+		display: none;
+	}
+	#sipapantek4{
+		display: none;
+	}
+	#sipapantek5{
+		display: none;
+	}
+	#sipapantek6{
+		display: none;
+	}
+	#ground1{
+		display: none;
+	}
+	#ground2{
+		display: none;
+	}
+	#ground3{
+		display: none;
+	}
+	#ground4{
+		display: none;
+	}
+	#ground5{
+		display: none;
+	}
+	#ground6{
+		display: none;
+	}
+	#roof1{
+		display: none;
+	}
+	#roof2{
+		display: none;
+	}
+	#roof3{
+		display: none;
+	}
+	#roof4{
+		display: none;
+	}
+	#roof5{
+		display: none;
+	}
+	#roof6{
+		display: none;
+	}
 </style>
 <body>
 	<div class="container" style="margin-bottom: 50px;">
@@ -708,7 +783,7 @@ body{
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox" name="checkbox" id="lainnya_jenisbangunan1"/>
-															<label for="lainnya_jenisbangunan1"><input style="padding-left: 45px;" disabled id="txtjenisbang" type="text" class="form-control" name="lainnya_jenisbangunan"></label>
+															<label for="lainnya_jenisbangunan1"><input value="....." style="padding-left: 45px;" disabled id="txtjenisbang" type="text" class="form-control" name="lainnya_jenisbangunan"></label>
 														</div>
 													</div>	
 												</div>
@@ -724,7 +799,7 @@ body{
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox" name="checkbox" id="lainnya_jenisbangunan2"/>
-															<label for="lainnya_jenisbangunan2"><input style="padding-left: 45px;" disabled id="txtjenisbang2" type="text" class="form-control" name="lainnya_jenisbangunan2"></label>
+															<label for="lainnya_jenisbangunan2"><input value="....." style="padding-left: 45px;" disabled id="txtjenisbang2" type="text" class="form-control" name="lainnya_jenisbangunan2"></label>
 														</div>
 													</div>	
 												</div>
@@ -819,6 +894,108 @@ body{
 									</div>
 								</div>
 							</div>
+							<br>
+							<div class="col-md-12">
+								<table class="table table table-striped table-bordered" style="margin-top: 20px;">
+									<tbody>
+										<thead>
+								          	<tr>
+								            	<th><center>Hari/Minggu</center></th>
+								            	<th><center>Jumlah rata-rata pengguna saat jam kerja (perkiraan),(orang)</center></th>
+								            	<th><center>Jumlah puncak penggunaan (perkiraan),(orang)</center></th>
+								          	</tr>
+								        </thead>
+										<tr>
+											<td style="text-align: center;">
+												Senin
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Selasa
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Rabu
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Kamis
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Jumat
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Sabtu
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Minggu
+											</td>
+											<td class="jum-rata">
+												<input type="number" required="required" class="form-control jumlah" placeholder="">
+											</td>
+											<td class="jum-puncak">
+												<input type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+											</td>
+										</tr>
+										<tr>
+											<td style="text-align: center;">
+												Total Per Minggu
+											</td>
+											<td>
+												<output id="result"></output>
+											</td>
+											<td>
+												<output id="resultpuncak"></output>
+											</td>
+										</tr>
+									</tbody>
+								</table>
+							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Total Penghuni :</label>
 								<div class="col-sm-10">
@@ -839,7 +1016,11 @@ body{
 					<div class="col-md-12">
 						<h3>DATA KONSUMSI AIR DAN PENGOLAHAN AIR</h3>
 						<br>
-						<label>KONSUMSI AIR</label>
+						<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
+						  	<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
+						    	KONSUMSI AIR
+						  	</span>
+						</div>
 						<div class="row">
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Sumber air yang digunakan* :</label>
@@ -872,8 +1053,8 @@ body{
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="lainnya" id="lainnya"/>
-															<label for="lainnya">Lain-lain, sebutkan .................</label>
+															<input type="checkbox" name="checkbox" id="lainnya_sumberair"/>
+															<label for="lainnya_sumberair"><input value="Lain-lain, sebutkan ..." style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control" name="lainnya_sumberair"></label>
 														</div>
 													</div>	
 												</div>
@@ -896,12 +1077,12 @@ body{
 								<label class="col-sm-2">Jumlah Sumur Bor :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input type="number" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input type="number" min="0" max="6" id="jumlahsumur" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipa1">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 1 NO:</label>
 								<div class="col-sm-3">
@@ -912,7 +1093,7 @@ body{
 									<input type="text" id="date_bor" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipa2">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 2 NO:</label>
 								<div class="col-sm-3">
@@ -923,7 +1104,7 @@ body{
 									<input type="text" id="date_bor2" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipa3">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 3 NO:</label>
 								<div class="col-sm-3">
@@ -934,9 +1115,31 @@ body{
 									<input type="text" id="date_bor3" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipa4">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 4 NO:</label>
+								<div class="col-sm-3">
+									<input  maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+								<label class="col-sm-1">Tanggal</label>
+								<div class="col-sm-4">
+									<input type="text" id="date_bor4" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="sipa5">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-2">SIPA 5 NO:</label>
+								<div class="col-sm-3">
+									<input  maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+								<label class="col-sm-1">Tanggal</label>
+								<div class="col-sm-4">
+									<input type="text" id="date_bor4" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="sipa6">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-2">SIPA 6 NO:</label>
 								<div class="col-sm-3">
 									<input  maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
@@ -950,12 +1153,12 @@ body{
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Jumlah Sumur Pantek (Jet Pump) :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input type="number" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input type="number" min="0" max="6" id="jumlahsumurpantek" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipapantek1">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 1 NO:</label>
 								<div class="col-sm-3">
@@ -966,7 +1169,7 @@ body{
 									<input type="text" id="date_jet" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipapantek2">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 2 NO:</label>
 								<div class="col-sm-3">
@@ -977,7 +1180,7 @@ body{
 									<input type="text" id="date_jet2" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipapantek3">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 3 NO:</label>
 								<div class="col-sm-3">
@@ -988,9 +1191,31 @@ body{
 									<input type="text" id="date_jet3" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="sipapantek4">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 4 NO:</label>
+								<div class="col-sm-3">
+									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+								<label class="col-sm-1">Tanggal</label>
+								<div class="col-sm-4">
+									<input type="text" id="date_jet4" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="sipapantek5">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-2">SIPA 5 NO:</label>
+								<div class="col-sm-3">
+									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+								<label class="col-sm-1">Tanggal</label>
+								<div class="col-sm-4">
+									<input type="text" id="date_jet4" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="sipapantek6">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-2">SIPA 6 NO:</label>
 								<div class="col-sm-3">
 									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
@@ -1004,28 +1229,49 @@ body{
 								<label class="col-sm-2">Jumlah Ground Tank :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input type="number" required="required" class="form-control" placeholder="Masukan Jumlah Unit">
+										<input type="number" min="0" max="6" id="jumlahground" required="required" class="form-control" placeholder="Masukan Jumlah Unit">
 										<span class="input-group-addon" id="basic-addon2">Unit</span>
 									</div>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="ground1">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 1 NO:</label>
 								<div class="col-sm-7">
 									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="ground2">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 2 NO:</label>
 								<div class="col-sm-7">
 									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="ground3">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 3 NO:</label>
+								<div class="col-sm-7">
+									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="ground4">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-3">Kapasitas Ground Tank 4 NO:</label>
+								<div class="col-sm-7">
+									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="ground5">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-3">Kapasitas Ground Tank 5 NO:</label>
+								<div class="col-sm-7">
+									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="ground6">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-3">Kapasitas Ground Tank 6 NO:</label>
 								<div class="col-sm-7">
 									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
@@ -1035,45 +1281,58 @@ body{
 								<label class="col-sm-2">Jumlah Roof Tank:</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input type="number" required="required" class="form-control" placeholder="Masukan Jumlah Unit">
+										<input type="number" min="0" max="6" id="jumlahroof" required="required" class="form-control" placeholder="Masukan Jumlah Unit">
 										<span class="input-group-addon" id="basic-addon2">Unit</span>
 									</div>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="roof1">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Roof Tank 1 NO:</label>
 								<div class="col-sm-7">
 									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="roof2">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Roof Tank 2 NO:</label>
 								<div class="col-sm-7">
 									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="roof3">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Roof Tank 3 NO:</label>
 								<div class="col-sm-7">
 									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Konsumsi Air Rata-rata :</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<input type="number" required="required" class="form-control" placeholder="Masukan Jumlah Unit">
-										<span class="input-group-addon" id="basic-addon2">Unit</span>
-									</div>
+							<div class="form-group margin-input" id="roof4">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-3">Kapasitas Roof Tank 4 NO:</label>
+								<div class="col-sm-7">
+									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
-							<div class="form-group margin-input">
+							<div class="form-group margin-input" id="roof5">
 								<label class="col-sm-2"></label>
-								<label class="col-sm-3">a. Occupant Area :</label>
+								<label class="col-sm-3">Kapasitas Roof Tank 5 NO:</label>
 								<div class="col-sm-7">
+									<input type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+							</div>
+							<div class="form-group margin-input" id="roof6">
+								<label class="col-sm-2"></label>
+								<label class="col-sm-3">Kapasitas Roof Tank 6 NO:</label>
+								<div class="col-sm-7">
+									<input  type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+								</div>
+							</div>
+
+							<div class="form-group margin-input">
+								<label class="col-sm-2">Konsumsi Air Rata-rata</label>
+								<label class="col-sm-2">a. Occupant Area :</label>
+								<div class="col-sm-8">
 									<div class="input-group">
 										<input type="text" required="required" class="form-control" placeholder="Masukan Occupant Area">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/org/hari</span>
@@ -1082,8 +1341,8 @@ body{
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2"></label>
-								<label class="col-sm-3">b. Service Area :</label>
-								<div class="col-sm-7">
+								<label class="col-sm-2">b. Service Area :</label>
+								<div class="col-sm-8">
 									<div class="input-group">
 										<input type="text" required="required" class="form-control" placeholder="Masukan Service Area">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
@@ -1092,8 +1351,11 @@ body{
 							</div>
 						</div>
 						<br>
-						<label>PENGOLAHAN AIR*</label>
-						<br>
+						<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
+						  	<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
+						    	PENGOLAHAN AIR<span style="color: red;"> *</span>
+						  	</span>
+						</div>
 						<div class="row">
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Air Bersih :</label>
@@ -1135,8 +1397,8 @@ body{
 										<div class="funkyradio">
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="checkbox" name="lainnya_air" id="lainnya_air">
-													<label for="lainnya_air">................</label>
+													<input type="checkbox" name="checkbox" id="lainnya_airbersih"/>
+													<label for="lainnya_airbersih"><input value="....." style="padding-left: 45px;" disabled id="txtairbersih" type="text" class="form-control" name="lainnya_airbersih"></label>
 												</div>
 											</div>
 										</div>
@@ -1148,7 +1410,7 @@ body{
 								<label class="col-sm-3">Kapasitas :</label>
 								<div class="col-sm-7">
 									<div class="input-group">
-										<input type="text" required="required" class="form-control" placeholder="Masukan Masukan Kapasitas">
+										<input type="text" disabled id="txtkapasitasair" required="required" class="form-control" placeholder="Masukan Kapasitas">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
 									</div>
 								</div>
@@ -1160,8 +1422,8 @@ body{
 										<div class="funkyradio">
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="checkbox" name="water_treatment" id="water_treatment">
-													<label for="water_treatment">Sumur Resapan</label>
+													<input type="checkbox" name="air_hujan" id="air_hujan">
+													<label for="air_hujan">Sumur Resapan</label>
 												</div>
 											</div>
 										</div>
@@ -1262,15 +1524,15 @@ body{
 										<div class="funkyradio">
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="checkbox" name="..............." id="...............">
-													<label for="...............">.............</label>
+													<input type="checkbox" name="checkbox" id="lainnya_airbekas"/>
+													<label for="lainnya_airbekas"><input value="....." style="padding-left: 45px;" disabled id="txtairbekas" type="text" class="form-control" name="lainnya_airbekas"></label>
 												</div>
 											</div>
 										</div>
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input type="text" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input type="text" disabled id="txtkapasitasbekas" required="required" class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1307,8 +1569,8 @@ body{
 										<div class="funkyradio">
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="checkbox" name="ipal" id="ipal">
-													<label for="ipal">PD PAL</label>
+													<input type="checkbox" name="pdpal" id="pdpal">
+													<label for="pdpal">PD PAL</label>
 												</div>
 											</div>
 										</div>
@@ -1322,40 +1584,16 @@ body{
 									</div>
 								</div>
 							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sketsa Lokasi Sumur Resapan</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<input type="file" required="required" class="form-control" name="sketsa_sumur_resapan">
+							<br>
+							<div class="col-md-12">
+								<div class="panel panel-default" style="margin-top: 20px;box-shadow: 0 2px 2px rgba(0,0,0,0.1);">
+									<div class="panel-body">
+										<h5>SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h5>
 									</div>
 								</div>
 							</div>
 							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sketsa Kolam Resapan</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<input type="file" required="required" class="form-control" name="sketsa_sumur_resapan">
-									</div>
-								</div>
-							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sketsa Sumur Bor</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<input type="file" required="required" class="form-control" name="sketsa_sumur_resapan">
-									</div>
-								</div>
-							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sketsa Sumur Pantek</label>
-								<div class="col-sm-10">
-									<div class="input-group">
-										<input type="file" required="required" class="form-control" name="sketsa_sumur_resapan">
-									</div>
-								</div>
-							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sketsa Watertrap pada siteplan</label>
+								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">File Sketsa</label>
 								<div class="col-sm-10">
 									<div class="input-group">
 										<input type="file" required="required" class="form-control" name="sketsa_sumur_resapan">
@@ -1410,8 +1648,8 @@ body{
 										<div class="funkyradio">
 											<div class="col-md-8">
 												<div class="funkyradio-primary">
-													<input type="checkbox" required id="pernyataanselesai">
-													<label for="pernyataanselesai">Dengan ini saya menyatakan bahwa data yang saya isi pada formulir ini adalah benar</label>
+													<input type="checkbox" name="checkbox" id="selesai"/>
+													<label for="selesai">Dengan ini saya menyatakan bahwa data yang saya isi pada formulir ini adalah benar</label>
 												</div>
 											</div>
 										</div>
@@ -1420,7 +1658,7 @@ body{
 							</div>
 						</div>
 						<br>	
-						<button class="btn btn-primary nextBtn btn-lg pull-right"  type="submit">Submit</button>
+						<button disabled id="btnselesai" class="btn btn-success btn-lg pull-right" type="submit">Submit</button>
 					</div>
 				</div>
 			</div>	
