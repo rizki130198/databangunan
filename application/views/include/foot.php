@@ -29,6 +29,26 @@
 	} );
 </script>
 <script type="text/javascript">
+	$('#lainnya_jenisbangunan1').change(function(){
+		if ($('#lainnya_jenisbangunan1').is(':checked') == true){
+			$('#txtjenisbang').prop('disabled', false);
+			console.log('checked');
+		} else {
+			$('#txtjenisbang').val('').prop('disabled', true);
+			console.log('unchecked');
+		}
+	});
+	$('#lainnya_jenisbangunan2').change(function(){
+		if ($('#lainnya_jenisbangunan2').is(':checked') == true){
+			$('#txtjenisbang2').prop('disabled', false);
+			console.log('checked');
+		} else {
+			$('#txtjenisbang2').val('').prop('disabled', true);
+			console.log('unchecked');
+		}
+	});
+</script>
+<script type="text/javascript">
 	$(document).ready(function () {
 
 		var navListItems = $('div.setup-panel div a'),

@@ -707,8 +707,8 @@ body{
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="checkbox" id="..."/>
-															<label for="...">........</label>
+															<input type="checkbox" name="checkbox" id="lainnya_jenisbangunan1"/>
+															<label for="lainnya_jenisbangunan1"><input style="padding-left: 45px;" disabled id="txtjenisbang" type="text" class="form-control" name="lainnya_jenisbangunan"></label>
 														</div>
 													</div>	
 												</div>
@@ -723,8 +723,8 @@ body{
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="checkbox" id="...."/>
-															<label for="....">.........</label>
+															<input type="checkbox" name="checkbox" id="lainnya_jenisbangunan2"/>
+															<label for="lainnya_jenisbangunan2"><input style="padding-left: 45px;" disabled id="txtjenisbang2" type="text" class="form-control" name="lainnya_jenisbangunan2"></label>
 														</div>
 													</div>	
 												</div>
