@@ -1,0 +1,22 @@
+.menu-title{
+	font-size: 14px !important;
+}
+.nav-link{
+	font-size: 14px !important;
+}
+.card-title{
+	font-size: 20px;
+}
+@media (max-width: 768px){
+	.main-panel{
+		margin-left: 0 !important;
+	}
+	.wraper {
+		width: 387% !important;
+		margin-left: -82%;
+	}
+	canvas {
+		width: 67% !important;
+		height: auto !important;
+	}
+} 
