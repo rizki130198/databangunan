@@ -65,12 +65,12 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
          <h2>Admin Login</h2>
          <p>Please enter your username and password</p>
        </div>
-       <form id="Login">
+       <form id="Login" method="post" action="<?php echo site_url('welcome/act_log') ?>">
         <div class="form-group">
-          <input type="text" class="form-control" id="inputEmail" placeholder="Username">
+          <input type="text" name="username" class="form-control" id="inputEmail" placeholder="Username">
         </div>
         <div class="form-group">
-          <input type="password" class="form-control" id="inputPassword" placeholder="Password">
+          <input type="password" name="password" class="form-control" id="inputPassword" placeholder="Password">
         </div>
         <div class="forgot">
           <a href="reset.html">Forgot password?</a>
