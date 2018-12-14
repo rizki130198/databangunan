@@ -10,9 +10,9 @@ class M_back extends CI_Model {
 		$lokasi = $this->input->post('lokasi');
 		$rt_info = $this->input->post('rt_info');
 		$rw_info = $this->input->post('rw_info');
-		$kelurahan_info = $this->input->post('kelurahan_info');
-		$kecamatan_info = $this->input->post('kecamatan_info');
-		$kota_info = $this->input->post('kota_info');
+		$kelurahan_info = strtoupper($this->input->post('kelurahan_info'));
+		$kecamatan_info = strtoupper($this->input->post('kecamatan_info'));
+		$kota_info = strtoupper($this->input->post('kota_info'));
 		$kode_info = $this->input->post('kode_info');
 		$nop = $this->input->post('nop');
 		$nbt = $this->input->post('nbt');
@@ -26,9 +26,9 @@ class M_back extends CI_Model {
 			'kelurahan'=>$kelurahan_info,
 			'kecamatan'=>$kecamatan_info,
 			'kota'=>$kota_info,
-			'kode_pos'=>$kode_pos,
+			'kode_pos'=>$kode_info,
 			'NOP'=>$nop,
-			'mulai_operasi'=>$nbt,
+			'mulai_operasi'=>date('Y',strtotime($nbt)),
 			'created_at'=>$tanggal
 		));
 
@@ -37,11 +37,11 @@ class M_back extends CI_Model {
 		$alamat = $this->input->post('alamat');
 		$rt_pemilik = $this->input->post('rt_pemilik');
 		$rw_pemilik = $this->input->post('rw_pemilik');
-		$kelurahan_pemilik = $this->input->post('kelurahan_pemilik');
-		$kecamatan_pemilik = $this->input->post('kecamatan_pemilik');
-		$kota_pemilik = $this->input->post('kota_pemilik');
+		$kelurahan_pemilik = strtoupper($this->input->post('kelurahan_pemilik'));
+		$kecamatan_pemilik = strtoupper($this->input->post('kecamatan_pemilik'));
+		$kota_pemilik = strtoupper($this->input->post('kota_pemilik'));
 		$kode_pemilik = $this->input->post('kode_pemilik');
-		$provinsi = $this->input->post('provinsi');
+		$provinsi = strtoupper($this->input->post('provinsi'));
 		$no_hp = $this->input->post('no_hp');
 		$no_telp = $this->input->post('no_telp');
 		$email = $this->input->post('email');
@@ -82,18 +82,18 @@ class M_back extends CI_Model {
 		$alamat_pengelola = $this->input->post('alamat_peng');
 		$rt_peng = $this->input->post('rt_peng');
 		$rw_peng = $this->input->post('rw_peng');
-		$kelurahan_peng = $this->input->post('kelurahan_peng');
-		$kecamatan_peng = $this->input->post('kecamatan_peng');
-		$kota_peng = $this->input->post('kota_peng');
+		$kelurahan_peng = strtoupper($this->input->post('kelurahan_peng'));
+		$kecamatan_peng = strtoupper($this->input->post('kecamatan_peng'));
+		$kota_peng = strtoupper($this->input->post('kota_peng'));
 		$kode_peng = $this->input->post('kode_peng');
-		$provinsi_peng = $this->input->post('provinsi_peng');
+		$provinsi_peng = strtoupper($this->input->post('provinsi_peng'));
 		$no_telp_peng = $this->input->post('no_telp_peng');
 		$no_hp_peng = $this->input->post('no_hp_peng');
-		$email_peng = $this->input->post('email');
+		$email_peng = $this->input->post('email_peng');
 		$this->db->insert('data_pengelola', array(
 			'id_users'=>$this->session->userdata('id'),
 			'id_peng_unik'=>$id,
-			'kategori_pengelola'=>$kategori_pengelola,
+			'kategori_pengelola'=>$kat_pengelola,
 			'pengelola'=>$pengelola,
 			'tanggung_jawab'=>$peng_jawab,
 			'jabatan'=>$jabatan_peng,
@@ -115,8 +115,10 @@ class M_back extends CI_Model {
 		$no_sippt = $this->input->post('no_sippt');
 		$tgl_sippt = date('Y-m-d',strtotime($this->input->post('tgl_sippt')));
 		$luas_tanah = $this->input->post('luas_tanah');
+
 		$no_imb = $this->input->post('no_imb');
 		$tgl_imb = date('Y-m-d',strtotime($this->input->post('tgl_imb')));
+
 		$no_kmb = $this->input->post('no_kmb');
 		$tgl_kmb = date('Y-m-d',strtotime($this->input->post('tgl_kmb')));
 		$jabatan_peng = $this->input->post('jabatan_peng');
@@ -144,6 +146,12 @@ class M_back extends CI_Model {
 		$tg_tower = $this->input->post('tinggi_tower');
 		$tg_podium = $this->input->post('tinggi_podium');
 		$js_bangunan = $this->input->post('jenis_bang');
+		$nmo = "";
+		for ($i=0; $i <count($js_bangunan) ; $i++) { 
+			$abc = $js_bangunan[$i].',';
+			$nmo .=$abc;
+		}
+		$jenis_bang = substr($nmo, 0, -1);
 		$luas_lantai = $this->input->post('luas_lantai');
 		$luas_total = $this->input->post('luas_total');
 		$tk_okupansi = $this->input->post('tk_okupansi');
@@ -167,19 +175,25 @@ class M_back extends CI_Model {
 		$minggu1 = $this->input->post('minggu1');
 		$minggu2 = $this->input->post('minggu2');
 		$total_minggu = $this->input->post('totalminggu');
+		$abc = "";
+		for ($i=0; $i <count($total_minggu) ; $i++) { 
+			$def = $total_minggu[$i].',';
+			$abc .=$def;
+		}
+		$tot_minggu = substr($abc, 0, -1);
 		$total_peng = $this->input->post('total_peng');
-		$datapeng = $this->db->insert('data_pengelola', array(
+		$datapeng = $this->db->insert('data_teknis', array(
 			'id_user'=>$this->session->userdata('id'),
 			'id_teknis_unik'=>$id,
 			'jumlah_tower'=>$jml_tower,
 			'jumlah_unit'=>$pengelola,
 			'ketinggian'=>$tg_tower.','.$tg_podium,
-			'jenis_bangunan'=>$js_bangunan,
+			'jenis_bangunan'=>$jenis_bang,
 			'luas_lantai'=>$luas_lantai.','.$luas_total,
 			'tingkat_okupansi'=>$tk_okupansi,
 			'ket_okupansi'=>$ket,
-			'opersional_gedung'=>$op1.','.$op2.','.$op3.','.$op4,
-			'peng_bangunan'=>$senin1.','.$senin2.','.$selasa1.','.$selasa2.','.$rabu1.','.$rabu2.','.$kamis1.','.$kamis2.','.$jumat1.','.$jumat2.','.$sabtu1.','.$sabtu2.','.$minggu1.','.$minggu2.','.$total_minggu,
+			'operasional_gedung'=>$op1.','.$op2.','.$op3.','.$op4,
+			'peng_bangunan'=>$senin1.','.$senin2.','.$selasa1.','.$selasa2.','.$rabu1.','.$rabu2.','.$kamis1.','.$kamis2.','.$jumat1.','.$jumat2.','.$sabtu1.','.$sabtu2.','.$minggu1.','.$minggu2.','.$tot_minggu,
 			'total_penghuni'=>$total_peng,
 		));
 		if ($datapeng==TRUE) {
@@ -193,44 +207,59 @@ class M_back extends CI_Model {
 				'jumat'=>$jumat1.','.$jumat2,
 				'sabtu'=>$sabtu1.','.$sabtu2,
 				'minggu'=>$minggu1.','.$minggu2,
-				'total'=>$total_minggu,
+				'total'=>$tot_minggu,
 			));
 		}
 
 		//Data Konsumsi
-		$kon_air = ;
-		$rata_kon = ;
-		$kaps_kon = ;
-		$kaps_kon2 = ;
-		$air_bersih = ;
-		$air_bersih2 = ;
-		$sistem = ;
-		$kaps_bersih = ;
-		$kaps_bersih2 = ;
-		$air_hujan = ;
-		$air_hujan2 = ;
-		$jml_hujan = ;
-		$jml_hujan2 = ;
-		$kaps_hujan = ;
-		$kaps_hujan2 = ;
-		$air_bekas = ;
-		$air_bekas2 = ;
-		$kaps_bekas = ;
-		$kaps_bekas2 = ;
-		$limbah = ;
-		$limbah2 = ;
-		$kaps_limbah = ;
-		$kaps_limbah2 = ;
+		$kon_air = $this->input->post('kons_air');
+		$rata_kon = $this->input->post('rata_kon');
+		$jkl = "";
+		$fgh = "";
+		for ($i=0; $i <count($kon_air) ; $i++) { 
+			$def = $kon_air[$i].',';
+			$fgh .=$def;
+		}
+		for ($i=0; $i <count($rata_kon) ; $i++) { 
+			$def = $kon_air[$i].',';
+			$jkl .=$def;
+		}
+		$kons_air = substr($fgh, 0, -1);
+		$rata_air = substr($jkl, 0, -1);
+
+		// $kaps_kon = $this->input->post();
+		// $kaps_kon2 = $this->input->post();
+
+		$air_bersih = $this->input->post('air_bersih');
+		$air_bersih2 = $this->input->post('air_bersih2');
+		$sistem = $this->input->post('sistem_air');
+		$kaps_bersih = $this->input->post('kaps_bersih');
+		$kaps_bersih2 = $this->input->post('kaps_bersih2');
+		$air_hujan = $this->input->post('air_hujan');
+		$air_hujan2 = $this->input->post('air_hujan2');
+		$air_hujan3 = $this->input->post('air_hujan3');
+		$jml_hujan = $this->input->post('jumlah_hujan');
+		$jml_hujan2 = $this->input->post('jumlah_hujan');
+		$kaps_hujan = $this->input->post('kaps_hujan');
+		$kaps_hujan2 = $this->input->post('kaps_hujan2');
+		$air_bekas = $this->input->post('air_bekas');
+		$air_bekas2 = $this->input->post('air_bekas2');
+		$kaps_bekas = $this->input->post('kaps_bekas');
+		$kaps_bekas2 = $this->input->post('kaps_bekas2');
+		$limbah = $this->input->post('air_limbah');
+		$limbah2 = $this->input->post('air_limbah2');
+		$kaps_limbah = $this->input->post('kaps_limbah');
+		$kaps_limbah2 = $this->input->post('kaps_limbah2');
 
 		$queryair = $this->db->insert('data_air', array(
 			'id_air_unik'=>$id,
-			'konsumsi_air'=>$kon_air,
+			'konsumsi_air'=>$kons_air,
 			'rata_konsumsi'=>$rata_kon,
-			'kapasitas_konsumsi'=>$kaps_kon.','.$kaps_kon2,
+			// 'kapasitas_konsumsi'=>$kaps_kon.','.$kaps_kon2,
 			'air_bersih'=>$air_bersih.','.$air_bersih2,
 			'sistem_water'=>$sistem,
 			'kapasitas_bersih'=>$kaps_bersih.','.$kaps_bersih2,
-			'air_hujan'=>$air_hujan.','.$air_hujan2,
+			'air_hujan'=>$air_hujan.','.$air_hujan2.','.$air_hujan3,
 			'jml_hujan'=>$jml_hujan.','.$jml_hujan2,
 			'kapasitas_hujan'=>$kaps_hujan.','.$kaps_hujan2,
 			'air_bekas'=>$air_bekas.','.$air_bekas2,
@@ -270,36 +299,33 @@ class M_back extends CI_Model {
 			}
 
 			//Ground Tank
-			$jml_pantek = $this->input->post('jumlah_pantek');
-			$no_sipa_pantek = $this->input->post('no_sipa_pantek');
-			$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
-			for ($i=0; $i < count($no_sipa_pantek); $i++) { 
+			$jml_ground = $this->input->post('jumlah_ground');
+			$kaps_ground = $this->input->post('kaps_ground');
+			for ($i=0; $i < count($kaps_ground); $i++) { 
 				$this->db->insert('data_sumur', array(
 					'id_data_sumur'=>$id_air,
-					'jenis'=>'sumur pantek',
-					'unit'=>$jml_pantek,
-					'sipa'=>$no_sipa_pantek,
-					'tanggal'=>$tgl_sipa_pantek
+					'jenis'=>'GROUND',
+					'unit'=>$jml_ground,
+					'kapasitas'=>$kaps_ground,
 				));
 			}
 
 			//Roof Tank
-			$jml_pantek = $this->input->post('jumlah_pantek');
-			$no_sipa_pantek = $this->input->post('no_sipa_pantek');
-			$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
+			$jml_roof = $this->input->post('jumlah_roof');
+			$kaps_roof = $this->input->post('kaps_roof');
 			for ($i=0; $i < count($no_sipa_pantek); $i++) { 
 				$this->db->insert('data_sumur', array(
 					'id_data_sumur'=>$id_air,
-					'jenis'=>'sumur pantek',
-					'unit'=>$jml_pantek,
-					'sipa'=>$no_sipa_pantek,
-					'tanggal'=>$tgl_sipa_pantek
+					'jenis'=>'Roof Tank',
+					'unit'=>$jml_roof,
+					'kapasitas'=>$kaps_roof,
 				));
 			}
 		}
+
 		//Data Sketsa
 		$this->load->library('upload');
-		$config['upload_path']          = './public/images/';
+		$config['upload_path']          = './assets/images/';
 		$config['allowed_types']        = 'gif|jpg|png|jpeg';
 		$config['remove_spaces']        = TRUE;
 		$config['encrypt_name']        = TRUE;
@@ -315,7 +341,6 @@ class M_back extends CI_Model {
 		}
 		$nama_bang_sketsa = $this->input->post('nama_bang_sketsa');
 		$lokasi_sketsa = $this->input->post('lokasi_sketsa');
-		$lokasi_sketsa = $this->input->post('lokasi_sketsa');
 		$this->db->insert('sketsa_lokasi', array(
 			'id_sketsa_unik'=>$id,
 			'nama_bangunan'=>$nama_bang_sketsa,
@@ -330,14 +355,16 @@ class M_back extends CI_Model {
 		$peng_air =  $this->input->post('peng_air');
 
 		$this->db->insert('permasalahan', array(
-			'id_inuk_masalah'=>$id,
+			'id_unik_masalah'=>$id,
 			'sumur_resapan'=>$smr_resap,
 			'sumur_dalam'=>$smr_dalam,
 			'pengelolaan_limbah'=>$peng_air,
 			'persetujuan'=>1,
 			'created_at'=>$tanggal
 		));
+		redirect($_SERVER['HTTP_REFERER']);
 	}
+
 
 
 }
