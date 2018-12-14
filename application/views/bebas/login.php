@@ -54,7 +54,13 @@ body#LoginForm{ background-image:url("https://hdwallsource.com/img/2014/9/blur-2
 }
 .back { text-align: left; margin-top:10px;}
 .back a {color: #444444; font-size: 13px;text-decoration: none;}
-
+@media(max-width: 768px){
+  .main-div{
+    max-width: 100% !important; 
+    padding: 32px 38px 32px 38px;
+    margin:8% auto 20%;
+  }
+}
 </style>
 <body id="LoginForm">  
   <div class="container">
