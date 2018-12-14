@@ -9,7 +9,7 @@ class M_front extends CI_Model {
 		if ($log->num_rows() > 0) {
 			$x = $log->row();
 			$sessi = array(
-				'id' => $x->id_user, 
+				'id' => $x->id, 
 				'email' => $x->email, 
 				'nama' => $x->username, 
 				'level' => $x->level
