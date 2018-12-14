@@ -1,6 +1,64 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/jq.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
+<script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
+<script type="text/javascript">
+var oh = document.querySelector('.circle.oh');
+
+document.addEventListener('mousemove', function (event) {
+  var domainX = [0, document.body.clientWidth],
+  domainY = [0, document.body.clientHeight],
+  range = [-10, 10];
+
+  var translate = {
+    x: range[0] + (event.clientX - domainX[0]) * (range[1] - range[0]) / (domainX[1] - domainX[0]),
+    y: range[0] + (event.clientY - domainY[0]) * (range[1] - range[0]) / (domainY[1] - domainY[0]) };
+
+
+  oh.style.animation = 'none';
+  oh.style.transform = 'translate(' + translate.x + 'px, ' + translate.y + 'px)';
+});
+
+document.addEventListener('mouseleave', function (event) {
+  oh.style.animation = 'floating 3s linear infinite';
+});
+</script>
+<script type="text/javascript">
+	$(document).ready(function () {
+    //Initialize tooltips
+    $('.nav-tabs > li a[title]').tooltip();
+});
+</script>
+<script type="text/javascript">
+	$(".scrollbar").addClass("");
+// If user has Javascript disabled, the thick scrollbar is shown
+$(".scrollbar").mouseover(function(){
+	$(this).removeClass("");
+});
+$(".scrollbar").mouseout(function(){
+	$(this).addClass("");
+});
+$(".scrollbar").scroll(function () {
+	$(".scrollbar").addClass("");
+});
+</script>
+<script type="text/javascript">
+$(document).ready(function() {
+    $('#example').DataTable({ 
+    	responsive: true
+    });
+});
+
+function checkAll(bx) {
+  var cbs = document.getElementsByTagName('input');
+  for(var i=0; i < cbs.length; i++) {
+    if(cbs[i].type == 'checkbox') {
+      cbs[i].checked = bx.checked;
+    }
+  }
+}
+</script>
 <script type="text/javascript">
 	$(function() {
 		$('.date-picker-year').datepicker({
@@ -293,7 +351,7 @@
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('#result').text(totalSum);
+		$('.result').text(totalSum);
 	});
 	$('.jum-puncak').on('input','.jumlahpuncak',function(){
 		var totalSum = 0;
@@ -303,7 +361,47 @@
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('#resultpuncak').text(totalSum);
+		$('.resultpuncak').text(totalSum);
+	});
+	$('.rowpdam').on('input','.pdam',function(){
+		var totalSum = 0;
+		$('.rowpdam .pdam').each(function(){
+			var inputVal = $(this).val();
+			if ($.isNumeric(inputVal)) {
+				totalSum += parseFloat(inputVal);
+			}
+		});
+		$('.resultpdam').text(totalSum);
+	});
+	$('.rowbor').on('input','.sumurbor',function(){
+		var totalSum = 0;
+		$('.rowbor .sumurbor').each(function(){
+			var inputVal = $(this).val();
+			if ($.isNumeric(inputVal)) {
+				totalSum += parseFloat(inputVal);
+			}
+		});
+		$('.resultbor').text(totalSum);
+	});
+	$('.rowrecycle').on('input','.recycle',function(){
+		var totalSum = 0;
+		$('.rowrecycle .recycle').each(function(){
+			var inputVal = $(this).val();
+			if ($.isNumeric(inputVal)) {
+				totalSum += parseFloat(inputVal);
+			}
+		});
+		$('.resultrecycle').text(totalSum);
+	});
+	$('.rowlain').on('input','.lainlain',function(){
+		var totalSum = 0;
+		$('.rowlain .lainlain').each(function(){
+			var inputVal = $(this).val();
+			if ($.isNumeric(inputVal)) {
+				totalSum += parseFloat(inputVal);
+			}
+		});
+		$('.resultlain').text(totalSum);
 	});
 </script>
 <script type="text/javascript">
@@ -353,5 +451,64 @@
 		$('div.setup-panel div a.btn-primary').trigger('click');
 	});
 </script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		$("#gridview").hide();
+		$("#grid").addClass('active');
+		$("#table").click(function(e) {
+			e.preventDefault();
+			$("#grid").removeClass('active');
+			$("#table").addClass('active');
+			$("#gridview").slideUp('slow');
+			$("#tableview").slideDown('slow');
+		});
+		$("#grid").click(function(e) {
+			e.preventDefault();
+			$("#table").removeClass('active');
+			$("#grid").addClass('active');
+			$("#tableview").slideUp('slow');
+			$("#gridview").slideDown('slow');
+		});
+	});
+	$(".btn-group").on("click", function () {
+		$("#grid, #table").toggleClass("btn-active");
+	});
+</script>
+<!-- <script type="text/javascript">
+	(function() {
+
+  // Definition of caller element
+  var getTriggerElement = function(el) {
+    var isCollapse = el.getAttribute('data-collapse');
+    if (isCollapse !== null) {
+      return el;
+    } else {
+      var isParentCollapse = el.parentNode.getAttribute('data-collapse');
+      return (isParentCollapse !== null) ? el.parentNode : undefined;
+    }
+  };
+
+  // A handler for click on toggle button
+  var collapseClickHandler = function(event) {
+    var triggerEl = getTriggerElement(event.target);
+    // If trigger element does not exist
+    if (triggerEl === undefined) {
+      event.preventDefault();
+      return false;
+    }
+
+    // If the target element exists
+    var targetEl = document.querySelector(triggerEl.getAttribute('data-target'));
+    if (targetEl) {
+      triggerEl.classList.toggle('-active');
+      targetEl.classList.toggle('-on');
+    }
+  };
+
+  // Delegated event
+  document.addEventListener('click', collapseClickHandler, false);
+
+})(document, window);
+</script> -->
 </body>
 </html>

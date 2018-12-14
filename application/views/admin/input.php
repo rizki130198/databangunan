@@ -1,229 +1,4 @@
-<style type="text/css">
-body{ 
-	margin-top:40px; 
-}
-
-.stepwizard-step p {
-	margin-top: 10px;
-}
-
-.stepwizard-row {
-	display: table-row;
-}
-
-.stepwizard {
-	display: table;
-	width: 100%;
-	position: relative;
-}
-
-.stepwizard-step button[disabled] {
-	opacity: 1 !important;
-	filter: alpha(opacity=100) !important;
-}
-
-.stepwizard-row:before {
-	top: 14px;
-	bottom: 0;
-	position: absolute;
-	content: " ";
-	width: 100%;
-	height: 1px;
-	background-color: #ccc;
-	z-order: 0;
-
-}
-
-.stepwizard-step {
-	display: table-cell;
-	text-align: center;
-	position: relative;
-}
-
-.btn-circle {
-	width: 30px;
-	height: 30px;
-	text-align: center;
-	padding: 6px 0;
-	font-size: 12px;
-	line-height: 1.428571429;
-	border-radius: 15px;
-}
-.margin-input .col-sm-1,.margin-input .col-sm-2,.margin-input .col-sm-3,.margin-input .col-sm-4,.margin-input .col-sm-6,.margin-input .col-sm-7,.margin-input .col-sm-10,.margin-input .col-sm-8,.margin-input .col-sm-9,.margin-input .col-sm-12{
-	margin-top: 20px;
-}
-.margin-input-row .col-sm-1, .margin-input-row .col-sm-5{
-	margin-top: 20px;
-}
-.ui-datepicker {
-	z-index: 2 !important;
-}
-/*.ui-datepicker-calendar {
-	display: none;
-}
-.ui-datepicker-month {
-	display: none;
-}
-.ui-datepicker-prev{
-	display: none;
-}
-.ui-datepicker-next{
-	display: none;
-	}*/
-
-	.funkyradio div {
-		/*clear: both;*/
-		overflow: hidden;
-	}
-
-	.funkyradio label {
-		width: 100%;
-		border-radius: 3px;
-		border: 1px solid #D1D3D4;
-		font-weight: normal;
-	}
-
-	.funkyradio input[type="radio"]:empty,
-	.funkyradio input[type="checkbox"]:empty {
-		display: none;
-	}
-
-	.funkyradio input[type="radio"]:empty ~ label,
-	.funkyradio input[type="checkbox"]:empty ~ label {
-		position: relative;
-		line-height: 2.5em;
-		text-indent: 3.25em;
-		cursor: pointer;
-		-webkit-user-select: none;
-		-moz-user-select: none;
-		-ms-user-select: none;
-		user-select: none;
-	}
-
-	.funkyradio input[type="radio"]:empty ~ label:before,
-	.funkyradio input[type="checkbox"]:empty ~ label:before {
-		position: absolute;
-		display: block;
-		top: 0;
-		bottom: 0;
-		left: 0;
-		content: '';
-		width: 2.5em;
-		background: #D1D3D4;
-		border-radius: 3px 0 0 3px;
-	}
-
-	.funkyradio input[type="radio"]:hover:not(:checked) ~ label,
-	.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label {
-		color: #888;
-	}
-
-	.funkyradio input[type="radio"]:hover:not(:checked) ~ label:before,
-	.funkyradio input[type="checkbox"]:hover:not(:checked) ~ label:before {
-		content: '\2714';
-		text-indent: .9em;
-		color: #C2C2C2;
-	}
-
-	.funkyradio input[type="radio"]:checked ~ label,
-	.funkyradio input[type="checkbox"]:checked ~ label {
-		color: #777;
-	}
-
-	.funkyradio input[type="radio"]:checked ~ label:before,
-	.funkyradio input[type="checkbox"]:checked ~ label:before {
-		content: '\2714';
-		text-indent: .9em;
-		color: #333;
-		background-color: #ccc;
-	}
-
-	.funkyradio input[type="radio"]:focus ~ label:before,
-	.funkyradio input[type="checkbox"]:focus ~ label:before {
-		box-shadow: 0 0 0 3px #999;
-	}
-
-	.funkyradio-primary input[type="radio"]:checked ~ label:before,
-	.funkyradio-primary input[type="checkbox"]:checked ~ label:before {
-		color: #fff;
-		background-color: #337ab7;
-	}
-	.active{
-		display: block;
-	}
-	#sipa1{
-		display: none;
-	}
-	#sipa2{
-		display: none;
-	}
-	#sipa3{
-		display: none;
-	}
-	#sipa4{
-		display: none;
-	}
-	#sipa5{
-		display: none;
-	}
-	#sipa6{
-		display: none;
-	}
-	#sipapantek1{
-		display: none;
-	}
-	#sipapantek2{
-		display: none;
-	}
-	#sipapantek3{
-		display: none;
-	}
-	#sipapantek4{
-		display: none;
-	}
-	#sipapantek5{
-		display: none;
-	}
-	#sipapantek6{
-		display: none;
-	}
-	#ground1{
-		display: none;
-	}
-	#ground2{
-		display: none;
-	}
-	#ground3{
-		display: none;
-	}
-	#ground4{
-		display: none;
-	}
-	#ground5{
-		display: none;
-	}
-	#ground6{
-		display: none;
-	}
-	#roof1{
-		display: none;
-	}
-	#roof2{
-		display: none;
-	}
-	#roof3{
-		display: none;
-	}
-	#roof4{
-		display: none;
-	}
-	#roof5{
-		display: none;
-	}
-	#roof6{
-		display: none;
-	}
-</style>
+<?php $this->load->view('include/navbar'); ?>	
 <body>
 	<div class="container" style="margin-bottom: 50px;">
 		<div class="stepwizard">
@@ -255,6 +30,10 @@ body{
 				<div class="stepwizard-step">
 					<a href="#step-7" type="button" class="btn btn-default btn-circle" disabled="disabled">7</a>
 					<p>Step 7</p>
+				</div>
+				<div class="stepwizard-step">
+					<a href="#step-8" type="button" class="btn btn-default btn-circle" disabled="disabled">8</a>
+					<p>Step 8</p>
 				</div>
 			</div>
 		</div>
@@ -495,7 +274,7 @@ body{
 						<h3> DATA PENGELOLA BANGUNAN GEDUNG</h3>
 						<div class="row">
 							<div class="form-group margin-input">
-								<label class="col-sm-2">Kategori Pengelola :</label>
+								<label class="col-sm-2">Kategori Pengelola <span style="color: red;">*</span>:</label>
 								<div class="col-sm-10">
 									<div class="row">
 										<div class="funkyradio">
@@ -524,13 +303,13 @@ body{
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Penanggung Jawab :</label>
 								<div class="col-sm-10">
-									<input  name="peng_jawab" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+									<input  name="peng_jawab" maxlength="100" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jabatan :</label>
 								<div class="col-sm-10">
-									<input  name="jabatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+									<input  name="jabatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Jabatan"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
@@ -730,7 +509,7 @@ body{
 								</div>
 							</div>
 							<div class="form-group margin-input">
-								<label class="col-sm-2">Jenis Bangunan :</label>
+								<label class="col-sm-2">Jenis Bangunan <span style="color: red;">*</span>:</label>
 								<div class="col-sm-10">
 									<div class="row">
 										<div class="funkyradio">
@@ -738,8 +517,8 @@ body{
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox"  name="jenis_bang[]" value="inhouse" id="inhouse"/>
-															<label for="inhouse">Perkantoran</label>
+															<input type="checkbox"  name="jenis_bang[]" value="perkantoran" id="jenisbang"/>
+															<label for="jenisbang">Perkantoran</label>
 														</div>
 													</div>
 													<div class="col-md-6">
@@ -981,10 +760,10 @@ body{
 												Total Per Minggu
 											</td>
 											<td>
-												<input type="number"  class="form-control" required="required" name="totalminggu[]" placeholder="">
+												<output type="number" class="form-control result" required="required" name="totalminggu[]" placeholder=""></output>
 											</td>
 											<td>
-												<input type="number"  class="form-control" required="required" name="totalminggu[]" placeholder="">
+												<output type="number"  class="form-control resultpuncak" required="required" name="totalminggu[]" placeholder=""></output>
 											</td>
 										</tr>
 									</tbody>
@@ -1017,7 +796,7 @@ body{
 						</div>
 						<div class="row">
 							<div class="form-group margin-input">
-								<label class="col-sm-2">Sumber air yang digunakan* :</label>
+								<label class="col-sm-2">Sumber air yang digunakan <span style="color: red;">*</span>:</label>
 								<div class="col-sm-10">
 									<div class="row">
 										<div class="funkyradio">
@@ -1057,7 +836,7 @@ body{
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox"  name="kons_air[]"  value="Sumur Pantek"/>
+															<input type="checkbox"  name="kons_air[]"  value="Sumur Pantek" id="sumur_pantek" />
 															<label for="sumur_pantek">Sumur Pantek</label>
 														</div>
 													</div>
@@ -1323,6 +1102,248 @@ body{
 								</div>
 							</div>
 
+							<div class="col-md-12">
+								<div class="table-responsive">
+									<table class="table table table-striped table-bordered" style="margin-top: 20px;">
+										<tbody>
+											<thead>
+									          	<tr>
+									            	<th rowspan="2"><center>Bulan (Januari - Desember 2018)</center></th>
+									            	<th colspan="4"><center>Jumlah Konsumsi</center></th>
+									          	</tr>
+									          	<tr>
+									          		<th><center>PDAM</center></th>
+									          		<th><center>Sumur Bor/ Pantek</center></th>
+									          		<th><center>Pengolahan air sendiri / Recycle</center></th>
+									          		<th><center>Lain-lain</center></th>
+									          	</tr>
+									        </thead>
+											<tr>
+												<td style="text-align: center;">
+													Januari
+												</td>
+												<td class="rowpdam">
+													<input name="januaripdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="januarisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="januarirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="januarilain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Febuari
+												</td>
+												<td class="rowpdam">
+													<input name="febuaripdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="febuarisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="febuarirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="febuarilain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Maret
+												</td>
+												<td class="rowpdam">
+													<input name="maretpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="maretsumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="maretrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="maretlain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													April
+												</td>
+												<td class="rowpdam">
+													<input name="aprilpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="aprilsumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="aprilrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="aprillain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Mei
+												</td>
+												<td class="rowpdam">
+													<input name="meipdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="meisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="meirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="meilain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Juni
+												</td>
+												<td class="rowpdam">
+													<input name="junipdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="junisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="junirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="junilain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Juli
+												</td>
+												<td class="rowpdam">
+													<input name="julipdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="julisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="julirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="julilain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Agustus
+												</td>
+												<td class="rowpdam">
+													<input name="agustuspdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="agustussumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="agustusrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="agustuslain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													September
+												</td>
+												<td class="rowpdam">
+													<input name="septemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="septembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="septemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="septemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Oktober
+												</td>
+												<td class="rowpdam">
+													<input name="oktoberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="oktobersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="oktoberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="oktoberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													November
+												</td>
+												<td class="rowpdam">
+													<input name="novemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="novembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="novemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="novemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Desember
+												</td>
+												<td class="rowpdam">
+													<input name="desemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+												</td>
+												<td class="rowbor">
+													<input name="desembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+												</td>
+												<td class="rowrecycle">
+													<input name="desemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+												</td>
+												<td class="rowlain">
+													<input name="desemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+												</td>
+											</tr>
+											<tr>
+												<td style="text-align: center;">
+													Total Konsumsi (M<sup>3</sup>)
+												</td>
+												<td>
+													<output type="number" class="form-control resultpdam" required="required" name="totalkonsumsi[]" placeholder=""></output>
+												</td>
+												<td>
+													<output type="number"  class="form-control resultbor" required="required" name="totalkonsumsi[]" placeholder=""></output>
+												</td>
+												<td>
+													<output type="number" class="form-control resultrecycle" required="required" name="totalkonsumsi[]" placeholder=""></output>
+												</td>
+												<td>
+													<output type="number"  class="form-control resultlain" required="required" name="totalkonsumsi[]" placeholder=""></output>
+												</td>
+											</tr>
+										</tbody>
+									</table>
+								</div>	
+							</div>
+
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Konsumsi Air Rata-rata</label>
 								<label class="col-sm-2">a. Occupant Area :</label>
@@ -1578,14 +1599,17 @@ body{
 									</div>
 								</div>
 							</div>
-							<br>
-							<div class="col-md-12">
-								<div class="panel panel-default" style="margin-top: 20px;box-shadow: 0 2px 2px rgba(0,0,0,0.1);">
-									<div class="panel-body">
-										<h5>SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h5>
-									</div>
-								</div>
-							</div>
+						</div>
+						<br>	
+						<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
+					</div>
+				</div>
+			</div>
+			<div class="row setup-content" id="step-7">
+				<div class="col-xs-12">
+					<div class="col-md-12">
+						<h3> SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h3>
+						<div class="row">
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">File Sketsa</label>
 								<div class="col-sm-10">
@@ -1612,7 +1636,8 @@ body{
 					</div>
 				</div>
 			</div>
-			<div class="row setup-content" id="step-7">
+
+			<div class="row setup-content" id="step-8">
 				<div class="col-xs-12">
 					<div class="col-md-12">
 						<h3> PERMASALAHAN / KENDALA</h3>
