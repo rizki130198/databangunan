@@ -981,10 +981,10 @@ body{
 												Total Per Minggu
 											</td>
 											<td>
-												<input type="number"  class="form-control" required="required" name="totalminggu[]" placeholder="">
+												<input type="number"  class="form-control jumlah jum-rata" required="required" name="totalminggu[]" placeholder="">
 											</td>
 											<td>
-												<input type="number"  class="form-control" required="required" name="totalminggu[]" placeholder="">
+												<input type="number"  class="form-control jumlahpuncak jum-puncak" required="required" name="totalminggu[]" placeholder="">
 											</td>
 										</tr>
 									</tbody>

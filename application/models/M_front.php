@@ -17,7 +17,6 @@ class M_front extends CI_Model {
 			$this->session->set_userdata($sessi);
 			redirect('main/input');
 		}else{
-
 			$this->session->set_flashdata('gagal', 'Tidak dapat login, harap periksa kembali username dan password anda');
 			redirect('welcome/login');
 		}
