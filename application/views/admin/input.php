@@ -517,13 +517,13 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox"  name="jenis_bang[]" value="perkantoran" id="jenisbang"/>
+															<input type="checkbox"  name="perkantoran" value="perkantoran" id="jenisbang"/>
 															<label for="jenisbang">Perkantoran</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="jenis_bang[]" value="kesehatan" id="kesehatan"/>
+															<input type="checkbox" name="kesehatan" value="kesehatan" id="kesehatan"/>
 															<label for="kesehatan">Sarana Kesehatan</label>
 														</div>
 													</div>
@@ -533,13 +533,13 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="jenis_bang[]" value="apartemen" id="apartemen"/>
+															<input type="checkbox" name="apartemen" value="apartemen" id="apartemen"/>
 															<label for="apartemen">Apartemen</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="jenis_bang[]" value="perdagangan" id="perdagangan"/>
+															<input type="checkbox" name="perdagangan" value="perdagangan" id="perdagangan"/>
 															<label for="perdagangan">Sarana Perdagangan</label>
 														</div>
 													</div>	
@@ -549,14 +549,14 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="jenis_bang[]" hunian="hunian" id="hunian"/>
+															<input type="checkbox" name="hunian" value="hunian" id="hunian"/>
 															<label for="hunian">Hunian</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox" id="lainnya_jenisbangunan1"/>
-															<label for="lainnya_jenisbangunan1"><input name="jenis_bang[]" value="....." style="padding-left: 45px;" disabled id="txtjenisbang" type="text" class="form-control" name="lainnya_jenisbangunan"></label>
+															<label for="lainnya_jenisbangunan1"><input name="lainnya"  style="padding-left: 45px;" disabled id="txtjenisbang" type="text" class="form-control" name="lainnya_jenisbangunan"></label>
 														</div>
 													</div>	
 												</div>
@@ -565,14 +565,14 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="jenis_bang[]" value="hotel" id="hotel"/>
+															<input type="checkbox" name="hotel" value="hotel" id="hotel"/>
 															<label for="hotel">Hotel</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox"  id="lainnya_jenisbangunan2"/>
-															<label for="lainnya_jenisbangunan2"><input name="jenis_bang[]" value="....." style="padding-left: 45px;" disabled id="txtjenisbang2" type="text" class="form-control" name="lainnya_jenisbangunan2"></label>
+															<label for="lainnya_jenisbangunan2"><input name="lainnya2" style="padding-left: 45px;" disabled id="txtjenisbang2" type="text" class="form-control" name="lainnya_jenisbangunan2"></label>
 														</div>
 													</div>	
 												</div>
@@ -672,12 +672,12 @@
 								<table class="table table table-striped table-bordered" style="margin-top: 20px;">
 									<tbody>
 										<thead>
-								          	<tr>
-								            	<th><center>Hari/Minggu</center></th>
-								            	<th><center>Jumlah rata-rata pengguna saat jam kerja (perkiraan),(orang)</center></th>
-								            	<th><center>Jumlah puncak penggunaan (perkiraan),(orang)</center></th>
-								          	</tr>
-								        </thead>
+											<tr>
+												<th><center>Hari/Minggu</center></th>
+												<th><center>Jumlah rata-rata pengguna saat jam kerja (perkiraan),(orang)</center></th>
+												<th><center>Jumlah puncak penggunaan (perkiraan),(orang)</center></th>
+											</tr>
+										</thead>
 										<tr>
 											<td style="text-align: center;">
 												Senin
@@ -760,10 +760,10 @@
 												Total Per Minggu
 											</td>
 											<td>
-												<input readonly type="number" class="form-control result" required="required" name="totalminggu[]" placeholder=""></input readonly>
+												<input readonly type="number" class="form-control result" required="required" name="totalminggu[]" placeholder="">
 											</td>
 											<td>
-												<input readonly type="number"  class="form-control resultpuncak" required="required" name="totalminggu[]" placeholder=""></input readonly>
+												<input readonly type="number"  class="form-control resultpuncak" required="required" name="totalminggu[]" placeholder="">
 											</td>
 										</tr>
 									</tbody>
@@ -790,9 +790,9 @@
 						<h3>DATA KONSUMSI AIR DAN PENGOLAHAN AIR</h3>
 						<br>
 						<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
-						  	<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
-						    	KONSUMSI AIR
-						  	</span>
+							<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
+								KONSUMSI AIR
+							</span>
 						</div>
 						<div class="row">
 							<div class="form-group margin-input">
@@ -804,13 +804,13 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="kons_air[]" value="pdam" id="pdam"/>
+															<input type="checkbox" name="pdam" value="pdam" id="pdam"/>
 															<label for="pdam">PDAM</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="kons_air[]" value="pengelola_sendiri" id="pengelola_sendiri"/>
+															<input type="checkbox" name="sendiri" value="pengelola_sendiri" id="pengelola_sendiri"/>
 															<label for="pengelola_sendiri">Pengolahan air sendiri</label>
 														</div>
 													</div>
@@ -820,14 +820,14 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox" name="kons_air[]" value="sumur dalam" id="sumur"/>
+															<input type="checkbox" name="dalam" value="sumur dalam" id="sumur"/>
 															<label for="sumur">Sumur Bor/ Sumur Dalam</label>
 														</div>
 													</div>
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox"id="lainnya_sumberair"/>
-															<label for="lainnya_sumberair"><input  name="kons_air[]"  value="Lain-lain, sebutkan ..." style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control" name="lainnya_sumberair"></label>
+															<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="Lain-lain, sebutkan ..." style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control" name="lainnya_sumberair"></label>
 														</div>
 													</div>	
 												</div>
@@ -1107,17 +1107,17 @@
 									<table class="table table table-striped table-bordered" style="margin-top: 20px;">
 										<tbody>
 											<thead>
-									          	<tr>
-									            	<th rowspan="2"><center>Bulan (Januari - Desember 2018)</center></th>
-									            	<th colspan="4"><center>Jumlah Konsumsi</center></th>
-									          	</tr>
-									          	<tr>
-									          		<th><center>PDAM</center></th>
-									          		<th><center>Sumur Bor/ Pantek</center></th>
-									          		<th><center>Pengolahan air sendiri / Recycle</center></th>
-									          		<th><center>Lain-lain</center></th>
-									          	</tr>
-									        </thead>
+												<tr>
+													<th rowspan="2"><center>Bulan (Januari - Desember 2018)</center></th>
+													<th colspan="4"><center>Jumlah Konsumsi</center></th>
+												</tr>
+												<tr>
+													<th><center>PDAM</center></th>
+													<th><center>Sumur Bor/ Pantek</center></th>
+													<th><center>Pengolahan air sendiri / Recycle</center></th>
+													<th><center>Lain-lain</center></th>
+												</tr>
+											</thead>
 											<tr>
 												<td style="text-align: center;">
 													Januari
@@ -1327,16 +1327,16 @@
 													Total Konsumsi (M<sup>3</sup>)
 												</td>
 												<td>
-													<output type="number" class="form-control resultpdam" required="required" name="totalkonsumsi[]" placeholder=""></output>
+													<input type="number" class="form-control resultpdam" required="required" name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<output type="number"  class="form-control resultbor" required="required" name="totalkonsumsi[]" placeholder=""></output>
+													<input type="number"  class="form-control resultbor" required="required" name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<output type="number" class="form-control resultrecycle" required="required" name="totalkonsumsi[]" placeholder=""></output>
+													<input type="number" class="form-control resultrecycle" required="required" name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<output type="number"  class="form-control resultlain" required="required" name="totalkonsumsi[]" placeholder=""></output>
+													<input type="number"  class="form-control resultlain" required="required" name="totalkonsumsi[]" placeholder="">
 												</td>
 											</tr>
 										</tbody>
@@ -1367,9 +1367,9 @@
 						</div>
 						<br>
 						<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
-						  	<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
-						    	PENGOLAHAN AIR<span style="color: red;"> *</span>
-						  	</span>
+							<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
+								PENGOLAHAN AIR<span style="color: red;"> *</span>
+							</span>
 						</div>
 						<div class="row">
 							<div class="form-group margin-input">
@@ -1413,7 +1413,7 @@
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
 													<input type="checkbox" name="checkbox" id="lainnya_airbersih"/>
-													<label for="lainnya_airbersih"><input name="air_bersih2" value="....." style="padding-left: 45px;" disabled id="txtairbersih" type="text" class="form-control" name="lainnya_airbersih"></label>
+													<label for="lainnya_airbersih"><input name="air_bersih2" value="....." style="padding-left: 45px;" disabled id="txtairbersih" type="text" class="form-control" ></label>
 												</div>
 											</div>
 										</div>
@@ -1681,5 +1681,5 @@
 					</div>
 				</div>
 			</div>	
-			</form>
-		</div>
+		</form>
+	</div>

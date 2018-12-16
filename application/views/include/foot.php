@@ -351,7 +351,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.result').text(totalSum);
+		$('.result').val(totalSum);
 	});
 	$('.jum-puncak').on('input','.jumlahpuncak',function(){
 		var totalSum = 0;
@@ -361,7 +361,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.resultpuncak').text(totalSum);
+		$('.resultpuncak').val(totalSum);
 	});
 	$('.rowpdam').on('input','.pdam',function(){
 		var totalSum = 0;
@@ -371,7 +371,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.resultpdam').text(totalSum);
+		$('.resultpdam').val(totalSum);
 	});
 	$('.rowbor').on('input','.sumurbor',function(){
 		var totalSum = 0;
@@ -381,7 +381,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.resultbor').text(totalSum);
+		$('.resultbor').val(totalSum);
 	});
 	$('.rowrecycle').on('input','.recycle',function(){
 		var totalSum = 0;
@@ -391,7 +391,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.resultrecycle').text(totalSum);
+		$('.resultrecycle').val(totalSum);
 	});
 	$('.rowlain').on('input','.lainlain',function(){
 		var totalSum = 0;
@@ -401,7 +401,7 @@ function checkAll(bx) {
 				totalSum += parseFloat(inputVal);
 			}
 		});
-		$('.resultlain').text(totalSum);
+		$('.resultlain').val(totalSum);
 	});
 </script>
 <script type="text/javascript">

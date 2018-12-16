@@ -64,7 +64,7 @@
 							<td>Perkantoran</td>
 							<td>PDAM</td>
 							<td>
-								<a href="<?php echo site_url('#'); ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+								<a href="<?php echo site_url('main/editdata'); ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
 								<a href="<?php echo site_url('main/viewdata'); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></button></a>
 							</td>
 						</tr>
