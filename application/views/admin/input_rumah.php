@@ -8,19 +8,19 @@
 					<p>Step 1</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-2" type="button" class="btn btn-default btn-circle" disabled>2</a>
+					<a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
 					<p>Step 2</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled>3</a>
+					<a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
 					<p>Step 3</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-4" type="button" class="btn btn-default btn-circle" disabled>4</a>
+					<a href="#step-4" type="button" class="btn btn-default btn-circle">4</a>
 					<p>Step 4</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-5" type="button" class="btn btn-default btn-circle" disabled>5</a>
+					<a href="#step-5" type="button" class="btn btn-default btn-circle">5</a>
 					<p>Step 5</p>
 				</div>
 			</div>

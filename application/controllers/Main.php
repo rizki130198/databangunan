@@ -34,7 +34,14 @@ class Main extends CI_Controller {
 	{
 		$data['title'] = "Halaman Data Rumah Tinggal";
 		$this->load->view('include/head',$data);
-		$this->load->view('admin/input');
+		$this->load->view('admin/rum_tinggal');
+		$this->load->view('include/foot');
+	}
+	public function viewdatarum()
+	{
+		$data['title'] = "Halaman Lihat Data Rumah Tinggal";
+		$this->load->view('include/head',$data);
+		$this->load->view('admin/view_datarum');
 		$this->load->view('include/foot');
 	}
 	public function proses_input()
