@@ -4,7 +4,8 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Welcome extends CI_Controller {
 	public function login()
 	{
-		$this->load->view('include/head');
+		$data['title'] = "Halaman Login";
+		$this->load->view('include/head',$data);
 		$this->load->view('bebas/login');
 		$this->load->view('include/foot');
 	}

@@ -43,16 +43,19 @@
 					<div class="col-md-12">
 						<h3> INFORMASI UMUM BANGUNAN GEDUNG</h3>
 						<div class="row">
+							<?php foreach ($info as $datainfo): ?>
+								
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nama Bangunan :</label>
 								<div class="col-sm-10">
-									<input  maxlength="100" name="nama_bangunan" type="text" required="required" class="form-control" placeholder="Masukan Nama Bangunan"  />
+									<input  maxlength="100" value="<?=($datainfo->nama_bangunan==NULL)?NULL:$datainfo->nama_bangunan?>" name="nama_bangunan" type="text" required="required" class="form-control" placeholder="Masukan Nama Bangunan"  />
 								</div>
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Lokasi :</label>
 								<div class="col-sm-10">
-									<textarea maxlength="100" name="lokasi" required="required" class="form-control" placeholder="Masukan Lokasi"  /></textarea>
+									<textarea maxlength="100" name="lokasi" required="required" class="form-control" placeholder="Masukan Lokasi"  /><?=
+									($datainfo->lokasi==NULL)?NULL:$datainfo->lokasi?></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -60,11 +63,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  maxlength="100" name="rt_info" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  maxlength="100" value="<?=$datainfo->rt?>" name="rt_info" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  maxlength="100" name="rw_info" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  maxlength="100" value="<?=$datainfo->rw?>" name="rw_info" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -74,7 +77,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kelurahan_info" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<input  maxlength="100" value="<?=$datainfo->kelurahan?>" name="kelurahan_info" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -84,7 +87,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kecamatan_info" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<input  maxlength="100" value="<?=$datainfo->kecamatan?>" name="kecamatan_info" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -94,7 +97,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kota_info" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<input  maxlength="100" value="<?=$datainfo->kota?>" name="kota_info" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -104,7 +107,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input maxlength="100" name="kode_info" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input maxlength="100" value="<?=$datainfo->kode_pos?>" name="kode_info" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -112,15 +115,16 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Obyek Pajak :</label>
 								<div class="col-sm-10">
-									<input  maxlength="100" name="nop" type="text" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
+									<input  maxlength="100" value="<?=$datainfo->NOP?>" name="nop" type="text" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Mulai Beroperasi Tahun</label>
 								<div class="col-sm-10">
-									<input name="startYear" id="startYear" class="date-picker-year form-control" placeholder="Masukan Tahun" /> 
+									<input name="startYear" value="<?=$datainfo->mulai_operasi?>" id="startYear" class="date-picker-year form-control" placeholder="Masukan Tahun" /> 
 								</div>
 							</div>
+							<?php endforeach ?>
 						</div>
 						<br>
 						<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
@@ -132,16 +136,17 @@
 					<div class="col-md-12">
 						<h3> DATA KEPEMILIKAN BANGUNAN GEDUNG</h3>
 						<div class="row">
+							<?php foreach ($pemilik as $datamilik): ?>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nama Pemilik :</label>
 								<div class="col-sm-10">
-									<input name="nama_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nama Pemilik"/>
+									<input name="nama_pemilik" maxlength="100" value="<?=$datamilik->nama_pemilik?>" type="text" required="required" class="form-control" placeholder="Masukan Nama Pemilik"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Alamat :</label>
 								<div class="col-sm-10">
-									<textarea maxlength="100" name="alamat" required="required" class="form-control" placeholder="Masukan Alamat"/></textarea>
+									<textarea maxlength="100" name="alamat" required="required" class="form-control" placeholder="Masukan Alamat"/><?=$datamilik->alamat?></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -149,11 +154,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_pemilik" maxlength="100" value="<?=$datamilik->rt?>" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_pemilik" maxlength="100" value="<?=$datamilik->rw?>" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -163,7 +168,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<input  name="kelurahan_pemilik" maxlength="100" value="<?=$datamilik->kelurahan?>" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -173,7 +178,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input  name="kecamatan_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<input  name="kecamatan_pemilik" maxlength="100" value="<?=$datamilik->kecamatan?>" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -183,7 +188,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<input  name="kota_pemilik" maxlength="100" value="<?=$datamilik->kota?>" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -193,7 +198,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_pemilik" maxlength="100" value="<?=$datamilik->kode_pos?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -203,7 +208,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
+											<input name="provinsi" maxlength="100" value="<?=$datamilik->provinsi?>" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
 										</div>
 									</div>
 								</div>
@@ -211,14 +216,14 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="no_hp" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="no_hp" maxlength="100" value="<?=$datamilik->no_kantor?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_telp" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_telp" maxlength="100" value="<?=$datamilik->no_hp?>" type="text" required="required" class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -226,32 +231,32 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email" maxlength="100" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email" maxlength="100" value="<?=$datamilik->email?>" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Penanggung Jawab (Person in Charge) :</label>
 								<div class="col-sm-10">
-									<input  name="tanggung" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Penanggung Jawab"/>
+									<input  name="tanggung" maxlength="100" value="<?=$datamilik->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Masukan Penanggung Jawab"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jabatan :</label>
 								<div class="col-sm-10">
-									<input  name="jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Jabatan"/>
+									<input  name="jabatan" maxlength="100" value="<?=$datamilik->jabatan?>" type="text" required="required" class="form-control" placeholder="Masukan Jabatan"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="telp_jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="telp_jabatan" maxlength="100" value="<?=$datamilik->telp_jabatan?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_jabatan" maxlength="100" value="<?=$datamilik->no_jabatan?>" type="text" required="required" class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -259,9 +264,12 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email_jabatan" maxlength="100" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email_jabatan" maxlength="100" value="<?=$datamilik->email_jabatan?>" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
+
+								
+							<?php endforeach ?>
 						</div>
 						<br>
 						<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
@@ -273,6 +281,8 @@
 					<div class="col-md-12">
 						<h3> DATA PENGELOLA BANGUNAN GEDUNG</h3>
 						<div class="row">
+							<?php foreach ($pengelola as $datapeng): ?>
+								
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Kategori Pengelola <span style="color: red;">*</span>:</label>
 								<div class="col-sm-10">
@@ -280,13 +290,13 @@
 										<div class="funkyradio">
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="radio" name="kat_pengelola" value="inhouse" id="inhouse"/>
+													<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='inhouse')?'checked':''?> id="inhouse"/>
 													<label for="inhouse">inhouse</label>
 												</div>
 											</div>
 											<div class="col-md-5">
 												<div class="funkyradio-primary">
-													<input type="radio" name="kat_pengelola" value="outsourcing" id="outsourcing"/>
+													<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='outsourcing')?'checked':''?> id="outsourcing"/>
 													<label for="outsourcing">outsourcing</label>
 												</div>
 											</div>
@@ -297,25 +307,28 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Pengelola :</label>
 								<div class="col-sm-10">
-									<input  name="pengelola" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+									<input  name="pengelola" maxlength="100" value="
+									<?=$datapeng->pengelola?>" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Penanggung Jawab :</label>
 								<div class="col-sm-10">
-									<input  name="peng_jawab" maxlength="100" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
+									<input  name="peng_jawab" maxlength="100" value="
+									<?=$datapeng->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jabatan :</label>
 								<div class="col-sm-10">
-									<input  name="jabatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Jabatan"/>
+									<input  name="jabatan_peng" maxlength="100" value="
+									<?=$datapeng->jabatan?>" type="text" required="required" class="form-control" placeholder="Jabatan"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Alamat :</label>
 								<div class="col-sm-10">
-									<textarea name="alamat_peng" maxlength="100" required="required" class="form-control" placeholder="Masukan Alamat"/></textarea>
+									<textarea name="alamat_peng" maxlength="100" required="required" class="form-control" placeholder="Masukan Alamat"/><?=$datapeng->alamat?></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -323,11 +336,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_peng" maxlength="100" value="<?=$datapeng->rt?>" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_peng" maxlength="100" value="<?=$datapeng->rw?>" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -337,7 +350,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<input  name="kelurahan_peng" maxlength="100" value="<?=$datapeng->kelurahan?>" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -347,7 +360,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input name="kecamatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<input name="kecamatan_peng" maxlength="100" value="<?=$datapeng->kecamatan?>" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -357,7 +370,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<input  name="kota_peng" maxlength="100" value="<?=$datapeng->kota?>" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -367,7 +380,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_peng" maxlength="100" value="<?=$datapeng->kode_pos?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -377,7 +390,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="provinsi_peng" maxlength="100" value="<?=$datapeng->provinsi?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -385,14 +398,15 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="no_telp_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="no_telp_peng" maxlength="100" value="
+									<?=$datapeng->no_kantor?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_hp_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_hp_peng" maxlength="100" value="<?=$datapeng->no_hp?>" type="text" required="required" class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -400,9 +414,10 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email_peng" maxlength="100" type="Email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email_peng" maxlength="100" value="<?=$datapeng->email?>" type="Email" required="required" class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
+							<?php endforeach ?>
 						</div>
 						<br>
 						<button class="btn btn-primary nextBtn btn-lg pull-right" type="button" >Next</button>
@@ -414,59 +429,56 @@
 					<div class="col-md-12">
 						<h3> DATA ADMINISTRASI BANGUNAN GEDUNG</h3>
 						<div class="row">
+							<?php foreach ($admin as $dataadmin): ?>
+								<?php $sippt = explode(',', $dataadmin->sippt) ?>
+								<?php $kmb = explode(',', $dataadmin->kmb) ?>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">SIPPT/IPPR :</label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input name="no_sippt" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input name="no_sippt" maxlength="100" value="<?=($sippt[0]==NULL)?NULL:$sippt[0]?>" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_sippt" type="text" id="datepicker" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_sippt" type="text" id="datepicker" value="<?=($sippt[1]==NULL)?NULL:$sippt[1]?>" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Luas Tanah :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="luas_tanah" type="text" required="required" class="form-control" placeholder="Masukan Luas Tanah">
+										<input name="luas_tanah" value="<?=$dataadmin->luas_tanah?>" type="text" required="required" class="form-control" placeholder="Masukan Luas Tanah">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div> 
 							</div>
+								<?php foreach ($imb as $dataimb): ?>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">IMB :</label>
+									
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input  name="no_imb[]" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="no_imb[]" value="<?=$dataimb->no_imb?>" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_imb[]" type="text" id="date_imb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_imb[]" value="<?=$dataimb->tanggal_imb?>" type="text" id="date_imb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
-							<div class="form-group margin-input">
-								<label class="col-sm-2"></label>
-								<label class="col-sm-1">No.</label>
-								<div class="col-sm-4">
-									<input  name="no_imb[]" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
-								</div> 
-								<label class="col-sm-1">Tgl.</label>
-								<div class="col-sm-4">
-									<input name="tgl_imb[]" type="text" id="date_imb2" required="required" class="form-control" placeholder="Masukan Tanggal"/>
-								</div> 
-							</div>
+								<?php endforeach ?>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">KMB/SLF Terakhir :</label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input  name="no_kmb" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="no_kmb" value="<?=($kmb[0]==NULL)?NULL:$kmb[0]?>" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_kmb" type="text" id="date_kmb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_kmb" type="text" value="<?=($kmb[1]==NULL)?NULL:$kmb[1]?>" id="date_kmb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
+
+							<?php endforeach ?>
 						</div>
 						<br>
 						<button class="btn btn-primary nextBtn btn-lg pull-right"  type="button">Next</button>
@@ -1621,13 +1633,13 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nama Bangunan</label>
 								<div class="col-sm-10">
-									<input name="nama_bang_sketsa" type="text"  name="nama_bangunan" class="form-control" placeholder="Masukan Nama Bangunan">
+									<input name="nama_bang_sketsa" type="text"   class="form-control" placeholder="Masukan Nama Bangunan">
 								</div>
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Lokasi Bangunan</label>
 								<div class="col-sm-10">
-									<input name="lokasi_sketsa" type="text"  name="lokasi_bangunan" class="form-control" placeholder="Masukan Lokasi Bangunan">
+									<input name="lokasi_sketsa" type="text" class="form-control" placeholder="Masukan Lokasi Bangunan">
 								</div>
 							</div>
 						</div>
@@ -1645,19 +1657,19 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sumur Resapan / Kolam Resapan</label>
 								<div class="col-sm-10">
-									<textarea name="sumur_resap" style="height: 100px;" name="permasalahan_sumur_resapan" class="form-control" placeholder="Masukan Permasalahan Sumur Resapan"></textarea>
+									<textarea name="sumur_resap" style="height: 100px;" class="form-control" placeholder="Masukan Permasalahan Sumur Resapan"></textarea>
 								</div>
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Sumur Dalam / Sumur Pantek</label>
 								<div class="col-sm-10">
-									<textarea name="sumur_dalam" style="height: 100px;" name="permasalahan_sumur_dalam" class="form-control" placeholder="Masukan Permasalahan Sumur Dalam"></textarea>
+									<textarea name="sumur_dalam" style="height: 100px;" class="form-control" placeholder="Masukan Permasalahan Sumur Dalam"></textarea>
 								</div>
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Pengolahan Air Limbah</label>
 								<div class="col-sm-10">
-									<textarea name="peng_air" style="height: 100px;" name="pengolahan_air" class="form-control" placeholder="Masukan Permasalahan Pengolahan Air Limbah"></textarea>
+									<textarea name="peng_air" style="height: 100px;" class="form-control" placeholder="Masukan Permasalahan Pengolahan Air Limbah"></textarea>
 								</div>
 							</div>
 							<div class="form-group margin-input">
