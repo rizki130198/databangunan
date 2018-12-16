@@ -8,31 +8,31 @@
 					<p>Step 1</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-2" type="button" class="btn btn-default btn-circle" disabled="disabled">2</a>
+					<a href="#step-2" type="button" class="btn btn-default btn-circle">2</a>
 					<p>Step 2</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-3" type="button" class="btn btn-default btn-circle" disabled="disabled">3</a>
+					<a href="#step-3" type="button" class="btn btn-default btn-circle">3</a>
 					<p>Step 3</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-4" type="button" class="btn btn-default btn-circle" disabled="disabled">4</a>
+					<a href="#step-4" type="button" class="btn btn-default btn-circle">4</a>
 					<p>Step 4</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-5" type="button" class="btn btn-default btn-circle" disabled="disabled">5</a>
+					<a href="#step-5" type="button" class="btn btn-default btn-circle">5</a>
 					<p>Step 5</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-6" type="button" class="btn btn-default btn-circle" disabled="disabled">6</a>
+					<a href="#step-6" type="button" class="btn btn-default btn-circle">6</a>
 					<p>Step 6</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-7" type="button" class="btn btn-default btn-circle" disabled="disabled">7</a>
+					<a href="#step-7" type="button" class="btn btn-default btn-circle">7</a>
 					<p>Step 7</p>
 				</div>
 				<div class="stepwizard-step">
-					<a href="#step-8" type="button" class="btn btn-default btn-circle" disabled="disabled">8</a>
+					<a href="#step-8" type="button" class="btn btn-default btn-circle">8</a>
 					<p>Step 8</p>
 				</div>
 			</div>
@@ -636,7 +636,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">a. Rata-rata jumlah jam operasional perminggu :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op1" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="op1" type="text" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
@@ -646,13 +646,13 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">b. Rata-rata jumlah hari dan minggu operasional per tahun :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op2" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="op2" type="text" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">hari</span>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op3" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="op3" type="text" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">minggu</span>
 									</div>
 								</div>
@@ -662,7 +662,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">c. Jumlah jam operasional per tahun :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op4" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="op4" type="text" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
