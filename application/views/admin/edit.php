@@ -1728,6 +1728,7 @@
 									<div class="col-sm-10">
 										<div class="input-group">
 											<input type="file" value="<?=$datasketsa->file_sketsa?>" class="form-control" name="foto_sketsa">
+											<input type="hidden" value="<?=$datasketsa->file_sketsa?>" class="form-control" name="file_old">
 										</div>
 									</div>
 								</div>
