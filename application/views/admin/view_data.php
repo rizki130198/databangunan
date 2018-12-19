@@ -1188,7 +1188,7 @@ span.round-tab:hover {
 							<div class="col-md-12" style="margin-top: 20px">
 								<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
 							</div>
-							<div class="col-md-12" style="margin-top: 20px">
+							 	<div class="col-md-12" style="margin-top: 20px">
 								<label>Nama Bangunan :</label>
 								<div class="lbl"><?=$datasketsa->nama_bangunan?></div>
 							</div>

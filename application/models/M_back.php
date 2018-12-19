@@ -876,7 +876,7 @@ class M_back extends CI_Model {
 		$this->upload->initialize($config);
 		if( ! $this->upload->do_upload('foto_sketsa'))
 		{
-			$file_sketsa = $this->input->post('file_old')
+			$file_sketsa = $this->input->post('file_old');
 		}else{
 			$this->upload->do_upload('foto_sketsa');
 			$f = $this->upload->data();

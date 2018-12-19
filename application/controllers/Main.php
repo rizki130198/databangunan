@@ -12,8 +12,14 @@ class Main extends CI_Controller {
 	public function bang_tinggi()
 	{
 		$data['title'] = "Halaman Data Bangunan Tinggi";
+		$this->db->select('*');
+		$this->db->from('info_bangunan');
+		$this->db->join('data_pemilik','data_pemilik.id_info_unik = info_bangunan.id_info');
+		$this->db->join('data_pengelola', 'data_pengelola.id_peng_unik = info_bangunan.id_info');
+		$this->db->where('info_bangunan.id_user',$this->session->userdata('id'));
+		$data['pemilik'] = $this->db->get();
 		$this->load->view('include/head',$data);
-		$this->load->view('admin/bang_tinggi');
+		$this->load->view('admin/bang_tinggi',$data);
 		$this->load->view('include/foot');
 	}
 	public function viewdata()
