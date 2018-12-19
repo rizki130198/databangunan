@@ -235,13 +235,13 @@ class M_back extends CI_Model {
 			$rata_kon = $this->input->post('rata_kon');
 			$jkl = "";
 			$fgh = "";
-			for ($i=0; $i <count($kon_air) ; $i++) { 
+			for ($i=0; $i < count($kon_air) ; $i++) { 
 				$def = $kon_air[$i].',';
 				$fgh .=$def;
 			}
-			for ($i=0; $i <count($rata_kon) ; $i++) { 
-				$def = $kon_air[$i].',';
-				$jkl .=$def;
+			for ($i=0; $i < count($rata_kon) ; $i++) { 
+				$fih = $rata_kon[$i].',';
+				$jkl .=$fih;
 			}
 			$kons_air = substr($fgh, 0, -1);
 			$rata_air = substr($jkl, 0, -1);
@@ -290,7 +290,7 @@ class M_back extends CI_Model {
 				$jml_smr = $this->input->post('jumlah_sumur');
 				$no_sipa = $this->input->post('no_sipa');
 				$tgl_sipa = $this->input->post('tgl_sipa');
-				for ($i=0; $i < count($no_sipa); $i++) { 
+				for ($i=0; $i < $jml_smr; $i++) { 
 					$this->db->insert('data_sumur', array(
 						'id_data_sumur'=>$idair,
 						'jenis'=>'sumur bor',
@@ -304,7 +304,7 @@ class M_back extends CI_Model {
 				$jml_pantek = $this->input->post('jumlah_pantek');
 				$no_sipa_pantek = $this->input->post('no_sipa_pantek');
 				$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
-				for ($i=0; $i < count($no_sipa_pantek); $i++) { 
+				for ($i=0; $i < $jml_pantek; $i++) { 
 					$this->db->insert('data_sumur', array(
 						'id_data_sumur'=>$idair,
 						'jenis'=>'sumur pantek',
@@ -317,7 +317,7 @@ class M_back extends CI_Model {
 			//Ground Tank
 				$jml_ground = $this->input->post('jumlah_ground');
 				$kaps_ground = $this->input->post('kaps_ground');
-				for ($i=0; $i < count($kaps_ground); $i++) { 
+				for ($i=0; $i < $jml_ground; $i++) { 
 					$this->db->insert('data_sumur', array(
 						'id_data_sumur'=>$idair,
 						'jenis'=>'GROUND',
@@ -329,7 +329,7 @@ class M_back extends CI_Model {
 			//Roof Tank
 				$jml_roof = $this->input->post('jumlah_roof');
 				$kaps_roof = $this->input->post('kaps_roof');
-				for ($i=0; $i < count($kaps_roof); $i++) { 
+				for ($i=0; $i < $jml_roof; $i++) { 
 					$this->db->insert('data_sumur', array(
 						'id_data_sumur'=>$idair,
 						'jenis'=>'Roof Tank',
@@ -510,10 +510,8 @@ class M_back extends CI_Model {
 		$telp_jabatan = $this->input->post('telp_jabatan');
 		$no_jabatan = $this->input->post('no_jabatan');
 		$email_jabatan = $this->input->post('email_jabatan');
-		$id = $this->db->insert_id();
 		$this->db->update('data_pemilik', array(
 			'id_user'=>$this->session->userdata('id'),
-			'id_info_unik'=>$id,
 			'nama_pemilik'=>$nama_pemilik,
 			'alamat'=>$alamat,
 			'rt'=>$rt_pemilik,
@@ -552,7 +550,6 @@ class M_back extends CI_Model {
 		$email_peng = $this->input->post('email_peng');
 		$this->db->update('data_pengelola', array(
 			'id_users'=>$this->session->userdata('id'),
-			'id_peng_unik'=>$id,
 			'kategori_pengelola'=>$kat_pengelola,
 			'pengelola'=>$pengelola,
 			'tanggung_jawab'=>$peng_jawab,
@@ -585,7 +582,6 @@ class M_back extends CI_Model {
 
 		$queryimb = $this->db->update('data_admin', array(
 			'id_user'=>$this->session->userdata('id'),
-			'id_admin_unik'=>$id,
 			'sippt' => $no_sippt.','.$tgl_sippt,
 			'luas_tanah' => $luas_tanah,
 			'kmb' => $no_kmb.','.$tgl_kmb,
@@ -638,7 +634,6 @@ class M_back extends CI_Model {
 		$total_peng = $this->input->post('total_peng');
 		$datapeng = $this->db->update('data_teknis', array(
 			'id_user'=>$this->session->userdata('id'),
-			'id_teknis_unik'=>$id,
 			'jumlah_tower'=>$jml_tower,
 			'jumlah_unit'=>$jml_unit,
 			'ketinggian'=>$tg_tower.','.$tg_podium,
@@ -695,8 +690,8 @@ class M_back extends CI_Model {
 			$fgh .=$def;
 		}
 		for ($i=0; $i <count($rata_kon) ; $i++) { 
-			$def = $kon_air[$i].',';
-			$jkl .=$def;
+			$fih = $rata_kon[$i].',';
+			$jkl .=$fih;
 		}
 		$kons_air = substr($fgh, 0, -1);
 		$rata_air = substr($jkl, 0, -1);
@@ -741,13 +736,11 @@ class M_back extends CI_Model {
 		),array('id_air'=>$idinput));
 		if ($queryair==TRUE) {
 			//Sumur Bor
-			$idair = $this->db->insert_id();
 			$jml_smr = $this->input->post('jumlah_sumur');
 			$no_sipa = $this->input->post('no_sipa');
 			$tgl_sipa = $this->input->post('tgl_sipa');
-			for ($i=0; $i < count($no_sipa); $i++) { 
+			for ($i=0; $i < $jml_smr; $i++) { 
 				$this->db->update('data_sumur', array(
-					'id_data_sumur'=>$idair,
 					'jenis'=>'sumur bor',
 					'unit'=>$jml_smr,
 					'sipa'=>$no_sipa[$i],
@@ -759,9 +752,8 @@ class M_back extends CI_Model {
 			$jml_pantek = $this->input->post('jumlah_pantek');
 			$no_sipa_pantek = $this->input->post('no_sipa_pantek');
 			$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
-			for ($i=0; $i < count($no_sipa_pantek); $i++) { 
+			for ($i=0; $i < $jml_pantek; $i++) { 
 				$this->db->update('data_sumur', array(
-					'id_data_sumur'=>$idair,
 					'jenis'=>'sumur pantek',
 					'unit'=>$jml_pantek,
 					'sipa'=>$no_sipa_pantek[$i],
@@ -772,9 +764,8 @@ class M_back extends CI_Model {
 			//Ground Tank
 			$jml_ground = $this->input->post('jumlah_ground');
 			$kaps_ground = $this->input->post('kaps_ground');
-			for ($i=0; $i < count($kaps_ground); $i++) { 
+			for ($i=0; $i < $jml_ground; $i++) { 
 				$this->db->update('data_sumur', array(
-					'id_data_sumur'=>$idair,
 					'jenis'=>'GROUND',
 					'unit'=>$jml_ground,
 					'kapasitas'=>$kaps_ground[$i],
@@ -784,9 +775,8 @@ class M_back extends CI_Model {
 			//Roof Tank
 			$jml_roof = $this->input->post('jumlah_roof');
 			$kaps_roof = $this->input->post('kaps_roof');
-			for ($i=0; $i < count($kaps_roof); $i++) { 
+			for ($i=0; $i < $jml_roof; $i++) { 
 				$this->db->update('data_sumur', array(
-					'id_data_sumur'=>$idair,
 					'jenis'=>'Roof Tank',
 					'unit'=>$jml_roof,
 					'kapasitas'=>$kaps_roof[$i],
@@ -851,11 +841,10 @@ class M_back extends CI_Model {
 		}
 		$sumsi = substr($iop, 0, -1);
 		$this->db->update('data_konsumsi', array(
-			'id_data_air'=>$idair,
 			'januari'=>$janurpd.','.$janursum.','.$janurrec.','.$janurlain,
 			'febuari'=>$febpd.','.$fbsum.','.$febrec.','.$feblain,
 			'maret'=>$marpd.','.$marsum.','.$marrec.','.$marlain,
-			'april'=>$aprilpd.'.'.$aprilsum.'.'.$aprilrec.','.$aprillain,
+			'april'=>$aprilpd.','.$aprilsum.','.$aprilrec.','.$aprillain,
 			'mei'=>$meipdam.','.$meisum.','.$meirec.','.$meilain,
 			'juni'=>$junipdam.','.$junisum.','.$junirec.','.$junilain,
 			'juli'=>$julipd.','.$julisum.','.$julirec.','.$julilain,
@@ -885,7 +874,6 @@ class M_back extends CI_Model {
 		$nama_bang_sketsa = $this->input->post('nama_bang_sketsa');
 		$lokasi_sketsa = $this->input->post('lokasi_sketsa');
 		$this->db->update('sketsa_lokasi', array(
-			'id_sketsa_unik'=>$id,
 			'id_user'=>$this->session->userdata('id'),
 			'nama_bangunan'=>$nama_bang_sketsa,
 			'lokasi'=>$lokasi_sketsa,
@@ -899,7 +887,6 @@ class M_back extends CI_Model {
 		$peng_air =  $this->input->post('peng_air');
 
 		$this->db->update('permasalahan', array(
-			'id_unik_masalah'=>$id,
 			'id_user'=>$this->session->userdata('id'),
 			'sumur_resapan'=>$smr_resap,
 			'sumur_dalam'=>$smr_dalam,
