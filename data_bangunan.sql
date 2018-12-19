@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 18, 2018 at 07:28 AM
+-- Generation Time: Dec 19, 2018 at 07:55 AM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -167,7 +167,7 @@ CREATE TABLE `data_pemilik` (
 
 INSERT INTO `data_pemilik` (`id_pemilik`, `id_user`, `id_info_unik`, `nama_pemilik`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_kantor`, `no_hp`, `email`, `tanggung_jawab`, `jabatan`, `no_jabatan`, `telp_jabatan`, `email_jabatan`, `created_at`) VALUES
 (1, 3, 0, '1', '11', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'fauzifahmi55@gmail.com', '1', '1', 1, 1, 'fauzifahmi55@gmail.com', '2018-12-16 21:47:48'),
-(2, 1, 0, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'fauzifahmi55@gmail.com', '1', '1', 1, 1, 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
+(2, 1, 2, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'fauzifahmi55@gmail.com', '1', '1', 1, 1, 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
 
 -- --------------------------------------------------------
 
@@ -204,7 +204,7 @@ CREATE TABLE `data_pengelola` (
 
 INSERT INTO `data_pengelola` (`id_pengelola`, `id_users`, `id_peng_unik`, `kategori_pengelola`, `pengelola`, `tanggung_jawab`, `jabatan`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_rumah`, `no_kantor`, `no_hp`, `email`, `created_at`) VALUES
 (1, 12121, 0, '', '																				1', '																				1', '1', '1', 1, 1, '1', '1', '1', '1', '1', '', '1', '1', 'fauzifahmi55@gmail.com', '2018-12-16 21:47:48'),
-(2, 1, 0, 'on', '										1', '										1', '1', '1', 1, 1, '1', '1', '1', '1', '1', '', '1', '1', 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
+(2, 1, 2, 'on', '										1', '										1', '1', '1', 1, 1, '1', '1', '1', '1', '1', '', '1', '1', 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
 
 -- --------------------------------------------------------
 
@@ -272,6 +272,7 @@ CREATE TABLE `info_bangunan` (
   `kode_pos` varchar(9) NOT NULL,
   `NOP` varchar(225) NOT NULL,
   `mulai_operasi` varchar(9) NOT NULL,
+  `type_bangunan` varchar(100) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
@@ -279,9 +280,9 @@ CREATE TABLE `info_bangunan` (
 -- Dumping data for table `info_bangunan`
 --
 
-INSERT INTO `info_bangunan` (`id_info`, `id_user`, `nama_bangunan`, `lokasi`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `NOP`, `mulai_operasi`, `created_at`) VALUES
-(1, 1212, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1970', '2018-12-16 21:47:48'),
-(2, 1, '12', '12', '1', '1', '1', '1', '1', '1', '1', '2018', '2018-12-16 22:09:12');
+INSERT INTO `info_bangunan` (`id_info`, `id_user`, `nama_bangunan`, `lokasi`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `NOP`, `mulai_operasi`, `type_bangunan`, `created_at`) VALUES
+(1, 1212, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1970', '', '2018-12-16 21:47:48'),
+(2, 1, '12', '12', '1', '1', '1', '1', '1', '1', '1', '2018', '', '2018-12-16 22:09:12');
 
 -- --------------------------------------------------------
 
