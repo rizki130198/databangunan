@@ -5,10 +5,6 @@ class M_back extends CI_Model {
 
 	public function proses_input()
 	{
-		$cek =  $this->db->get('info_bangunan',array('id_user'=>$this->session->userdata('id')))->row();
-		if (count($cek) > 1) {
-			$this->session->set_flashdata('gagal', 'Anda sudah masukan data 1 akun hanya 1');
-		}else{
 
 		//Data Bangunan
 			$nama_bang = $this->input->post('nama_bangunan');
@@ -390,6 +386,7 @@ class M_back extends CI_Model {
 			$desrec = $this->input->post('desemberrecycle');
 			$deslain = $this->input->post('desemberlain');
 			$totsumsin = $this->input->post('totalkonsumsi');
+			$iop="";
 			for ($i=0; $i <count($totsumsin) ; $i++) { 
 				$das = $totsumsin[$i].',';
 				$iop .=$das;
@@ -453,7 +450,7 @@ class M_back extends CI_Model {
 				'created_at'=>$tanggal
 			));
 			redirect($_SERVER['HTTP_REFERER']);
-		}
+		//}
 
 	}
 	public function jenis()
@@ -835,6 +832,7 @@ class M_back extends CI_Model {
 		$desrec = $this->input->post('desemberrecycle');
 		$deslain = $this->input->post('desemberlain');
 		$totsumsin = $this->input->post('totalkonsumsi');
+		$iop = "";
 		for ($i=0; $i <count($totsumsin) ; $i++) { 
 			$das = $totsumsin[$i].',';
 			$iop .=$das;

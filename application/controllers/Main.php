@@ -4,10 +4,17 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Main extends CI_Controller {
 	public function input()
 	{
-		$data['title'] = "Halaman Input Bangunan Tinggi";
-		$this->load->view('include/head',$data);
-		$this->load->view('admin/input');
-		$this->load->view('include/foot');
+		// $cek =  $this->db->get_where('info_bangunan',array('id_user'=>$this->session->userdata('id')))->row();
+		// if (count($cek) > 0) {
+		// 	$this->session->set_flashdata('gagal', 'Anda sudah masukan data 1 akun hanya 1');
+		// 	redirect('main/bang_tinggi');
+		// }else{
+			$data['title'] = "Halaman Input Bangunan Tinggi";
+			$this->load->view('include/head',$data);
+			$this->load->view('admin/input');
+			$this->load->view('include/foot');
+		//}
+
 	}
 	public function bang_tinggi()
 	{

@@ -760,10 +760,10 @@
 												Total Per Minggu
 											</td>
 											<td>
-												<input readonly type="number" class="form-control result" required="required" name="totalminggu[]" placeholder="">
+												<input readonly type="number" class="form-control result" required="required" name="totalminggu" placeholder="">
 											</td>
 											<td>
-												<input readonly type="number"  class="form-control resultpuncak" required="required" name="totalminggu[]" placeholder="">
+												<input readonly type="number"  class="form-control resultpuncak" required="required" name="totalminggu2" placeholder="">
 											</td>
 										</tr>
 									</tbody>
