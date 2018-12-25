@@ -2,6 +2,27 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Main extends CI_Controller {
+
+	public function jsonWal()
+	{
+		echo "<option value='' >-- SILAHKAN PILIH KOTA --</option>";
+		echo "<option value=''  disabled></option>";
+		$x = $this->M_front->jsonWal();
+		foreach ($x as $v) {
+			echo '<option value='.$v->id.'>'.$v->name.'</option>';
+		}
+	}
+
+	public function jsonKec()
+	{
+		echo "<option value=''>-- SILAHKAN PILIH KECAMATAN --</option>";
+		echo "<option value='' disabled></option>";
+		$x = $this->M_front->jsonKec();
+		foreach ($x as $v) {
+			echo '<option value='.$v->regency_id.'>'.$v->name.'</option>';
+		}
+	}
+
 	public function input()
 	{
 		// $cek =  $this->db->get_where('info_bangunan',array('id_user'=>$this->session->userdata('id')))->row();
@@ -10,8 +31,9 @@ class Main extends CI_Controller {
 		// 	redirect('main/bang_tinggi');
 		// }else{
 			$data['title'] = "Halaman Input Bangunan Tinggi";
+			$data['kelurahan'] = $this->M_front->getkel();
 			$this->load->view('include/head',$data);
-			$this->load->view('admin/input');
+			$this->load->view('admin/input',$data);
 			$this->load->view('include/foot');
 		//}
 
@@ -29,18 +51,17 @@ class Main extends CI_Controller {
 		$this->load->view('admin/bang_tinggi',$data);
 		$this->load->view('include/foot');
 	}
-	public function viewdata()
+	public function viewdata($id)
 	{
 		$data['title'] = "Halaman Lihat Data Bangunan Tinggi";		
-		$id = $this->session->userdata('id');
-		$data['info'] = $this->db->get_where('info_bangunan',array('id_user'=>$id))->result();
-		$data['pemilik'] = $this->db->get_where('data_pemilik',array('id_user'=>$id))->result();
-		$data['pengelola'] = $this->db->get_where('data_pengelola',array('id_users'=>$id))->result();
-		$data['admin'] = $this->db->get_where("data_admin",array('id_user'=>$id))->result();
+		$data['info'] = $this->db->get_where('info_bangunan',array('id_info'=>$id))->result();
+		$data['pemilik'] = $this->db->get_where('data_pemilik',array('id_info_unik'=>$id))->result();
+		$data['pengelola'] = $this->db->get_where('data_pengelola',array('id_peng_unik'=>$id))->result();
+		$data['admin'] = $this->db->get_where("data_admin",array('id_admin_unik'=>$id))->result();
 		foreach ($data['admin'] as $key) {
 			$data['imb'] = $this->db->get_where("data_imb",array('id_admin_imb'=>$key->id_admin))->result();
 		}
-		$data['teknis'] = $this->db->get_where('data_teknis',array('id_user'=>$id))->result();
+		$data['teknis'] = $this->db->get_where('data_teknis',array('id_teknis_unik'=>$id))->result();
 		foreach ($data['teknis'] as $teknis) {
 			$data['hari'] = $this->db->get_where('penggunan_bangunan',array('id_join'=>$teknis->id_teknis))->result();
 			$data['jenis'] = $this->db->get_where('jenis_bangunan',array('id_admin_teknis'=>$teknis->id_teknis))->result();
@@ -51,8 +72,8 @@ class Main extends CI_Controller {
 			$data['bulan'] = $this->db->get_where('data_konsumsi',array('id_data_air'=>$sumur->id_air))->result();
 			$data['sumber'] = $this->db->get_where('sumber_air',array('id_sumber_air'=>$sumur->id_air))->result();
 		}
-		$data['sketsa'] = $this->db->get_where('sketsa_lokasi',array('id_user'=>$id))->result();
-		$data['permasalahan'] = $this->db->get_where('permasalahan',array('id_user'=>$id))->result();
+		$data['sketsa'] = $this->db->get_where('sketsa_lokasi',array('id_sketsa_unik'=>$id))->result();
+		$data['permasalahan'] = $this->db->get_where('permasalahan',array('id_unik_masalah'=>$id))->result();
 		$this->load->view('include/head',$data);
 		$this->load->view('admin/view_data');
 		$this->load->view('include/foot');
@@ -86,18 +107,17 @@ class Main extends CI_Controller {
 	{
 		$this->M_back->proses_edit();
 	}
-	public function editdata()
+	public function editdata($id)
 	{
-		$data['title'] = "Edit data Bangunan";
-		$id = $this->session->userdata('id');
-		$data['info'] = $this->db->get_where('info_bangunan',array('id_user'=>$id))->result();
-		$data['pemilik'] = $this->db->get_where('data_pemilik',array('id_user'=>$id))->result();
-		$data['pengelola'] = $this->db->get_where('data_pengelola',array('id_users'=>$id))->result();
-		$data['admin'] = $this->db->get_where("data_admin",array('id_user'=>$id))->result();
+		$data['title'] = "Edit data Bangunan";	
+		$data['info'] = $this->db->get_where('info_bangunan',array('id_info'=>$id))->result();
+		$data['pemilik'] = $this->db->get_where('data_pemilik',array('id_info_unik'=>$id))->result();
+		$data['pengelola'] = $this->db->get_where('data_pengelola',array('id_peng_unik'=>$id))->result();
+		$data['admin'] = $this->db->get_where("data_admin",array('id_admin_unik'=>$id))->result();
 		foreach ($data['admin'] as $key) {
 			$data['imb'] = $this->db->get_where("data_imb",array('id_admin_imb'=>$key->id_admin))->result();
 		}
-		$data['teknis'] = $this->db->get_where('data_teknis',array('id_user'=>$id))->result();
+		$data['teknis'] = $this->db->get_where('data_teknis',array('id_teknis_unik'=>$id))->result();
 		foreach ($data['teknis'] as $teknis) {
 			$data['hari'] = $this->db->get_where('penggunan_bangunan',array('id_join'=>$teknis->id_teknis))->result();
 			$data['jenis'] = $this->db->get_where('jenis_bangunan',array('id_admin_teknis'=>$teknis->id_teknis))->result();
@@ -108,8 +128,8 @@ class Main extends CI_Controller {
 			$data['bulan'] = $this->db->get_where('data_konsumsi',array('id_data_air'=>$sumur->id_air))->result();
 			$data['sumber'] = $this->db->get_where('sumber_air',array('id_sumber_air'=>$sumur->id_air))->result();
 		}
-		$data['sketsa'] = $this->db->get_where('sketsa_lokasi',array('id_user'=>$id))->result();
-		$data['permasalahan'] = $this->db->get_where('permasalahan',array('id_user'=>$id))->result();
+		$data['sketsa'] = $this->db->get_where('sketsa_lokasi',array('id_sketsa_unik'=>$id))->result();
+		$data['permasalahan'] = $this->db->get_where('permasalahan',array('id_unik_masalah'=>$id))->result();
 		$this->load->view('include/head',$data);
 		$this->load->view('admin/edit',$data);
 		$this->load->view('include/foot');

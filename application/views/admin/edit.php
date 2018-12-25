@@ -49,13 +49,13 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nama Bangunan :</label>
 									<div class="col-sm-10">
-										<input  maxlength="100" value="<?=($datainfo->nama_bangunan==NULL)?NULL:$datainfo->nama_bangunan?>" name="nama_bangunan" type="text" required="required" class="form-control" placeholder="Masukan Nama Bangunan"  />
+										<input  maxlength="100" value="<?=($datainfo->nama_bangunan==NULL)?NULL:$datainfo->nama_bangunan?>" name="nama_bangunan" type="text" class="form-control" placeholder="Masukan Nama Bangunan"  />
 									</div>
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Lokasi :</label>
 									<div class="col-sm-10">
-										<textarea maxlength="100" name="lokasi" required="required" class="form-control" placeholder="Masukan Lokasi"  /><?=
+										<textarea maxlength="100" name="lokasi" class="form-control" placeholder="Masukan Lokasi"  /><?=
 										($datainfo->lokasi==NULL)?NULL:$datainfo->lokasi?></textarea>
 									</div>
 								</div>
@@ -64,11 +64,11 @@
 										<div class="row">
 											<label class="col-sm-1">RT :</label>
 											<div class="col-sm-5">
-												<input  maxlength="100" value="<?=$datainfo->rt?>" name="rt_info" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+												<input  maxlength="100" value="<?=$datainfo->rt?>" name="rt_info" type="text" class="form-control" placeholder="Masukan RT"  />
 											</div>
 											<label class="col-sm-1">RW :</label>
 											<div class="col-sm-5">
-												<input  maxlength="100" value="<?=$datainfo->rw?>" name="rw_info" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+												<input  maxlength="100" value="<?=$datainfo->rw?>" name="rw_info" type="text" class="form-control" placeholder="Masukan RW"  />
 											</div>
 										</div>
 									</div>
@@ -78,7 +78,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<input  maxlength="100" value="<?=$datainfo->kelurahan?>" name="kelurahan_info" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+												<input  maxlength="100" value="<?=$datainfo->kelurahan?>" name="kelurahan_info" type="text" class="form-control" placeholder="Masukan Kelurahan"/>
 											</div>
 										</div>
 									</div>
@@ -88,7 +88,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<input  maxlength="100" value="<?=$datainfo->kecamatan?>" name="kecamatan_info" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+												<input  maxlength="100" value="<?=$datainfo->kecamatan?>" name="kecamatan_info" type="text" class="form-control" placeholder="Masukan Kecamatan"/>
 											</div>
 										</div>
 									</div>
@@ -98,7 +98,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
-												<input  maxlength="100" value="<?=$datainfo->kota?>" name="kota_info" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+												<input  maxlength="100" value="<?=$datainfo->kota?>" name="kota_info" type="text" class="form-control" placeholder="Masukan Kota"/>
 											</div>
 										</div>
 									</div>
@@ -108,7 +108,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kode Pos :</label>
 											<div class="col-sm-10">
-												<input maxlength="100" value="<?=$datainfo->kode_pos?>" name="kode_info" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+												<input maxlength="100" value="<?=$datainfo->kode_pos?>" name="kode_info" type="text" class="form-control" placeholder="Masukan Kode Pos"/>
 											</div>
 										</div>
 									</div>
@@ -116,7 +116,7 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nomor Obyek Pajak :</label>
 									<div class="col-sm-10">
-										<input  maxlength="100" value="<?=$datainfo->NOP?>" name="nop" type="text" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
+										<input  maxlength="100" value="<?=$datainfo->NOP?>" name="nop" type="text" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
@@ -141,13 +141,13 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nama Pemilik :</label>
 									<div class="col-sm-10">
-										<input name="nama_pemilik" maxlength="100" value="<?=$datamilik->nama_pemilik?>" type="text" required="required" class="form-control" placeholder="Masukan Nama Pemilik"/>
+										<input name="nama_pemilik" maxlength="100" value="<?=$datamilik->nama_pemilik?>" type="text" class="form-control" placeholder="Masukan Nama Pemilik"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Alamat :</label>
 									<div class="col-sm-10">
-										<textarea maxlength="100" name="alamat" required="required" class="form-control" placeholder="Masukan Alamat"/><?=$datamilik->alamat?></textarea>
+										<textarea maxlength="100" name="alamat" class="form-control" placeholder="Masukan Alamat"/><?=$datamilik->alamat?></textarea>
 									</div>
 								</div>
 								<div class="form-group">
@@ -155,11 +155,11 @@
 										<div class="row">
 											<label class="col-sm-1">RT :</label>
 											<div class="col-sm-5">
-												<input  name="rt_pemilik" maxlength="100" value="<?=$datamilik->rt?>" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+												<input  name="rt_pemilik" maxlength="100" value="<?=$datamilik->rt?>" type="text" class="form-control" placeholder="Masukan RT"  />
 											</div>
 											<label class="col-sm-1">RW :</label>
 											<div class="col-sm-5">
-												<input  name="rw_pemilik" maxlength="100" value="<?=$datamilik->rw?>" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+												<input  name="rw_pemilik" maxlength="100" value="<?=$datamilik->rw?>" type="text" class="form-control" placeholder="Masukan RW"  />
 											</div>
 										</div>
 									</div>
@@ -169,7 +169,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<input  name="kelurahan_pemilik" maxlength="100" value="<?=$datamilik->kelurahan?>" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+												<input  name="kelurahan_pemilik" maxlength="100" value="<?=$datamilik->kelurahan?>" type="text" class="form-control" placeholder="Masukan Kelurahan"/>
 											</div>
 										</div>
 									</div>
@@ -179,7 +179,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<input  name="kecamatan_pemilik" maxlength="100" value="<?=$datamilik->kecamatan?>" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+												<input  name="kecamatan_pemilik" maxlength="100" value="<?=$datamilik->kecamatan?>" type="text" class="form-control" placeholder="Masukan Kecamatan"/>
 											</div>
 										</div>
 									</div>
@@ -189,7 +189,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
-												<input  name="kota_pemilik" maxlength="100" value="<?=$datamilik->kota?>" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+												<input  name="kota_pemilik" maxlength="100" value="<?=$datamilik->kota?>" type="text" class="form-control" placeholder="Masukan Kota"/>
 											</div>
 										</div>
 									</div>
@@ -199,7 +199,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kode Pos :</label>
 											<div class="col-sm-10">
-												<input name="kode_pemilik" maxlength="100" value="<?=$datamilik->kode_pos?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+												<input name="kode_pemilik" maxlength="100" value="<?=$datamilik->kode_pos?>" type="text" class="form-control" placeholder="Masukan Kode Pos"/>
 											</div>
 										</div>
 									</div>
@@ -209,7 +209,7 @@
 										<div class="row">
 											<label class="col-sm-2">Provinsi :</label>
 											<div class="col-sm-10">
-												<input name="provinsi" maxlength="100" value="<?=$datamilik->provinsi?>" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
+												<input name="provinsi" maxlength="100" value="<?=$datamilik->provinsi?>" type="text" class="form-control" placeholder="Masukan Provinsi"/>
 											</div>
 										</div>
 									</div>
@@ -217,14 +217,14 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nomor Telepon :</label>
 									<div class="col-sm-10">
-										<input  name="no_hp" maxlength="100" value="<?=$datamilik->no_kantor?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
+										<input  name="no_hp" maxlength="100" value="<?=$datamilik->no_kantor?>" type="text" class="form-control" placeholder="Kantor"/>
 									</div> 
 								</div>
 								<div class="form-group">
 									<div class="col-sm-offset-2 col-sm-10 margin-input">
 										<div class="row">
 											<div class="col-sm-12">
-												<input  name="no_telp" maxlength="100" value="<?=$datamilik->no_hp?>" type="text" required="required" class="form-control" placeholder="HP"/>
+												<input  name="no_telp" maxlength="100" value="<?=$datamilik->no_hp?>" type="text" class="form-control" placeholder="HP"/>
 											</div>
 										</div>
 									</div>
@@ -232,32 +232,32 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Email :</label>
 									<div class="col-sm-10">
-										<input  name="email" maxlength="100" value="<?=$datamilik->email?>" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+										<input  name="email" maxlength="100" value="<?=$datamilik->email?>" type="email" class="form-control" placeholder="Masukan Email"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Penanggung Jawab (Person in Charge) :</label>
 									<div class="col-sm-10">
-										<input  name="tanggung" maxlength="100" value="<?=$datamilik->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Masukan Penanggung Jawab"/>
+										<input  name="tanggung" maxlength="100" value="<?=$datamilik->tanggung_jawab?>" type="text" class="form-control" placeholder="Masukan Penanggung Jawab"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Jabatan :</label>
 									<div class="col-sm-10">
-										<input  name="jabatan" maxlength="100" value="<?=$datamilik->jabatan?>" type="text" required="required" class="form-control" placeholder="Masukan Jabatan"/>
+										<input  name="jabatan" maxlength="100" value="<?=$datamilik->jabatan?>" type="text" class="form-control" placeholder="Masukan Jabatan"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nomor Telepon :</label>
 									<div class="col-sm-10">
-										<input  name="telp_jabatan" maxlength="100" value="<?=$datamilik->telp_jabatan?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
+										<input  name="telp_jabatan" maxlength="100" value="<?=$datamilik->telp_jabatan?>" type="text" class="form-control" placeholder="Kantor"/>
 									</div> 
 								</div>
 								<div class="form-group">
 									<div class="col-sm-offset-2 col-sm-10 margin-input">
 										<div class="row">
 											<div class="col-sm-12">
-												<input  name="no_jabatan" maxlength="100" value="<?=$datamilik->no_jabatan?>" type="text" required="required" class="form-control" placeholder="HP"/>
+												<input  name="no_jabatan" maxlength="100" value="<?=$datamilik->no_jabatan?>" type="text" class="form-control" placeholder="HP"/>
 											</div>
 										</div>
 									</div>
@@ -265,7 +265,7 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Email :</label>
 									<div class="col-sm-10">
-										<input  name="email_jabatan" maxlength="100" value="<?=$datamilik->email_jabatan?>" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+										<input  name="email_jabatan" maxlength="100" value="<?=$datamilik->email_jabatan?>" type="email" class="form-control" placeholder="Masukan Email"/>
 									</div> 
 								</div>
 
@@ -308,25 +308,25 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Pengelola :</label>
 									<div class="col-sm-10">
-										<input  name="pengelola" maxlength="100" value="<?=$datapeng->pengelola?>" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+										<input  name="pengelola" maxlength="100" value="<?=$datapeng->pengelola?>" type="text" class="form-control" placeholder="Masukan Pengelola"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Penanggung Jawab :</label>
 									<div class="col-sm-10">
-										<input  name="peng_jawab" maxlength="100" value="<?=$datapeng->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
+										<input  name="peng_jawab" maxlength="100" value="<?=$datapeng->tanggung_jawab?>" type="text" class="form-control" placeholder="Penanggung Jawab"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Jabatan :</label>
 									<div class="col-sm-10">
-										<input  name="jabatan_peng" maxlength="100" value="<?=$datapeng->jabatan?>" type="text" required="required" class="form-control" placeholder="Jabatan"/>
+										<input  name="jabatan_peng" maxlength="100" value="<?=$datapeng->jabatan?>" type="text" class="form-control" placeholder="Jabatan"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Alamat :</label>
 									<div class="col-sm-10">
-										<textarea name="alamat_peng" maxlength="100" required="required" class="form-control" placeholder="Masukan Alamat"/><?=$datapeng->alamat?></textarea>
+										<textarea name="alamat_peng" maxlength="100" class="form-control" placeholder="Masukan Alamat"/><?=$datapeng->alamat?></textarea>
 									</div>
 								</div>
 								<div class="form-group">
@@ -334,11 +334,11 @@
 										<div class="row">
 											<label class="col-sm-1">RT :</label>
 											<div class="col-sm-5">
-												<input  name="rt_peng" maxlength="100" value="<?=$datapeng->rt?>" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+												<input  name="rt_peng" maxlength="100" value="<?=$datapeng->rt?>" type="text" class="form-control" placeholder="Masukan RT"  />
 											</div>
 											<label class="col-sm-1">RW :</label>
 											<div class="col-sm-5">
-												<input  name="rw_peng" maxlength="100" value="<?=$datapeng->rw?>" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+												<input  name="rw_peng" maxlength="100" value="<?=$datapeng->rw?>" type="text" class="form-control" placeholder="Masukan RW"  />
 											</div>
 										</div>
 									</div>
@@ -348,7 +348,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<input  name="kelurahan_peng" maxlength="100" value="<?=$datapeng->kelurahan?>" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+												<input  name="kelurahan_peng" maxlength="100" value="<?=$datapeng->kelurahan?>" type="text" class="form-control" placeholder="Masukan Kelurahan"/>
 											</div>
 										</div>
 									</div>
@@ -358,7 +358,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<input name="kecamatan_peng" maxlength="100" value="<?=$datapeng->kecamatan?>" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+												<input name="kecamatan_peng" maxlength="100" value="<?=$datapeng->kecamatan?>" type="text" class="form-control" placeholder="Masukan Kecamatan"/>
 											</div>
 										</div>
 									</div>
@@ -368,7 +368,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
-												<input  name="kota_peng" maxlength="100" value="<?=$datapeng->kota?>" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+												<input  name="kota_peng" maxlength="100" value="<?=$datapeng->kota?>" type="text" class="form-control" placeholder="Masukan Kota"/>
 											</div>
 										</div>
 									</div>
@@ -378,7 +378,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kode Pos :</label>
 											<div class="col-sm-10">
-												<input name="kode_peng" maxlength="100" value="<?=$datapeng->kode_pos?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+												<input name="kode_peng" maxlength="100" value="<?=$datapeng->kode_pos?>" type="text" class="form-control" placeholder="Masukan Kode Pos"/>
 											</div>
 										</div>
 									</div>
@@ -388,7 +388,7 @@
 										<div class="row">
 											<label class="col-sm-2">Provinsi :</label>
 											<div class="col-sm-10">
-												<input name="provinsi_peng" maxlength="100" value="<?=$datapeng->provinsi?>" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+												<input name="provinsi_peng" maxlength="100" value="<?=$datapeng->provinsi?>" type="text" class="form-control" placeholder="Masukan Kode Pos"/>
 											</div>
 										</div>
 									</div>
@@ -396,14 +396,14 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Nomor Telepon :</label>
 									<div class="col-sm-10">
-										<input  name="no_telp_peng" maxlength="100" value="<?=$datapeng->no_kantor?>" type="text" required="required" class="form-control" placeholder="Kantor"/>
+										<input  name="no_telp_peng" maxlength="100" value="<?=$datapeng->no_kantor?>" type="text" class="form-control" placeholder="Kantor"/>
 									</div> 
 								</div>
 								<div class="form-group">
 									<div class="col-sm-offset-2 col-sm-10 margin-input">
 										<div class="row">
 											<div class="col-sm-12">
-												<input  name="no_hp_peng" maxlength="100" value="<?=$datapeng->no_hp?>" type="text" required="required" class="form-control" placeholder="HP"/>
+												<input  name="no_hp_peng" maxlength="100" value="<?=$datapeng->no_hp?>" type="text" class="form-control" placeholder="HP"/>
 											</div>
 										</div>
 									</div>
@@ -411,7 +411,7 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Email :</label>
 									<div class="col-sm-10">
-										<input  name="email_peng" maxlength="100" value="<?=$datapeng->email?>" type="Email" required="required" class="form-control" placeholder="Masukan Email"/>
+										<input  name="email_peng" maxlength="100" value="<?=$datapeng->email?>" type="Email" class="form-control" placeholder="Masukan Email"/>
 									</div> 
 								</div>
 							<?php endforeach ?>
@@ -433,18 +433,18 @@
 									<label class="col-sm-2">SIPPT/IPPR :</label>
 									<label class="col-sm-1">No.</label>
 									<div class="col-sm-4">
-										<input name="no_sippt" maxlength="100" value="<?=($sippt[0]==NULL)?NULL:$sippt[0]?>" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+										<input name="no_sippt" maxlength="100" value="<?=($sippt[0]==NULL)?NULL:$sippt[0]?>" type="text" class="form-control" placeholder="Masukan Nomor"/>
 									</div> 
 									<label class="col-sm-1">Tgl.</label>
 									<div class="col-sm-4">
-										<input name="tgl_sippt" type="text" id="datepicker" value="<?=($sippt[1]==NULL)?NULL:$sippt[1]?>" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+										<input name="tgl_sippt" type="text" id="datepicker" value="<?=($sippt[1]==NULL)?NULL:$sippt[1]?>" class="form-control" placeholder="Masukan Tanggal"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Luas Tanah :</label>
 									<div class="col-sm-10">
 										<div class="input-group">
-											<input name="luas_tanah" value="<?=$dataadmin->luas_tanah?>" type="text" required="required" class="form-control" placeholder="Masukan Luas Tanah">
+											<input name="luas_tanah" value="<?=$dataadmin->luas_tanah?>" type="text" class="form-control" placeholder="Masukan Luas Tanah">
 											<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 										</div>
 									</div> 
@@ -455,11 +455,11 @@
 
 										<label class="col-sm-1">No.</label>
 										<div class="col-sm-4">
-											<input  name="no_imb[]" value="<?=$dataimb->no_imb?>" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="no_imb[]" value="<?=$dataimb->no_imb?>" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
 										</div> 
 										<label class="col-sm-1">Tgl.</label>
 										<div class="col-sm-4">
-											<input name="tgl_imb[]" value="<?=$dataimb->tanggal_imb?>" type="text" id="date_imb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_imb[]" value="<?=$dataimb->tanggal_imb?>" type="text" id="date_imb" class="form-control" placeholder="Masukan Tanggal"/>
 										</div> 
 									</div>
 								<?php endforeach ?>
@@ -467,11 +467,11 @@
 									<label class="col-sm-2">KMB/SLF Terakhir :</label>
 									<label class="col-sm-1">No.</label>
 									<div class="col-sm-4">
-										<input  name="no_kmb" value="<?=($kmb[0]==NULL)?NULL:$kmb[0]?>" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+										<input  name="no_kmb" value="<?=($kmb[0]==NULL)?NULL:$kmb[0]?>" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
 									</div> 
 									<label class="col-sm-1">Tgl.</label>
 									<div class="col-sm-4">
-										<input name="tgl_kmb" type="text" value="<?=($kmb[1]==NULL)?NULL:$kmb[1]?>" id="date_kmb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+										<input name="tgl_kmb" type="text" value="<?=($kmb[1]==NULL)?NULL:$kmb[1]?>" id="date_kmb" class="form-control" placeholder="Masukan Tanggal"/>
 									</div> 
 								</div>
 
@@ -492,11 +492,11 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Jumlah Tower<sup>1</sup> :</label>
 									<div class="col-sm-4">
-										<input  name="tower" maxlength="100" value="<?=$datateknis->jumlah_tower?>" type="number" required="required" class="form-control" placeholder="Masukan Jumlah Tower"/>
+										<input  name="tower" maxlength="100" value="<?=$datateknis->jumlah_tower?>" type="number" class="form-control" placeholder="Masukan Jumlah Tower"/>
 									</div> 
 									<label class="col-sm-2">Jumlah Unit<sup>2</sup></sub>.</label>
 									<div class="col-sm-4">
-										<input name="unit" type="number" value="<?=$datateknis->jumlah_unit?>" required="required" class="form-control" placeholder="Masukan Jumlah Unit"/>
+										<input name="unit" type="number" value="<?=$datateknis->jumlah_unit?>" class="form-control" placeholder="Masukan Jumlah Unit"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
@@ -504,7 +504,7 @@
 									<label class="col-sm-2">a. Tower</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="tinggi_tower" type="text" value="<?=($podium[0]==NULL)?NULL:$podium[0]?>" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="tinggi_tower" type="text" value="<?=($podium[0]==NULL)?NULL:$podium[0]?>" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">Lantai</span>
 										</div>
 									</div>
@@ -514,7 +514,7 @@
 									<label class="col-sm-2">b. Podium</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="tinggi_podium" value="<?=($podium[1]==NULL)?NULL:$podium[1]?>" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="tinggi_podium" value="<?=($podium[1]==NULL)?NULL:$podium[1]?>" type="text" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">Lantai</span>
 										</div>
 									</div>
@@ -603,7 +603,7 @@
 									<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">a. Luas Lantai Dasar / Lantai Terluas</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="luas_lantai" value="<?=$datateknis->luas_lantai?>" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="luas_lantai" value="<?=$datateknis->luas_lantai?>" type="text" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 										</div>
 									</div>
@@ -613,7 +613,7 @@
 									<label class="col-sm-2">b. Luas Lantai Total</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="luas_total" value="<?=$datateknis->luas_total?>" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="luas_total" value="<?=$datateknis->luas_total?>" type="text" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 										</div>
 									</div>
@@ -622,7 +622,7 @@
 									<label class="col-sm-2">Tingkat Okupansi :</label>
 									<div class="col-sm-10">
 										<div class="input-group">
-											<input name="tk_okupansi" value="<?=$datateknis->tingkat_okupansi?>" type="text" required="required" class="form-control" placeholder="Masukan Tingkat Okupansi">
+											<input name="tk_okupansi" value="<?=$datateknis->tingkat_okupansi?>" type="text" class="form-control" placeholder="Masukan Tingkat Okupansi">
 											<span class="input-group-addon" id="basic-addon2">% (perkiraan)</span>
 										</div>
 									</div> 
@@ -653,7 +653,7 @@
 									<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">a. Rata-rata jumlah jam operasional perminggu :</label>
 									<div class="col-sm-6">
 										<div class="input-group">
-											<input name="op1" value="<?=($operasi[0]==NULL)?NULL:$operasi[0]?>" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="op1" value="<?=($operasi[0]==NULL)?NULL:$operasi[0]?>" type="text" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 										</div>
 									</div>
@@ -663,13 +663,13 @@
 									<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">b. Rata-rata jumlah hari dan minggu operasional per tahun :</label>
 									<div class="col-sm-3">
 										<div class="input-group">
-											<input name="op2" type="text" value="<?=($operasi[1]==NULL)?NULL:$operasi[1]?>" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="op2" type="text" value="<?=($operasi[1]==NULL)?NULL:$operasi[1]?>" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">hari</span>
 										</div>
 									</div>
 									<div class="col-sm-3">
 										<div class="input-group">
-											<input name="op3" type="text" value="<?=($operasi[2]==NULL)?NULL:$operasi[2]?>" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="op3" type="text" value="<?=($operasi[2]==NULL)?NULL:$operasi[2]?>" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">minggu</span>
 										</div>
 									</div>
@@ -679,7 +679,7 @@
 									<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">c. Jumlah jam operasional per tahun :</label>
 									<div class="col-sm-6">
 										<div class="input-group">
-											<input name="op4" type="text" value="<?=($operasi[3]==NULL)?NULL:$operasi[3]?>" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+											<input name="op4" type="text" value="<?=($operasi[3]==NULL)?NULL:$operasi[3]?>" class="form-control" placeholder="Masukan Tinggi Lantai">
 											<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 										</div>
 									</div>
@@ -700,10 +700,10 @@
 													Senin
 												</td>
 												<td class="jum-rata">
-													<input name="senin1" type="number" value="<?=($hari[0]==NULL)?NULL:$hari[0]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="senin1" type="number" value="<?=($hari[0]==NULL)?NULL:$hari[0]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="senin2" type="number" value="<?=($hari[1]==NULL)?NULL:$hari[1]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="senin2" type="number" value="<?=($hari[1]==NULL)?NULL:$hari[1]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -711,10 +711,10 @@
 													Selasa
 												</td>
 												<td class="jum-rata">
-													<input name="selasa1" type="number" value="<?=($hari[2]==NULL)?NULL:$hari[2]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="selasa1" type="number" value="<?=($hari[2]==NULL)?NULL:$hari[2]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="selasa2" type="number" value="<?=($hari[3]==NULL)?NULL:$hari[3]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="selasa2" type="number" value="<?=($hari[3]==NULL)?NULL:$hari[3]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -722,10 +722,10 @@
 													Rabu
 												</td>
 												<td class="jum-rata">
-													<input name="rabu1" type="number" value="<?=($hari[4]==NULL)?NULL:$hari[4]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="rabu1" type="number" value="<?=($hari[4]==NULL)?NULL:$hari[4]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="rabu2" type="number" value="<?=($hari[5]==NULL)?NULL:$hari[5]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="rabu2" type="number" value="<?=($hari[5]==NULL)?NULL:$hari[5]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -733,10 +733,10 @@
 													Kamis
 												</td>
 												<td class="jum-rata">
-													<input name="kamis1" type="number" value="<?=($hari[6]==NULL)?NULL:$hari[6]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="kamis1" type="number" value="<?=($hari[6]==NULL)?NULL:$hari[6]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="kamis2" type="number" value="<?=($hari[7]==NULL)?NULL:$hari[7]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="kamis2" type="number" value="<?=($hari[7]==NULL)?NULL:$hari[7]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -744,10 +744,10 @@
 													Jumat
 												</td>
 												<td class="jum-rata">
-													<input name="jumat1" type="number" value="<?=($hari[8]==NULL)?NULL:$hari[8]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="jumat1" type="number" value="<?=($hari[8]==NULL)?NULL:$hari[8]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="jumat2" type="number" value="<?=($hari[9]==NULL)?NULL:$hari[9]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="jumat2" type="number" value="<?=($hari[9]==NULL)?NULL:$hari[9]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -755,10 +755,10 @@
 													Sabtu
 												</td>
 												<td class="jum-rata">
-													<input name="sabtu1" type="number" value="<?=($hari[10]==NULL)?NULL:$hari[10]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="sabtu1" type="number" value="<?=($hari[10]==NULL)?NULL:$hari[10]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="sabtu2" type="number" value="<?=($hari[11]==NULL)?NULL:$hari[11]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="sabtu2" type="number" value="<?=($hari[11]==NULL)?NULL:$hari[11]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -766,10 +766,10 @@
 													Minggu
 												</td>
 												<td class="jum-rata">
-													<input name="minggu1" type="number" value="<?=($hari[12]==NULL)?NULL:$hari[12]?>" required="required" class="form-control jumlah" placeholder="">
+													<input name="minggu1" type="number" value="<?=($hari[12]==NULL)?NULL:$hari[12]?>" class="form-control jumlah" placeholder="">
 												</td>
 												<td class="jum-puncak">
-													<input name="minggu2" type="number" value="<?=($hari[13]==NULL)?NULL:$hari[13]?>" required="required" class="form-control jumlahpuncak" placeholder="">
+													<input name="minggu2" type="number" value="<?=($hari[13]==NULL)?NULL:$hari[13]?>" class="form-control jumlahpuncak" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -777,10 +777,10 @@
 													Total Per Minggu
 												</td>
 												<td>
-													<input readonly type="number" value="<?=($hari[14]==NULL)?NULL:$hari[14]?>" class="form-control result" required="required" name="totalminggu[]" placeholder="">
+													<input readonly type="number" value="<?=($hari[14]==NULL)?NULL:$hari[14]?>" class="form-control result" name="totalminggu" placeholder="">
 												</td>
 												<td>
-													<input readonly type="number"  value="<?=($hari[15]==NULL)?NULL:$hari[15]?>" class="form-control resultpuncak" required="required" name="totalminggu[]" placeholder="">
+													<input readonly type="number"  value="<?=($hari[15]==NULL)?NULL:$hari[15]?>" class="form-control resultpuncak" name="totalminggu2" placeholder="">
 												</td>
 											</tr>
 										</tbody>
@@ -790,7 +790,7 @@
 									<label class="col-sm-2">Total Penghuni :</label>
 									<div class="col-sm-10">
 										<div class="input-group">
-											<input type="number" name="total_peng" value="<?=$datateknis->total_penghuni?>" required="required" class="form-control" placeholder="Masukan Total Penghuni">
+											<input type="number" name="total_peng" value="<?=$datateknis->total_penghuni?>" class="form-control" placeholder="Masukan Total Penghuni">
 											<span class="input-group-addon" id="basic-addon2">Orang (perkiraan)</span>
 										</div>
 									</div> 
@@ -886,7 +886,7 @@
 												<label class="col-sm-2">Jumlah Sumur Bor :</label>
 												<div class="col-sm-10">
 													<div class="input-group">
-														<input name="jumlah_sumur" type="number" value="<?=$datasumur->unit?>" min="0" max="6" id="jumlahsumur" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+														<input name="jumlah_sumur" type="number" value="<?=$datasumur->unit?>" min="0" max="6" id="jumlahsumur" class="form-control" placeholder="Masukan Jumlah Titik">
 														<span class="input-group-addon" id="basic-addon2">Titik</span>
 													</div>
 												</div>
@@ -1229,16 +1229,16 @@
 															Januari
 														</td>
 														<td class="rowpdam">
-															<input name="januaripdam" type="number" value="<?=($januari[0]==NULL)?NULL:$januari[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="januaripdam" type="number" value="<?=($januari[0]==NULL)?NULL:$januari[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="januarisumurbor" type="number" value="<?=($januari[1]==NULL)?NULL:$januari[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="januarisumurbor" type="number" value="<?=($januari[1]==NULL)?NULL:$januari[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="januarirecycle" type="number" value="<?=($januari[2]==NULL)?NULL:$januari[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="januarirecycle" type="number" value="<?=($januari[2]==NULL)?NULL:$januari[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="januarilain" type="number" value="<?=($januari[3]==NULL)?NULL:$januari[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="januarilain" type="number" value="<?=($januari[3]==NULL)?NULL:$januari[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1246,16 +1246,16 @@
 															Febuari
 														</td>
 														<td class="rowpdam">
-															<input name="febuaripdam" type="number" value="<?=($febuari[0]==NULL)?NULL:$febuari[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="febuaripdam" type="number" value="<?=($febuari[0]==NULL)?NULL:$febuari[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="febuarisumurbor" type="number" value="<?=($febuari[1]==NULL)?NULL:$febuari[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="febuarisumurbor" type="number" value="<?=($febuari[1]==NULL)?NULL:$febuari[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="febuarirecycle" type="number" value="<?=($febuari[2]==NULL)?NULL:$febuari[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="febuarirecycle" type="number" value="<?=($febuari[2]==NULL)?NULL:$febuari[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="febuarilain" type="number" value="<?=($febuari[3]==NULL)?NULL:$febuari[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="febuarilain" type="number" value="<?=($febuari[3]==NULL)?NULL:$febuari[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1263,16 +1263,16 @@
 															Maret
 														</td>
 														<td class="rowpdam">
-															<input name="maretpdam" type="number" value="<?=($maret[0]==NULL)?NULL:$maret[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="maretpdam" type="number" value="<?=($maret[0]==NULL)?NULL:$maret[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="maretsumurbor" type="number" value="<?=($maret[1]==NULL)?NULL:$maret[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="maretsumurbor" type="number" value="<?=($maret[1]==NULL)?NULL:$maret[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="maretrecycle" type="number" value="<?=($maret[2]==NULL)?NULL:$maret[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="maretrecycle" type="number" value="<?=($maret[2]==NULL)?NULL:$maret[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="maretlain" type="number" value="<?=($maret[3]==NULL)?NULL:$maret[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="maretlain" type="number" value="<?=($maret[3]==NULL)?NULL:$maret[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1280,16 +1280,16 @@
 															April
 														</td>
 														<td class="rowpdam">
-															<input name="aprilpdam" type="number" value="<?=($april[0]==NULL)?NULL:$april[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="aprilpdam" type="number" value="<?=($april[0]==NULL)?NULL:$april[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="aprilsumurbor" type="number" value="<?=($april[1]==NULL)?NULL:$april[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="aprilsumurbor" type="number" value="<?=($april[1]==NULL)?NULL:$april[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="aprilrecycle" type="number" value="<?=($april[2]==NULL)?NULL:$april[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="aprilrecycle" type="number" value="<?=($april[2]==NULL)?NULL:$april[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="aprillain" type="number" value="<?=($april[3]==NULL)?NULL:$april[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="aprillain" type="number" value="<?=($april[3]==NULL)?NULL:$april[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1297,16 +1297,16 @@
 															Mei
 														</td>
 														<td class="rowpdam">
-															<input name="meipdam" type="number" value="<?=($mei[0]==NULL)?NULL:$mei[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="meipdam" type="number" value="<?=($mei[0]==NULL)?NULL:$mei[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="meisumurbor" type="number" value="<?=($mei[1]==NULL)?NULL:$mei[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="meisumurbor" type="number" value="<?=($mei[1]==NULL)?NULL:$mei[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="meirecycle" type="number" value="<?=($mei[2]==NULL)?NULL:$mei[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="meirecycle" type="number" value="<?=($mei[2]==NULL)?NULL:$mei[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="meilain" type="number" value="<?=($mei[3]==NULL)?NULL:$mei[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="meilain" type="number" value="<?=($mei[3]==NULL)?NULL:$mei[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1314,16 +1314,16 @@
 															Juni
 														</td>
 														<td class="rowpdam">
-															<input name="junipdam" type="number" value="<?=($juni[0]==NULL)?NULL:$juni[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="junipdam" type="number" value="<?=($juni[0]==NULL)?NULL:$juni[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="junisumurbor" type="number" value="<?=($juni[1]==NULL)?NULL:$juni[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="junisumurbor" type="number" value="<?=($juni[1]==NULL)?NULL:$juni[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="junirecycle" type="number" value="<?=($juni[2]==NULL)?NULL:$juni[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="junirecycle" type="number" value="<?=($juni[2]==NULL)?NULL:$juni[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="junilain" type="number" value="<?=($juni[3]==NULL)?NULL:$juni[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="junilain" type="number" value="<?=($juni[3]==NULL)?NULL:$juni[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1331,16 +1331,16 @@
 															Juli
 														</td>
 														<td class="rowpdam">
-															<input name="julipdam" type="number" value="<?=($juli[0]==NULL)?NULL:$juli[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="julipdam" type="number" value="<?=($juli[0]==NULL)?NULL:$juli[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="julisumurbor" type="number" value="<?=($juli[1]==NULL)?NULL:$juli[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="julisumurbor" type="number" value="<?=($juli[1]==NULL)?NULL:$juli[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="julirecycle" type="number" value="<?=($juli[2]==NULL)?NULL:$juli[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="julirecycle" type="number" value="<?=($juli[2]==NULL)?NULL:$juli[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="julilain" type="number" value="<?=($juli[3]==NULL)?NULL:$juli[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="julilain" type="number" value="<?=($juli[3]==NULL)?NULL:$juli[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1348,16 +1348,16 @@
 															Agustus
 														</td>
 														<td class="rowpdam">
-															<input name="agustuspdam" type="number" value="<?=($agustus[0]==NULL)?NULL:$agustus[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="agustuspdam" type="number" value="<?=($agustus[0]==NULL)?NULL:$agustus[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="agustussumurbor" type="number" value="<?=($agustus[1]==NULL)?NULL:$agustus[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="agustussumurbor" type="number" value="<?=($agustus[1]==NULL)?NULL:$agustus[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="agustusrecycle" type="number" value="<?=($agustus[2]==NULL)?NULL:$agustus[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="agustusrecycle" type="number" value="<?=($agustus[2]==NULL)?NULL:$agustus[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="agustuslain" type="number" value="<?=($agustus[3]==NULL)?NULL:$agustus[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="agustuslain" type="number" value="<?=($agustus[3]==NULL)?NULL:$agustus[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1365,16 +1365,16 @@
 															September
 														</td>
 														<td class="rowpdam">
-															<input name="septemberpdam" type="number" value="<?=($september[0]==NULL)?NULL:$september[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="septemberpdam" type="number" value="<?=($september[0]==NULL)?NULL:$september[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="septembersumurbor" type="number" value="<?=($september[1]==NULL)?NULL:$september[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="septembersumurbor" type="number" value="<?=($september[1]==NULL)?NULL:$september[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="septemberrecycle" type="number" value="<?=($september[2]==NULL)?NULL:$september[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="septemberrecycle" type="number" value="<?=($september[2]==NULL)?NULL:$september[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="septemberlain" type="number" value="<?=($september[3]==NULL)?NULL:$september[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="septemberlain" type="number" value="<?=($september[3]==NULL)?NULL:$september[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1382,16 +1382,16 @@
 															Oktober
 														</td>
 														<td class="rowpdam">
-															<input name="oktoberpdam" type="number" value="<?=($oktober[0]==NULL)?NULL:$oktober[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="oktoberpdam" type="number" value="<?=($oktober[0]==NULL)?NULL:$oktober[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="oktobersumurbor" type="number" value="<?=($oktober[1]==NULL)?NULL:$oktober[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="oktobersumurbor" type="number" value="<?=($oktober[1]==NULL)?NULL:$oktober[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="oktoberrecycle" type="number" value="<?=($oktober[2]==NULL)?NULL:$oktober[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="oktoberrecycle" type="number" value="<?=($oktober[2]==NULL)?NULL:$oktober[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="oktoberlain" type="number" value="<?=($oktober[3]==NULL)?NULL:$oktober[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="oktoberlain" type="number" value="<?=($oktober[3]==NULL)?NULL:$oktober[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1399,16 +1399,16 @@
 															November
 														</td>
 														<td class="rowpdam">
-															<input name="novemberpdam" type="number" value="<?=($november[0]==NULL)?NULL:$november[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="novemberpdam" type="number" value="<?=($november[0]==NULL)?NULL:$november[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="novembersumurbor" type="number" value="<?=($november[1]==NULL)?NULL:$november[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="novembersumurbor" type="number" value="<?=($november[1]==NULL)?NULL:$november[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="novemberrecycle" type="number" value="<?=($november[2]==NULL)?NULL:$november[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="novemberrecycle" type="number" value="<?=($november[2]==NULL)?NULL:$november[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="novemberlain" type="number" value="<?=($november[3]==NULL)?NULL:$november[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="novemberlain" type="number" value="<?=($november[3]==NULL)?NULL:$november[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1416,16 +1416,16 @@
 															Desember
 														</td>
 														<td class="rowpdam">
-															<input name="desemberpdam" type="number" value="<?=($desember[0]==NULL)?NULL:$desember[0]?>" required="required" class="form-control pdam" placeholder="">
+															<input name="desemberpdam" type="number" value="<?=($desember[0]==NULL)?NULL:$desember[0]?>" class="form-control pdam" placeholder="">
 														</td>
 														<td class="rowbor">
-															<input name="desembersumurbor" type="number" value="<?=($desember[1]==NULL)?NULL:$desember[1]?>" required="required" class="form-control sumurbor" placeholder="">
+															<input name="desembersumurbor" type="number" value="<?=($desember[1]==NULL)?NULL:$desember[1]?>" class="form-control sumurbor" placeholder="">
 														</td>
 														<td class="rowrecycle">
-															<input name="desemberrecycle" type="number" value="<?=($desember[2]==NULL)?NULL:$desember[2]?>" required="required" class="form-control recycle" placeholder="">
+															<input name="desemberrecycle" type="number" value="<?=($desember[2]==NULL)?NULL:$desember[2]?>" class="form-control recycle" placeholder="">
 														</td>
 														<td class="rowlain">
-															<input name="desemberlain" type="number" value="<?=($desember[3]==NULL)?NULL:$desember[3]?>" required="required" class="form-control lainlain" placeholder="">
+															<input name="desemberlain" type="number" value="<?=($desember[3]==NULL)?NULL:$desember[3]?>" class="form-control lainlain" placeholder="">
 														</td>
 													</tr>
 													<tr>
@@ -1433,16 +1433,16 @@
 															Total Konsumsi (M<sup>3</sup>)
 														</td>
 														<td>
-															<input readonly type="number" value="<?=($total[0]==NULL)?NULL:$total[0]?>" class="form-control resultpdam" required="required" name="totalkonsumsi[]" placeholder="">
+															<input readonly type="number" value="<?=($total[0]==NULL)?NULL:$total[0]?>" class="form-control resultpdam" name="totalkonsumsi[]" placeholder="">
 														</td>
 														<td>
-															<input readonly type="number" value="<?=($total[1]==NULL)?NULL:$total[1]?>"  class="form-control resultbor" required="required" name="totalkonsumsi[]" placeholder="">
+															<input readonly type="number" value="<?=($total[1]==NULL)?NULL:$total[1]?>"  class="form-control resultbor" name="totalkonsumsi[]" placeholder="">
 														</td>
 														<td>
-															<input readonly type="number" value="<?=($total[2]==NULL)?NULL:$total[2]?>" class="form-control resultrecycle" required="required" name="totalkonsumsi[]" placeholder="">
+															<input readonly type="number" value="<?=($total[2]==NULL)?NULL:$total[2]?>" class="form-control resultrecycle" name="totalkonsumsi[]" placeholder="">
 														</td>
 														<td>
-															<input readonly type="number" value="<?=($total[3]==NULL)?NULL:$total[3]?>"  class="form-control resultlain" required="required" name="totalkonsumsi[]" placeholder="">
+															<input readonly type="number" value="<?=($total[3]==NULL)?NULL:$total[3]?>"  class="form-control resultlain" name="totalkonsumsi[]" placeholder="">
 														</td>
 													</tr>
 												<?php endforeach ?>
@@ -1456,7 +1456,7 @@
 									<label class="col-sm-2">a. Occupant Area :</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="rata_kon[]" value="<?=($rata[0]==NULL)?'NULL':$rata[0]?>" type="text"  class="form-control" placeholder="Masukan Occupant Area">
+											<input name="rata_kon[]" value="<?=($rata[0]==NULL)?NULL:$rata[0]?>" type="text"  class="form-control" placeholder="Masukan Occupant Area">
 											<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/org/hari</span>
 										</div>
 									</div>
@@ -1466,7 +1466,7 @@
 									<label class="col-sm-2">b. Service Area :</label>
 									<div class="col-sm-8">
 										<div class="input-group">
-											<input name="rata_kon[]" value="<?=($rata[1]==NULL)?'NULL':$rata[1]?>" type="text"  class="form-control" placeholder="Masukan Service Area">
+											<input name="rata_kon[]" value="<?=($rata[1]==NULL)?NULL:$rata[1]?>" type="text"  class="form-control" placeholder="Masukan Service Area">
 											<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
 										</div>
 									</div>
@@ -1564,7 +1564,7 @@
 									<label class="col-sm-2">Kapasitas Total :</label>
 									<div class="col-sm-3">
 										<div class="input-group">
-											<input name="kaps_hujan" value="<?=($kaps[0]==NULL)?'':$kaps[0]?>" type="text" required="required" class="form-control" placeholder="Masukan Total Kapasitas">
+											<input name="kaps_hujan" value="<?=($kaps[0]==NULL)?'':$kaps[0]?>" type="text" class="form-control" placeholder="Masukan Total Kapasitas">
 											<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 										</div>
 									</div>
@@ -1589,14 +1589,14 @@
 									<label class="col-sm-1">Jumlah :</label>
 									<div class="col-sm-4">
 										<div class="input-group">
-											<input name="jumlah_hujan2" type="text" value="<?=($jml[1]==NULL)?'':$jml[1]?>" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+											<input name="jumlah_hujan2" type="text" value="<?=($jml[1]==NULL)?'':$jml[1]?>" class="form-control" placeholder="Masukan Jumlah Titik">
 											<span class="input-group-addon" id="basic-addon2">Titik</span>
 										</div>
 									</div>
 									<label class="col-sm-2">Kapasitas Total :</label>
 									<div class="col-sm-3">
 										<div class="input-group">
-											<input name="kaps_hujan2" value="<?=($kaps[1]==NULL)?'':$kaps[1]?>" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas Total">
+											<input name="kaps_hujan2" value="<?=($kaps[1]==NULL)?'':$kaps[1]?>" type="text" class="form-control" placeholder="Masukan Kapasitas Total">
 											<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 										</div>
 									</div>
@@ -1632,7 +1632,7 @@
 											<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 											<div class="col-sm-5">
 												<div class="input-group">
-													<input name="kaps_bekas" value="<?=($kaps_bekas[0]==NULL)?'':$kaps_bekas[0]?>" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas">
+													<input name="kaps_bekas" value="<?=($kaps_bekas[0]==NULL)?'':$kaps_bekas[0]?>" type="text" class="form-control" placeholder="Masukan Kapasitas">
 													<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 												</div>
 											</div>
@@ -1654,7 +1654,7 @@
 											<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 											<div class="col-sm-5">
 												<div class="input-group">
-													<input name="kaps_bekas2" value="<?=($kaps_bekas[1]==NULL)?'':$kaps_bekas[1]?>" type="text" disabled id="txtkapasitasbekas" required="required" class="form-control" placeholder="Masukan Kapasitas">
+													<input name="kaps_bekas2" value="<?=($kaps_bekas[1]==NULL)?'':$kaps_bekas[1]?>" type="text" disabled id="txtkapasitasbekas" class="form-control" placeholder="Masukan Kapasitas">
 													<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 												</div>
 											</div>
@@ -1677,7 +1677,7 @@
 											<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 											<div class="col-sm-5">
 												<div class="input-group">
-													<input name="kaps_limbah" type="text" value="<?=($kaps_limbah[0]==NULL)?'':$kaps_limbah[0]?>" required="required" class="form-control" placeholder="Masukan Kapasitas">
+													<input name="kaps_limbah" type="text" value="<?=($kaps_limbah[0]==NULL)?'':$kaps_limbah[0]?>" class="form-control" placeholder="Masukan Kapasitas">
 													<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 												</div>
 											</div>
@@ -1699,7 +1699,7 @@
 											<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 											<div class="col-sm-5">
 												<div class="input-group">
-													<input name="kaps_limbah2" type="text" value="<?=($kaps_limbah[1]==NULL)?'':$kaps_limbah[1]?>" required="required" class="form-control" placeholder="Masukan Kapasitas">
+													<input name="kaps_limbah2" type="text" value="<?=($kaps_limbah[1]==NULL)?'':$kaps_limbah[1]?>" class="form-control" placeholder="Masukan Kapasitas">
 													<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 												</div>
 											</div>
@@ -1720,9 +1720,12 @@
 						<h3> SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h3>
 						<div class="row">
 							<?php foreach ($sketsa as $datasketsa): ?>
-								
+								 
 								<div class="form-group margin-input">
-									<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">File Sketsa</label>
+									<div class="col-md-12" style="margin-top: 20px">
+									<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
+								</div>
+									<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Ubah File Sketsa</label>
 									<div class="col-sm-10">
 										<div class="input-group">
 											<input type="file" value="<?=$datasketsa->file_sketsa?>" class="form-control" name="foto_sketsa">

@@ -46,13 +46,13 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nama Bangunan :</label>
 								<div class="col-sm-10">
-									<input  maxlength="100" name="nama_bangunan" type="text" required="required" class="form-control" placeholder="Masukan Nama Bangunan"  />
+									<input  maxlength="100" name="nama_bangunan" type="text"  class="form-control" placeholder="Masukan Nama Bangunan"  />
 								</div>
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Lokasi :</label>
 								<div class="col-sm-10">
-									<textarea maxlength="100" name="lokasi" required="required" class="form-control" placeholder="Masukan Lokasi"  /></textarea>
+									<textarea maxlength="100" name="lokasi"  class="form-control" placeholder="Masukan Lokasi"  /></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -60,11 +60,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input name="rt_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input name="rt_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;"  class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input name="rw_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input name="rw_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;"  class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -74,7 +74,13 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kelurahan_info" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<!-- <select required="" id="kel" class="form-control" name="kelurahan_info" onchange="getKecInfo();">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
+												<?php //foreach ($kelurahan as $kel): ?>
+													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
+												<?php //endforeach ?>
+											</select> -->
+											<input  maxlength="100" name="kelurahan_info" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -84,7 +90,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kecamatan_info" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<!-- <select required="" id="kec" class="form-control" name="kecamatan_info" onchange="getKotaInfo()">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select> -->
+											<input  maxlength="100" name="kecamatan_info" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -94,7 +104,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  maxlength="100" name="kota_info" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<!-- <select required="" id="kota" class="form-control" name="kota_info" onchange="">
+												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select> -->
+											<input  maxlength="100" name="kota_info" type="text"  class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -104,7 +118,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_info" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_info" type="number"  class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -112,7 +126,7 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Obyek Pajak :</label>
 								<div class="col-sm-10">
-									<input name="nop" type="number" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
+									<input name="nop" type="number"  class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
@@ -135,13 +149,13 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nama Pemilik :</label>
 								<div class="col-sm-10">
-									<input name="nama_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nama Pemilik"/>
+									<input name="nama_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Nama Pemilik"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Alamat :</label>
 								<div class="col-sm-10">
-									<textarea maxlength="100" name="alamat" required="required" class="form-control" placeholder="Masukan Alamat"/></textarea>
+									<textarea maxlength="100" name="alamat"  class="form-control" placeholder="Masukan Alamat"/></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -149,11 +163,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;"  class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;"  class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -163,7 +177,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<input  name="kelurahan_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -173,7 +187,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input  name="kecamatan_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<input  name="kecamatan_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -183,7 +197,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<input  name="kota_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -193,7 +207,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_pemilik" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_pemilik" type="number"  class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -203,7 +217,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
+											<input name="provinsi" maxlength="100" type="text"  class="form-control" placeholder="Masukan Provinsi"/>
 										</div>
 									</div>
 								</div>
@@ -211,14 +225,14 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="no_hp" type="number" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="no_hp" type="number"  class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_telp" type="number" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_telp" type="number"  class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -226,32 +240,32 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email" maxlength="100" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email" maxlength="100" type="email"  class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Penanggung Jawab (Person in Charge) :</label>
 								<div class="col-sm-10">
-									<input  name="tanggung" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Penanggung Jawab"/>
+									<input  name="tanggung" maxlength="100" type="text"  class="form-control" placeholder="Masukan Penanggung Jawab"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jabatan :</label>
 								<div class="col-sm-10">
-									<input  name="jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Jabatan"/>
+									<input  name="jabatan" maxlength="100" type="text"  class="form-control" placeholder="Masukan Jabatan"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="telp_jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="telp_jabatan" maxlength="100" type="text"  class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_jabatan" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_jabatan" maxlength="100" type="text"  class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -259,7 +273,7 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email_jabatan" maxlength="100" type="email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email_jabatan" maxlength="100" type="email"  class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
 						</div>
@@ -297,25 +311,25 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Pengelola :</label>
 								<div class="col-sm-10">
-									<input  name="pengelola" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+									<input  name="pengelola" maxlength="100" type="text"  class="form-control" placeholder="Masukan Pengelola"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Penanggung Jawab :</label>
 								<div class="col-sm-10">
-									<input  name="peng_jawab" maxlength="100" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
+									<input  name="peng_jawab" maxlength="100" type="text"  class="form-control" placeholder="Penanggung Jawab"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jabatan :</label>
 								<div class="col-sm-10">
-									<input  name="jabatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Jabatan"/>
+									<input  name="jabatan_peng" maxlength="100" type="text"  class="form-control" placeholder="Jabatan"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Alamat :</label>
 								<div class="col-sm-10">
-									<textarea name="alamat_peng" maxlength="100" required="required" class="form-control" placeholder="Masukan Alamat"/></textarea>
+									<textarea name="alamat_peng" maxlength="100"  class="form-control" placeholder="Masukan Alamat"/></textarea>
 								</div>
 							</div>
 							<div class="form-group">
@@ -323,11 +337,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;"  class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;"  class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -337,7 +351,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kelurahan"/>
+											<input  name="kelurahan_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -347,7 +361,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input name="kecamatan_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kecamatan"/>
+											<input name="kecamatan_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -357,7 +371,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kota"/>
+											<input  name="kota_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -367,7 +381,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_peng" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_peng" type="number"  class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -377,7 +391,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi_peng" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
+											<input name="provinsi_peng" type="text"  class="form-control" placeholder="Masukan Provinsi"/>
 										</div>
 									</div>
 								</div>
@@ -385,14 +399,14 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="no_telp_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="no_telp_peng" maxlength="100" type="text"  class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_hp_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_hp_peng" maxlength="100" type="text"  class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -400,7 +414,7 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email_peng" maxlength="100" type="Email" required="required" class="form-control" placeholder="Masukan Email"/>
+									<input  name="email_peng" maxlength="100" type="Email"  class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
 						</div>
@@ -418,18 +432,18 @@
 								<label class="col-sm-2">SIPPT/IPPR :</label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input name="no_sippt" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input name="no_sippt" maxlength="100" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_sippt" type="text" id="datepicker" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_sippt" type="text" id="datepicker"  class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Luas Tanah :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="luas_tanah" type="number" required="required" class="form-control" placeholder="Masukan Luas Tanah">
+										<input name="luas_tanah" type="number"  class="form-control" placeholder="Masukan Luas Tanah">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div> 
@@ -438,11 +452,11 @@
 								<label class="col-sm-2">IMB :</label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input  name="no_imb[]" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="no_imb[]" maxlength="100" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">									
-									<input name="tgl_imb[]" id="date_imb" class="date form-control" required="required" placeholder="Masukan Tanggal" /> 
+									<input name="tgl_imb[]" id="date_imb" class="date form-control"  placeholder="Masukan Tanggal" /> 
 									
 								</div> 
 							</div>
@@ -450,22 +464,22 @@
 								<label class="col-sm-2"></label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input  name="no_imb[]" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="no_imb[]" maxlength="100" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_imb[]" type="text" id="date_imb2" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_imb[]" type="text" id="date_imb2"  class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">KMB/SLF Terakhir :</label>
 								<label class="col-sm-1">No.</label>
 								<div class="col-sm-4">
-									<input  name="no_kmb" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="no_kmb" maxlength="100" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
 								<div class="col-sm-4">
-									<input name="tgl_kmb" type="text" id="date_kmb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+									<input name="tgl_kmb" type="text" id="date_kmb"  class="form-control" placeholder="Masukan Tanggal"/>
 								</div> 
 							</div>
 						</div>
@@ -482,11 +496,11 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Jumlah Tower<sup>1</sup> :</label>
 								<div class="col-sm-4">
-									<input  name="tower" maxlength="100" type="number" required="required" class="form-control" placeholder="Masukan Jumlah Tower"/>
+									<input  name="tower" maxlength="100" type="number"  class="form-control" placeholder="Masukan Jumlah Tower"/>
 								</div> 
 								<label class="col-sm-2">Jumlah Unit<sup>2</sup></sub>.</label>
 								<div class="col-sm-4">
-									<input name="unit" type="number" required="required" class="form-control" placeholder="Masukan Jumlah Unit"/>
+									<input name="unit" type="number"  class="form-control" placeholder="Masukan Jumlah Unit"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
@@ -494,7 +508,7 @@
 								<label class="col-sm-2">a. Tower</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="tinggi_tower" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="tinggi_tower" type="number"  class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">Lantai</span>
 									</div>
 								</div>
@@ -504,7 +518,7 @@
 								<label class="col-sm-2">b. Podium</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="tinggi_podium" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="tinggi_podium" type="number"  class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">Lantai</span>
 									</div>
 								</div>
@@ -587,7 +601,7 @@
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">a. Luas Lantai Dasar / Lantai Terluas</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="luas_lantai" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="luas_lantai" type="number"  class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -597,7 +611,7 @@
 								<label class="col-sm-2">b. Luas Lantai Total</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="luas_total" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="luas_total" type="number"  class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -606,7 +620,7 @@
 								<label class="col-sm-2">Tingkat Okupansi :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="tk_okupansi" type="number" required="required" class="form-control" placeholder="Masukan Tingkat Okupansi">
+										<input name="tk_okupansi" type="number"  class="form-control" placeholder="Masukan Tingkat Okupansi">
 										<span class="input-group-addon" id="basic-addon2">% (perkiraan)</span>
 									</div>
 								</div> 
@@ -637,7 +651,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">a. Rata-rata jumlah jam operasional perminggu :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op1" type="number" required="required" class="form-control" placeholder="">
+										<input name="op1" type="number"  class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
@@ -647,13 +661,13 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">b. Rata-rata jumlah hari dan minggu operasional per tahun :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op2" type="number" required="required" class="form-control" placeholder="">
+										<input name="op2" type="number"  class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">hari</span>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op3" type="number" required="required" class="form-control" placeholder="">
+										<input name="op3" type="number"  class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">minggu</span>
 									</div>
 								</div>
@@ -663,7 +677,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">c. Jumlah jam operasional per tahun :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op4" type="number" required="required" class="form-control" placeholder="">
+										<input name="op4" type="number"  class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
@@ -684,10 +698,10 @@
 												Senin
 											</td>
 											<td class="jum-rata">
-												<input name="senin1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="senin1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="senin2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="senin2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -695,10 +709,10 @@
 												Selasa
 											</td>
 											<td class="jum-rata">
-												<input name="selasa1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="selasa1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="selasa2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="selasa2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -706,10 +720,10 @@
 												Rabu
 											</td>
 											<td class="jum-rata">
-												<input name="rabu1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="rabu1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="rabu2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="rabu2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -717,10 +731,10 @@
 												Kamis
 											</td>
 											<td class="jum-rata">
-												<input name="kamis1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="kamis1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="kamis2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="kamis2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -728,10 +742,10 @@
 												Jumat
 											</td>
 											<td class="jum-rata">
-												<input name="jumat1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="jumat1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="jumat2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="jumat2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -739,10 +753,10 @@
 												Sabtu
 											</td>
 											<td class="jum-rata">
-												<input name="sabtu1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="sabtu1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="sabtu2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="sabtu2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -750,10 +764,10 @@
 												Minggu
 											</td>
 											<td class="jum-rata">
-												<input name="minggu1" type="number" required="required" class="form-control jumlah" placeholder="">
+												<input name="minggu1" type="number"  class="form-control jumlah" placeholder="">
 											</td>
 											<td class="jum-puncak">
-												<input name="minggu2" type="number" required="required" class="form-control jumlahpuncak" placeholder="">
+												<input name="minggu2" type="number"  class="form-control jumlahpuncak" placeholder="">
 											</td>
 										</tr>
 										<tr>
@@ -761,10 +775,10 @@
 												Total Per Minggu
 											</td>
 											<td>
-												<input readonly type="number" class="form-control result" required="required" name="totalminggu" placeholder="">
+												<input readonly type="number" class="form-control result"  name="totalminggu" placeholder="">
 											</td>
 											<td>
-												<input readonly type="number"  class="form-control resultpuncak" required="required" name="totalminggu2" placeholder="">
+												<input readonly type="number"  class="form-control resultpuncak"  name="totalminggu2" placeholder="">
 											</td>
 										</tr>
 									</tbody>
@@ -774,7 +788,7 @@
 								<label class="col-sm-2">Total Penghuni :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input type="number" name="total_peng" required="required" class="form-control" placeholder="Masukan Total Penghuni">
+										<input type="number" name="total_peng"  class="form-control" placeholder="Masukan Total Penghuni">
 										<span class="input-group-addon" id="basic-addon2">Orang (perkiraan)</span>
 									</div>
 								</div> 
@@ -851,7 +865,7 @@
 								<label class="col-sm-2">Jumlah Sumur Bor :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="jumlah_sumur" type="number" min="0" max="6" id="jumlahsumur" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input name="jumlah_sumur" type="number" min="0" max="6" id="jumlahsumur"  class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
@@ -1124,16 +1138,16 @@
 													Januari
 												</td>
 												<td class="rowpdam">
-													<input name="januaripdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="januaripdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="januarisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="januarisumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="januarirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="januarirecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="januarilain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="januarilain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1141,16 +1155,16 @@
 													Febuari
 												</td>
 												<td class="rowpdam">
-													<input name="febuaripdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="febuaripdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="febuarisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="febuarisumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="febuarirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="febuarirecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="febuarilain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="febuarilain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1158,16 +1172,16 @@
 													Maret
 												</td>
 												<td class="rowpdam">
-													<input name="maretpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="maretpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="maretsumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="maretsumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="maretrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="maretrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="maretlain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="maretlain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1175,16 +1189,16 @@
 													April
 												</td>
 												<td class="rowpdam">
-													<input name="aprilpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="aprilpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="aprilsumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="aprilsumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="aprilrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="aprilrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="aprillain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="aprillain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1192,16 +1206,16 @@
 													Mei
 												</td>
 												<td class="rowpdam">
-													<input name="meipdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="meipdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="meisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="meisumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="meirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="meirecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="meilain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="meilain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1209,16 +1223,16 @@
 													Juni
 												</td>
 												<td class="rowpdam">
-													<input name="junipdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="junipdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="junisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="junisumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="junirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="junirecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="junilain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="junilain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1226,16 +1240,16 @@
 													Juli
 												</td>
 												<td class="rowpdam">
-													<input name="julipdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="julipdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="julisumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="julisumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="julirecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="julirecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="julilain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="julilain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1243,16 +1257,16 @@
 													Agustus
 												</td>
 												<td class="rowpdam">
-													<input name="agustuspdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="agustuspdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="agustussumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="agustussumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="agustusrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="agustusrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="agustuslain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="agustuslain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1260,16 +1274,16 @@
 													September
 												</td>
 												<td class="rowpdam">
-													<input name="septemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="septemberpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="septembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="septembersumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="septemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="septemberrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="septemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="septemberlain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1277,16 +1291,16 @@
 													Oktober
 												</td>
 												<td class="rowpdam">
-													<input name="oktoberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="oktoberpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="oktobersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="oktobersumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="oktoberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="oktoberrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="oktoberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="oktoberlain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1294,16 +1308,16 @@
 													November
 												</td>
 												<td class="rowpdam">
-													<input name="novemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="novemberpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="novembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="novembersumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="novemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="novemberrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="novemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="novemberlain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1311,16 +1325,16 @@
 													Desember
 												</td>
 												<td class="rowpdam">
-													<input name="desemberpdam" type="number" required="required" class="form-control pdam" placeholder="">
+													<input name="desemberpdam" type="number"  class="form-control pdam" placeholder="">
 												</td>
 												<td class="rowbor">
-													<input name="desembersumurbor" type="number" required="required" class="form-control sumurbor" placeholder="">
+													<input name="desembersumurbor" type="number"  class="form-control sumurbor" placeholder="">
 												</td>
 												<td class="rowrecycle">
-													<input name="desemberrecycle" type="number" required="required" class="form-control recycle" placeholder="">
+													<input name="desemberrecycle" type="number"  class="form-control recycle" placeholder="">
 												</td>
 												<td class="rowlain">
-													<input name="desemberlain" type="number" required="required" class="form-control lainlain" placeholder="">
+													<input name="desemberlain" type="number"  class="form-control lainlain" placeholder="">
 												</td>
 											</tr>
 											<tr>
@@ -1328,16 +1342,16 @@
 													Total Konsumsi (M<sup>3</sup>)
 												</td>
 												<td>
-													<input type="number" class="form-control resultpdam" required="required" name="totalkonsumsi[]" placeholder="">
+													<input type="number" value="0" readonly class="form-control resultpdam"  name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<input type="number"  class="form-control resultbor" required="required" name="totalkonsumsi[]" placeholder="">
+													<input type="number"  value="0" readonly class="form-control resultbor"  name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<input type="number" class="form-control resultrecycle" required="required" name="totalkonsumsi[]" placeholder="">
+													<input type="number" value="0" readonly class="form-control resultrecycle"  name="totalkonsumsi[]" placeholder="">
 												</td>
 												<td>
-													<input type="number"  class="form-control resultlain" required="required" name="totalkonsumsi[]" placeholder="">
+													<input type="number" value="0" readonly class="form-control resultlain"  name="totalkonsumsi[]" placeholder="">
 												</td>
 											</tr>
 										</tbody>
@@ -1458,7 +1472,7 @@
 								<label class="col-sm-2">Kapasitas Total :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="kaps_hujan" type="number" required="required" class="form-control" placeholder="Masukan Total Kapasitas">
+										<input name="kaps_hujan" type="number"  class="form-control" placeholder="Masukan Total Kapasitas">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 									</div>
 								</div>
@@ -1483,14 +1497,14 @@
 								<label class="col-sm-1">Jumlah :</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<input name="jumlah_hujan2" type="number" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input name="jumlah_hujan2" type="number"  class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
 								<label class="col-sm-2">Kapasitas Total :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="kaps_hujan2" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas Total">
+										<input name="kaps_hujan2" type="number"  class="form-control" placeholder="Masukan Kapasitas Total">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -1526,7 +1540,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_bekas" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_bekas" type="number"  class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1548,7 +1562,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_bekas2" type="number" disabled id="txtkapasitasbekas" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_bekas2" type="number" disabled id="txtkapasitasbekas"  class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1571,7 +1585,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_limbah" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_limbah" type="number"  class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1593,7 +1607,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_limbah2" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_limbah2" type="number"  class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>

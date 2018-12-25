@@ -20,6 +20,34 @@ class M_front extends CI_Model {
 			$this->session->set_flashdata('gagal', 'Tidak dapat login, harap periksa kembali username dan password anda');
 			redirect('welcome/login');
 		}
+	}	// Lokasi
+	function getKecamatan(){
+		$q = $this->db->query("SELECT 
+			d.id,d.name AS kecName, r.name AS kabName, p.name AS provName 
+			FROM districts d 
+			INNER JOIN regencies r ON r.id = d.regency_id 
+			INNER JOIN provinces p ON p.id=r.province_id
+			WHERE p.id=31");
+		return $q->result();
+	}
+	public function getkel(){
+		$q = $this->db->query("SELECT v.district_id AS id, v.name AS kel
+			FROM districts d 
+			INNER JOIN villages v ON v.district_id = d.id
+			WHERE d.regency_id=3101 OR d.regency_id=3171 OR d.regency_id=3172 OR d.regency_id=3173 OR d.regency_id=3174 OR d.regency_id=3175");
+		return $q->result();
+	}
+
+	public function jsonWal()
+	{
+		$id = $this->input->get('id');
+		return $this->db->query("SELECT * FROM `regencies` WHERE id = $id")->result();
+	}
+
+	public function jsonKec()
+	{
+		$id = $this->input->get('id');
+		return $this->db->query("SELECT * FROM `districts` WHERE id = $id")->result();
 	}
 
 }

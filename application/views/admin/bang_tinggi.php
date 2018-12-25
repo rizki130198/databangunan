@@ -55,9 +55,9 @@
 						</tr>
 					</thead>
 					<tbody>
-						<tr>
 							<?php $no = 1; 
 							foreach ($pemilik->result() as $key): ?>
+						<tr>
 								<td><?=$no++?></td>
 								<td><?=$key->nama_pemilik?></td>
 								<td><?=$key->nama_bangunan?></td>
@@ -70,8 +70,8 @@
 								<a href="<?php echo site_url('main/viewdata'); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></button></a>
 							</td>
 
-							<?php endforeach ?>
 						</tr>
+							<?php endforeach ?>
 					</tbody>
 				</table>
 			</div>
