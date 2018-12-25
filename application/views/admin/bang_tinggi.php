@@ -49,24 +49,28 @@
 							<th>Nama Bangunan</th>
 							<th>Lokasi</th>
 							<th>Kategori Pengelola</th>
-							<th>Jenis Bangunan</th>	
-							<th>Sumber Air</th>
+							<th>NOP</th>	
+							<th>Mulai Operasi</th>
 							<th>Aksi</th>
 						</tr>
 					</thead>
 					<tbody>
 						<tr>
-							<td>No</td>
-							<td>Jordan</td>
-							<td>Queen</td>
-							<td>Depok</td>
-							<td>Inhouse</td>
-							<td>Perkantoran</td>
-							<td>PDAM</td>
+							<?php $no = 1; 
+							foreach ($pemilik->result() as $key): ?>
+								<td><?=$no++?></td>
+								<td><?=$key->nama_pemilik?></td>
+								<td><?=$key->nama_bangunan?></td>
+								<td><?=$key->lokasi?></td>
+								<td><?=$key->kategori_pengelola?></td>
+								<td><?=$key->NOP?></td>
+								<td><?=$key->mulai_operasi?></td>
 							<td>
 								<a href="<?php echo site_url('main/editdata'); ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
 								<a href="<?php echo site_url('main/viewdata'); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></button></a>
 							</td>
+
+							<?php endforeach ?>
 						</tr>
 					</tbody>
 				</table>

@@ -291,13 +291,13 @@
 											<div class="funkyradio">
 												<div class="col-md-5">
 													<div class="funkyradio-primary">
-														<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='inhouse')?'checked':''?> id="inhouse"/>
+														<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='inhouse')?'checked':''?> id="inhouse" value="inhouse"/>
 														<label for="inhouse">inhouse</label>
 													</div>
 												</div>
 												<div class="col-md-5">
 													<div class="funkyradio-primary">
-														<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='outsourcing')?'checked':''?> id="outsourcing"/>
+														<input type="radio" name="kat_pengelola" <?=($datapeng->kategori_pengelola=='outsourcing')?'checked':''?> id="outsourcing" value="outsourcing"/>
 														<label for="outsourcing">outsourcing</label>
 													</div>
 												</div>
@@ -308,15 +308,13 @@
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Pengelola :</label>
 									<div class="col-sm-10">
-										<input  name="pengelola" maxlength="100" value="
-										<?=$datapeng->pengelola?>" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
+										<input  name="pengelola" maxlength="100" value="<?=$datapeng->pengelola?>" type="text" required="required" class="form-control" placeholder="Masukan Pengelola"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
 									<label class="col-sm-2">Penanggung Jawab :</label>
 									<div class="col-sm-10">
-										<input  name="peng_jawab" maxlength="100" value="
-										<?=$datapeng->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
+										<input  name="peng_jawab" maxlength="100" value="<?=$datapeng->tanggung_jawab?>" type="text" required="required" class="form-control" placeholder="Penanggung Jawab"/>
 									</div> 
 								</div>
 								<div class="form-group margin-input">
@@ -1728,6 +1726,7 @@
 									<div class="col-sm-10">
 										<div class="input-group">
 											<input type="file" value="<?=$datasketsa->file_sketsa?>" class="form-control" name="foto_sketsa">
+											<input type="hidden" value="<?=$datasketsa->file_sketsa?>" class="form-control" name="file_old">
 										</div>
 									</div>
 								</div>
