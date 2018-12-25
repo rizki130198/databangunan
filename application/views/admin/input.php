@@ -60,11 +60,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  maxlength="100" name="rt_info" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input name="rt_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  maxlength="100" name="rw_info" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input name="rw_info" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -104,7 +104,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input maxlength="100" name="kode_info" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_info" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -112,13 +112,13 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Obyek Pajak :</label>
 								<div class="col-sm-10">
-									<input  maxlength="100" name="nop" type="text" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
+									<input name="nop" type="number" required="required" class="form-control" placeholder="Masukan Nomor Obyek Pajak"/>
 								</div> 
 							</div>
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Mulai Beroperasi Tahun</label>
 								<div class="col-sm-10">
-									<input name="startYear" id="startYear" class="date-picker-year form-control" placeholder="Masukan Tahun" /> 
+									<input name="startYear" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" class="form-control" placeholder="Masukan Tahun" /> 
 								</div>
 							</div>
 						</div>
@@ -149,11 +149,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_pemilik" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==3) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -193,7 +193,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_pemilik" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_pemilik" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -211,14 +211,14 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Nomor Telepon :</label>
 								<div class="col-sm-10">
-									<input  name="no_hp" maxlength="100" type="text" required="required" class="form-control" placeholder="Kantor"/>
+									<input  name="no_hp" type="number" required="required" class="form-control" placeholder="Kantor"/>
 								</div> 
 							</div>
 							<div class="form-group">
 								<div class="col-sm-offset-2 col-sm-10 margin-input">
 									<div class="row">
 										<div class="col-sm-12">
-											<input  name="no_telp" maxlength="100" type="text" required="required" class="form-control" placeholder="HP"/>
+											<input  name="no_telp" type="number" required="required" class="form-control" placeholder="HP"/>
 										</div>
 									</div>
 								</div>
@@ -323,11 +323,11 @@
 									<div class="row">
 										<label class="col-sm-1">RT :</label>
 										<div class="col-sm-5">
-											<input  name="rt_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RT"  />
+											<input  name="rt_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RT"  />
 										</div>
 										<label class="col-sm-1">RW :</label>
 										<div class="col-sm-5">
-											<input  name="rw_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan RW"  />
+											<input  name="rw_peng" type="number" pattern="/^-?\d+\.?\d*$/" onKeyPress="if(this.value.length==4) return false;" required="required" class="form-control" placeholder="Masukan RW"  />
 										</div>
 									</div>
 								</div>
@@ -367,7 +367,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kode Pos :</label>
 										<div class="col-sm-10">
-											<input name="kode_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="kode_peng" type="number" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
 										</div>
 									</div>
 								</div>
@@ -377,7 +377,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi_peng" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Kode Pos"/>
+											<input name="provinsi_peng" type="text" required="required" class="form-control" placeholder="Masukan Provinsi"/>
 										</div>
 									</div>
 								</div>
@@ -429,7 +429,7 @@
 								<label class="col-sm-2">Luas Tanah :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="luas_tanah" type="text" required="required" class="form-control" placeholder="Masukan Luas Tanah">
+										<input name="luas_tanah" type="number" required="required" class="form-control" placeholder="Masukan Luas Tanah">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div> 
@@ -441,8 +441,9 @@
 									<input  name="no_imb[]" maxlength="100" type="text" required="required" class="form-control" placeholder="Masukan Nomor"/>
 								</div> 
 								<label class="col-sm-1">Tgl.</label>
-								<div class="col-sm-4">
-									<input name="tgl_imb[]" type="text" id="date_imb" required="required" class="form-control" placeholder="Masukan Tanggal"/>
+								<div class="col-sm-4">									
+									<input name="tgl_imb[]" id="date_imb" class="date form-control" required="required" placeholder="Masukan Tanggal" /> 
+									
 								</div> 
 							</div>
 							<div class="form-group margin-input">
@@ -493,7 +494,7 @@
 								<label class="col-sm-2">a. Tower</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="tinggi_tower" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="tinggi_tower" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">Lantai</span>
 									</div>
 								</div>
@@ -503,7 +504,7 @@
 								<label class="col-sm-2">b. Podium</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="tinggi_podium" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="tinggi_podium" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">Lantai</span>
 									</div>
 								</div>
@@ -586,7 +587,7 @@
 								<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">a. Luas Lantai Dasar / Lantai Terluas</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="luas_lantai" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="luas_lantai" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -596,7 +597,7 @@
 								<label class="col-sm-2">b. Luas Lantai Total</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="luas_total" type="text" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
+										<input name="luas_total" type="number" required="required" class="form-control" placeholder="Masukan Tinggi Lantai">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -605,7 +606,7 @@
 								<label class="col-sm-2">Tingkat Okupansi :</label>
 								<div class="col-sm-10">
 									<div class="input-group">
-										<input name="tk_okupansi" type="text" required="required" class="form-control" placeholder="Masukan Tingkat Okupansi">
+										<input name="tk_okupansi" type="number" required="required" class="form-control" placeholder="Masukan Tingkat Okupansi">
 										<span class="input-group-addon" id="basic-addon2">% (perkiraan)</span>
 									</div>
 								</div> 
@@ -636,7 +637,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">a. Rata-rata jumlah jam operasional perminggu :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op1" type="text" required="required" class="form-control" placeholder="">
+										<input name="op1" type="number" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
@@ -646,13 +647,13 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">b. Rata-rata jumlah hari dan minggu operasional per tahun :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op2" type="text" required="required" class="form-control" placeholder="">
+										<input name="op2" type="number" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">hari</span>
 									</div>
 								</div>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="op3" type="text" required="required" class="form-control" placeholder="">
+										<input name="op3" type="number" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">minggu</span>
 									</div>
 								</div>
@@ -662,7 +663,7 @@
 								<label class="col-sm-4" style="margin-top: 14px;margin-bottom: 0;">c. Jumlah jam operasional per tahun :</label>
 								<div class="col-sm-6">
 									<div class="input-group">
-										<input name="op4" type="text" required="required" class="form-control" placeholder="">
+										<input name="op4" type="number" required="required" class="form-control" placeholder="">
 										<span class="input-group-addon" id="basic-addon2">jam/minggu</span>
 									</div>
 								</div>
@@ -935,7 +936,7 @@
 								<label class="col-sm-2"></label>
 								<label class="col-sm-2">SIPA 1 NO:</label>
 								<div class="col-sm-3">
-									<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input name="no_sipa_pantek[]" type="text" class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 								<label class="col-sm-1">Tanggal</label>
 								<div class="col-sm-4">
@@ -1011,42 +1012,42 @@
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 1 NO:</label>
 								<div class="col-sm-7">
-									<input name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 							<div class="form-group margin-input" id="ground2">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 2 NO:</label>
 								<div class="col-sm-7">
-									<input name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 							<div class="form-group margin-input" id="ground3">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 3 NO:</label>
 								<div class="col-sm-7">
-									<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 							<div class="form-group margin-input" id="ground4">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 4 NO:</label>
 								<div class="col-sm-7">
-									<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 							<div class="form-group margin-input" id="ground5">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 5 NO:</label>
 								<div class="col-sm-7">
-									<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 							<div class="form-group margin-input" id="ground6">
 								<label class="col-sm-2"></label>
 								<label class="col-sm-3">Kapasitas Ground Tank 6 NO:</label>
 								<div class="col-sm-7">
-									<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<input  name="kaps_ground[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 								</div>
 							</div>
 
@@ -1349,7 +1350,7 @@
 								<label class="col-sm-2">a. Occupant Area :</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="rata_kon[]" type="text"  class="form-control" placeholder="Masukan Occupant Area">
+										<input name="rata_kon[]" type="number"  class="form-control" placeholder="Masukan Occupant Area">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/org/hari</span>
 									</div>
 								</div>
@@ -1359,7 +1360,7 @@
 								<label class="col-sm-2">b. Service Area :</label>
 								<div class="col-sm-8">
 									<div class="input-group">
-										<input name="rata_kon[]" type="text"  class="form-control" placeholder="Masukan Service Area">
+										<input name="rata_kon[]" type="number"  class="form-control" placeholder="Masukan Service Area">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
 									</div>
 								</div>
@@ -1399,7 +1400,7 @@
 								<label class="col-sm-3">Kapasitas :</label>
 								<div class="col-sm-7">
 									<div class="input-group">
-										<input type="text" name="kaps_bersih"  class="form-control" placeholder="Masukan Kapasitas">
+										<input type="number" name="kaps_bersih"  class="form-control" placeholder="Masukan Kapasitas">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
 									</div>
 								</div>
@@ -1425,7 +1426,7 @@
 								<label class="col-sm-3">Kapasitas :</label>
 								<div class="col-sm-7">
 									<div class="input-group">
-										<input name="kaps_bersih2" type="text" disabled id="txtkapasitasair"  class="form-control" placeholder="Masukan Kapasitas">
+										<input name="kaps_bersih2" type="number" disabled id="txtkapasitasair"  class="form-control" placeholder="Masukan Kapasitas">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup>/hari</span>
 									</div>
 								</div>
@@ -1450,14 +1451,14 @@
 								<label class="col-sm-1">Jumlah :</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<input name="jumlah_hujan" type="text" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input name="jumlah_hujan" type="number" class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
 								<label class="col-sm-2">Kapasitas Total :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="kaps_hujan" type="text" required="required" class="form-control" placeholder="Masukan Total Kapasitas">
+										<input name="kaps_hujan" type="number" required="required" class="form-control" placeholder="Masukan Total Kapasitas">
 										<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 									</div>
 								</div>
@@ -1482,14 +1483,14 @@
 								<label class="col-sm-1">Jumlah :</label>
 								<div class="col-sm-4">
 									<div class="input-group">
-										<input name="jumlah_hujan2" type="text" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
+										<input name="jumlah_hujan2" type="number" required="required" class="form-control" placeholder="Masukan Jumlah Titik">
 										<span class="input-group-addon" id="basic-addon2">Titik</span>
 									</div>
 								</div>
 								<label class="col-sm-2">Kapasitas Total :</label>
 								<div class="col-sm-3">
 									<div class="input-group">
-										<input name="kaps_hujan2" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas Total">
+										<input name="kaps_hujan2" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas Total">
 										<span class="input-group-addon" id="basic-addon2">M<sup>2</sup></span>
 									</div>
 								</div>
@@ -1525,7 +1526,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_bekas" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_bekas" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1547,7 +1548,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_bekas2" type="text" disabled id="txtkapasitasbekas" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_bekas2" type="number" disabled id="txtkapasitasbekas" required="required" class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1570,7 +1571,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_limbah" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_limbah" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
@@ -1592,7 +1593,7 @@
 										<label class="col-sm-2" style="margin:0;">Kapasitas :</label>
 										<div class="col-sm-5">
 											<div class="input-group">
-												<input name="kaps_limbah2" type="text" required="required" class="form-control" placeholder="Masukan Kapasitas">
+												<input name="kaps_limbah2" type="number" required="required" class="form-control" placeholder="Masukan Kapasitas">
 												<span class="input-group-addon" id="basic-addon2">M<sup>3</sup></span>
 											</div>
 										</div>
