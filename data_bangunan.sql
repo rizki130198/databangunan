@@ -1,11 +1,11 @@
 -- phpMyAdmin SQL Dump
--- version 4.7.0
+-- version 4.8.4
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 19, 2018 at 07:55 AM
--- Server version: 10.1.25-MariaDB
--- PHP Version: 5.6.31
+-- Waktu pembuatan: 25 Des 2018 pada 14.50
+-- Versi server: 10.1.37-MariaDB
+-- Versi PHP: 7.0.33
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
 SET AUTOCOMMIT = 0;
@@ -25,7 +25,7 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_admin`
+-- Struktur dari tabel `data_admin`
 --
 
 CREATE TABLE `data_admin` (
@@ -39,17 +39,18 @@ CREATE TABLE `data_admin` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_admin`
+-- Dumping data untuk tabel `data_admin`
 --
 
 INSERT INTO `data_admin` (`id_admin`, `id_user`, `id_admin_unik`, `sippt`, `luas_tanah`, `kmb`, `created_at`) VALUES
-(1, 121, 0, '1,2018-12-16', '1', '11,2018-12-19', '2018-12-16 21:47:48'),
-(2, 1, 0, '2323,2018-12-12', '232', '22,2018-12-17', '2018-12-16 22:09:12');
+(1, 1, 0, '1,2018-12-19', '1000', '3,2018-12-19', '2018-12-19 08:51:40'),
+(2, 1, 2, '1,2018-01-01', '2522', '45,2018-12-04', '2018-12-23 01:44:01'),
+(3, 1, 3, '1,2018-01-01', '2522', '45,2018-12-04', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_air`
+-- Struktur dari tabel `data_air`
 --
 
 CREATE TABLE `data_air` (
@@ -72,17 +73,18 @@ CREATE TABLE `data_air` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_air`
+-- Dumping data untuk tabel `data_air`
 --
 
 INSERT INTO `data_air` (`id_air`, `id_air_unik`, `konsumsi_air`, `konsumsi_bulan`, `rata_konsumsi`, `air_bersih`, `sistem_water`, `kapasitas_bersih`, `air_hujan`, `jml_hujan`, `kapasitas_hujan`, `air_bekas`, `kapasitas_bekas`, `air_limbah`, `kapasitas_limbah`, `created_at`) VALUES
-(1, 112121, '0', 0, ',', 'Water Treatment Plant,', '1', '1,', 'Sumur Resapan,Kolam Resapan,Water Trap', '1,1', '1,1', 'Water Treatment Plant,', '1,', 'IPAL/Sewage Treatment Plant (STP),PD PAL', '1,1', '2018-12-16 21:47:48'),
-(2, 1, '0', 0, ',', 'Water Treatment Plant,', '1', '1,', 'Sumur Resapan,Kolam Resapan,', '1,1', '1,1', 'Water Treatment Plant,', '1,', 'IPAL/Sewage Treatment Plant (STP),PD PAL', '1,1', '2018-12-16 22:09:12');
+(1, 1, '0', 0, '12,12', 'Water Treatment Plant,', 'Sistem drop', '21,', 'Sumur Resapan,Kolam Resapan,Water Trap', '12,12', '8000,1', 'Water Treatment Plant,', '1,', 'IPAL/Sewage Treatment Plant (STP),PD PAL', '1,1', '2018-12-19 08:51:40'),
+(2, 1, '0', 0, '445,56', 'Water Treatment Plant,', 'trtrt', '455,rer', 'Sumur Resapan,Kolam Resapan,Water Trap', '4,4', 'vv,344f', 'Water Treatment Plant,', '56,rere', ',', '56,56hhh', '2018-12-23 01:44:01'),
+(3, 1, '0', 0, '445,56', 'Water Treatment Plant,', 'trtrt', '455,', 'Sumur Resapan,Kolam Resapan,Water Trap', '4,4', 'vv,344f', 'Water Treatment Plant,', '56,', 'IPAL/Sewage Treatment Plant (STP),PD PAL', '56,56hhh', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_imb`
+-- Struktur dari tabel `data_imb`
 --
 
 CREATE TABLE `data_imb` (
@@ -93,17 +95,21 @@ CREATE TABLE `data_imb` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_imb`
+-- Dumping data untuk tabel `data_imb`
 --
 
 INSERT INTO `data_imb` (`id_imb`, `id_admin_imb`, `no_imb`, `tanggal_imb`) VALUES
-(3, 0, '232', '2018-12-11'),
-(4, 0, '232', '2018-12-11');
+(1, 1, '1', '2018-12-19'),
+(2, 1, '1', '2018-12-19'),
+(3, 2, '23', '2018-12-17'),
+(4, 2, '34', '2018-12-05'),
+(5, 3, '23', '2018-12-17'),
+(6, 3, '34', '2018-12-05');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_konsumsi`
+-- Struktur dari tabel `data_konsumsi`
 --
 
 CREATE TABLE `data_konsumsi` (
@@ -125,16 +131,18 @@ CREATE TABLE `data_konsumsi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_konsumsi`
+-- Dumping data untuk tabel `data_konsumsi`
 --
 
 INSERT INTO `data_konsumsi` (`id_konsumsi`, `id_data_air`, `januari`, `febuari`, `maret`, `april`, `mei`, `juni`, `juli`, `agustus`, `september`, `oktober`, `november`, `desember`, `total`) VALUES
-(1, 2, '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1');
+(1, 0, ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', '0'),
+(2, 2, '1,87,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '78,164,84,84'),
+(3, 3, '1,87,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '7,7,7,7', '78,164,84,84');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pemilik`
+-- Struktur dari tabel `data_pemilik`
 --
 
 CREATE TABLE `data_pemilik` (
@@ -155,24 +163,25 @@ CREATE TABLE `data_pemilik` (
   `email` varchar(100) NOT NULL,
   `tanggung_jawab` varchar(100) NOT NULL,
   `jabatan` varchar(100) NOT NULL,
-  `no_jabatan` tinyint(15) NOT NULL,
-  `telp_jabatan` tinyint(15) NOT NULL,
+  `no_jabatan` varchar(15) NOT NULL,
+  `telp_jabatan` varchar(15) NOT NULL,
   `email_jabatan` varchar(50) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_pemilik`
+-- Dumping data untuk tabel `data_pemilik`
 --
 
 INSERT INTO `data_pemilik` (`id_pemilik`, `id_user`, `id_info_unik`, `nama_pemilik`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_kantor`, `no_hp`, `email`, `tanggung_jawab`, `jabatan`, `no_jabatan`, `telp_jabatan`, `email_jabatan`, `created_at`) VALUES
-(1, 3, 0, '1', '11', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'fauzifahmi55@gmail.com', '1', '1', 1, 1, 'fauzifahmi55@gmail.com', '2018-12-16 21:47:48'),
-(2, 1, 2, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', '1', 'fauzifahmi55@gmail.com', '1', '1', 1, 1, 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
+(1, 1, 1, 'Rizki', 'Alamat Rizki', '5', '6', 'MAKASAR', 'MAKASAR', 'JAKARTA TIMUR', '1567', 'JAKARTA', 'Kebon Sirih', '08145278089', 'Fauzifahmi@gmail.com', 'Rizki', 'CEO', '0821', '0812', 'Fauzifahmi@gmail.com', '2018-12-19 08:51:40'),
+(2, 1, 2, 'pEMERINTAH', 'Balaikota', '1', '3', 'PUSAT', 'PUSAT', 'PUSAT', '23445', 'JAKARTA', '9488478', '01-2333333', 'test@test.com', 'pemerintah', 'kepala dinas', '087778449', '084548990', 'test@test.com', '2018-12-23 01:44:01'),
+(3, 1, 3, 'pEMERINTAH', 'Balaikota', '1', '3', 'PUSAT', 'PUSAT', 'PUSAT', '23445', 'JAKARTA', '9488478', '01-2333333', 'test@test.com', 'pemerintah', 'kepala dinas', '087778449', '084548990', 'test@test.com', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_pengelola`
+-- Struktur dari tabel `data_pengelola`
 --
 
 CREATE TABLE `data_pengelola` (
@@ -199,17 +208,18 @@ CREATE TABLE `data_pengelola` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_pengelola`
+-- Dumping data untuk tabel `data_pengelola`
 --
 
 INSERT INTO `data_pengelola` (`id_pengelola`, `id_users`, `id_peng_unik`, `kategori_pengelola`, `pengelola`, `tanggung_jawab`, `jabatan`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_rumah`, `no_kantor`, `no_hp`, `email`, `created_at`) VALUES
-(1, 12121, 0, '', '																				1', '																				1', '1', '1', 1, 1, '1', '1', '1', '1', '1', '', '1', '1', 'fauzifahmi55@gmail.com', '2018-12-16 21:47:48'),
-(2, 1, 2, 'on', '										1', '										1', '1', '1', 1, 1, '1', '1', '1', '1', '1', '', '1', '1', 'fauzifahmi55@gmail.com', '2018-12-16 22:09:12');
+(1, 1, 1, 'inhouse', '										Rizki', '										Rizki', 'depok', 'Depok', 8, 8, 'TAPOS', 'CURUG', 'JAKARTA', '1909', 'JAWA BARAT', '', 'Kebon sirih', '081267', 'Fauzifahmi@gmail.com', '2018-12-19 08:51:40'),
+(2, 1, 2, 'inhouse', 'dcktrp', 'dcktrp', 'dcktpr', 'jatibaru', 127, 127, 'PUSAT', 'PUSAT', 'PUSAT', '9489485', 'JAKARTA', '', '098u7', '-0997777', 'test@test.com', '2018-12-23 01:44:01'),
+(3, 1, 3, 'inhouse', 'dcktrp', 'dcktrp', 'dcktpr', 'jatibaru', 127, 127, 'PUSAT', 'PUSAT', 'PUSAT', '9489485', 'JAKARTA', '', '098u7', '-0997777', 'test@test.com', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_sumur`
+-- Struktur dari tabel `data_sumur`
 --
 
 CREATE TABLE `data_sumur` (
@@ -222,10 +232,48 @@ CREATE TABLE `data_sumur` (
   `kapasitas` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data untuk tabel `data_sumur`
+--
+
+INSERT INTO `data_sumur` (`id_sumur`, `id_data_sumur`, `jenis`, `unit`, `sipa`, `tanggal`, `kapasitas`) VALUES
+(1, 1, 'sumur bor', '1', '21', '2018-12-19', ''),
+(7, 1, 'sumur bor', '1', '21', '2018-12-19', ''),
+(13, 1, 'sumur bor', '1', '21', '2018-12-19', '12'),
+(19, 1, 'sumur bor', '1', '21', '2018-12-19', '123'),
+(20, 2, 'sumur bor', '3', '4', '2018-12-10', ''),
+(21, 2, 'sumur bor', '3', '4', '2018-12-04', ''),
+(22, 2, 'sumur bor', '3', '4', '2018-12-13', ''),
+(23, 2, 'sumur pantek', '4', 'tg', '1970-01-01', ''),
+(24, 2, 'sumur pantek', '4', '5', '1970-01-01', ''),
+(25, 2, 'sumur pantek', '4', 'rer', '1970-01-01', ''),
+(26, 2, 'sumur pantek', '4', '34', '1970-01-01', ''),
+(27, 2, 'GROUND', '5', '', '0000-00-00', '56565'),
+(28, 2, 'GROUND', '5', '', '0000-00-00', '6565'),
+(29, 2, 'GROUND', '5', '', '0000-00-00', '445'),
+(30, 2, 'GROUND', '5', '', '0000-00-00', '555'),
+(31, 2, 'GROUND', '5', '', '0000-00-00', '555'),
+(32, 2, 'Roof Tank', '2', '', '0000-00-00', '45453'),
+(33, 2, 'Roof Tank', '2', '', '0000-00-00', '56465'),
+(34, 3, 'sumur bor', '3', '4', '2018-12-10', ''),
+(35, 3, 'sumur bor', '3', '4', '2018-12-04', ''),
+(36, 3, 'sumur bor', '3', '4', '2018-12-13', ''),
+(37, 3, 'sumur pantek', '4', 'tg', '1970-01-01', ''),
+(38, 3, 'sumur pantek', '4', '5', '1970-01-01', ''),
+(39, 3, 'sumur pantek', '4', 'rer', '1970-01-01', ''),
+(40, 3, 'sumur pantek', '4', '34', '1970-01-01', ''),
+(41, 3, 'GROUND', '5', '', '0000-00-00', '56565'),
+(42, 3, 'GROUND', '5', '', '0000-00-00', '6565'),
+(43, 3, 'GROUND', '5', '', '0000-00-00', '445'),
+(44, 3, 'GROUND', '5', '', '0000-00-00', '555'),
+(45, 3, 'GROUND', '5', '', '0000-00-00', '555'),
+(46, 3, 'Roof Tank', '2', '', '0000-00-00', '45453'),
+(47, 3, 'Roof Tank', '2', '', '0000-00-00', '56465');
+
 -- --------------------------------------------------------
 
 --
--- Table structure for table `data_teknis`
+-- Struktur dari tabel `data_teknis`
 --
 
 CREATE TABLE `data_teknis` (
@@ -246,17 +294,18 @@ CREATE TABLE `data_teknis` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `data_teknis`
+-- Dumping data untuk tabel `data_teknis`
 --
 
 INSERT INTO `data_teknis` (`id_teknis`, `id_user`, `id_teknis_unik`, `jumlah_tower`, `jumlah_unit`, `ketinggian`, `luas_lantai`, `luas_total`, `tingkat_okupansi`, `ket_okupansi`, `operasional_gedung`, `peng_bangunan`, `total_penghuni`, `created_at`) VALUES
-(1, 1212121, 0, 1, 1, '1,1', 'perkantor', '1', '1', NULL, '1,1,1,1', '1,1,1,1,1,1,1,1,1,1,1,1,1,1,1,', 1, '0000-00-00 00:00:00'),
-(2, 1, 0, 22, 2, '2,2', '2', '2', '2', 'Apabila berbentuk gedung', '2,2,2,2', '22,112,12,1,1,1,1,1,1,1,1,1,1,1,39,118', 1, '0000-00-00 00:00:00');
+(1, 1, 0, 12, 127, '15,90', '12', '12', '21', 'Apabila berbentuk gedung', '1,7,7,1', '1,1,1,1,1,1,1,1,1,1,1,1,1,1,7,7', 12, '0000-00-00 00:00:00'),
+(2, 1, 2, 1, 1, '60,45', '45', '45', '60', NULL, '5,3,5,54', '50,50,50,50,50,50,50,50,0,50,50,50,50,50,300,350', 127, '0000-00-00 00:00:00'),
+(3, 1, 3, 1, 1, '60,45', '45', '45', '60', NULL, '5,3,5,54', '50,50,50,50,50,50,50,50,0,50,50,50,50,50,300,350', 127, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `info_bangunan`
+-- Struktur dari tabel `info_bangunan`
 --
 
 CREATE TABLE `info_bangunan` (
@@ -277,17 +326,18 @@ CREATE TABLE `info_bangunan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `info_bangunan`
+-- Dumping data untuk tabel `info_bangunan`
 --
 
 INSERT INTO `info_bangunan` (`id_info`, `id_user`, `nama_bangunan`, `lokasi`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `NOP`, `mulai_operasi`, `type_bangunan`, `created_at`) VALUES
-(1, 1212, '1', '1', '1', '1', '1', '1', '1', '1', '1', '1970', '', '2018-12-16 21:47:48'),
-(2, 1, '12', '12', '1', '1', '1', '1', '1', '1', '1', '2018', '', '2018-12-16 22:09:12');
+(1, 1, 'Gedung Menara', 'Jakarta', '4', '7', 'CILINCING', 'CILINCING', 'JAKARTA', '15652', '12345678190', '2018', '', '2018-12-19 08:51:40'),
+(2, 1, 'Dinas Teknis Jatibaru', 'Jl. taman jatibaru', '1', '1', 'CIDENG', 'GAMBIR', 'JAKARTA PUSAT', '10110', '1234567894564', '2018', '', '2018-12-23 01:44:01'),
+(3, 1, 'Dinas Teknis Jatibaru', 'Jl. taman jatibaru', '1', '1', 'CIDENG', 'GAMBIR', 'JAKARTA PUSAT', '10110', '1234567894564', '2018', '', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `jenis_bangunan`
+-- Struktur dari tabel `jenis_bangunan`
 --
 
 CREATE TABLE `jenis_bangunan` (
@@ -305,16 +355,18 @@ CREATE TABLE `jenis_bangunan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `jenis_bangunan`
+-- Dumping data untuk tabel `jenis_bangunan`
 --
 
 INSERT INTO `jenis_bangunan` (`id_jenis`, `id_admin_teknis`, `perkantoran`, `apartemen`, `hunian`, `hotel`, `sarana_kesehatan`, `sarana_perdagangan`, `lainnya`, `lainnya2`, `created_at`) VALUES
-(2, 2, 'perkantoran', NULL, 'hunian', 'on', NULL, NULL, NULL, NULL, '0000-00-00 00:00:00');
+(1, 1, 'perkantoran', 'apartemen', 'hunian', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00'),
+(2, 0, 'perkantoran', NULL, 'hunian', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00'),
+(3, 0, 'perkantoran', NULL, 'hunian', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `penggunan_bangunan`
+-- Struktur dari tabel `penggunan_bangunan`
 --
 
 CREATE TABLE `penggunan_bangunan` (
@@ -331,17 +383,18 @@ CREATE TABLE `penggunan_bangunan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `penggunan_bangunan`
+-- Dumping data untuk tabel `penggunan_bangunan`
 --
 
 INSERT INTO `penggunan_bangunan` (`id_penggunaan`, `id_join`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`, `total`) VALUES
-(1, 0, '1,1', '1,1', '1,1', '1,1', '1,1', '1,1', '1,1', '1,'),
-(2, 0, '22,112', '12,1', '1,1', '1,1', '1,1', '1,1', '1,1', '39,118');
+(1, 0, '1,1', '1,1', '1,1', '1,1', '1,1', '1,1', '1,1', '7,7'),
+(2, 2, '50,50', '50,50', '50,50', '50,50', '0,50', '50,50', '50,50', '300,350'),
+(3, 3, '50,50', '50,50', '50,50', '50,50', '0,50', '50,50', '50,50', '300,350');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `permasalahan`
+-- Struktur dari tabel `permasalahan`
 --
 
 CREATE TABLE `permasalahan` (
@@ -356,17 +409,17 @@ CREATE TABLE `permasalahan` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `permasalahan`
+-- Dumping data untuk tabel `permasalahan`
 --
 
 INSERT INTO `permasalahan` (`id_masalah`, `id_user`, `id_unik_masalah`, `sumur_resapan`, `sumur_dalam`, `pengelolaan_limbah`, `persetujuan`, `created_at`) VALUES
-(1, 121, 0, '1', 'qwqwqqw', '1', 1, '2018-12-16 21:47:48'),
-(2, 1, 0, '1', '23232', '2322', 1, '2018-12-16 22:09:12');
+(1, 1, 1, 'Masalah ', 'masalah 2', 'masalah 3', 1, '2018-12-19 08:51:40'),
+(2, 1, 3, 'kurang lahan', 'kurang lahan', 'kurang lahan', 1, '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sketsa_lokasi`
+-- Struktur dari tabel `sketsa_lokasi`
 --
 
 CREATE TABLE `sketsa_lokasi` (
@@ -380,17 +433,17 @@ CREATE TABLE `sketsa_lokasi` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `sketsa_lokasi`
+-- Dumping data untuk tabel `sketsa_lokasi`
 --
 
 INSERT INTO `sketsa_lokasi` (`id_sketsa`, `id_user`, `id_sketsa_unik`, `nama_bangunan`, `lokasi`, `file_sketsa`, `created_at`) VALUES
-(1, 1121, 0, '1', '1', '', '2018-12-16 21:47:48'),
-(2, 1, 0, '1', '1', '1.jpg', '2018-12-16 22:09:12');
+(1, 1, 1, 'Menara Tower', 'Kebon sirih', 'c35654dd607a8367a06005c03b7e94e9.jpg', '2018-12-19 08:51:40'),
+(2, 1, 3, 'dinas teknis', 'jl jatibaru', 'c414757e6f7780a441e05e4d22141cb1.jpg', '2018-12-23 01:46:30');
 
 -- --------------------------------------------------------
 
 --
--- Table structure for table `sumber_air`
+-- Struktur dari tabel `sumber_air`
 --
 
 CREATE TABLE `sumber_air` (
@@ -403,17 +456,10 @@ CREATE TABLE `sumber_air` (
   `lainnya` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
---
--- Dumping data for table `sumber_air`
---
-
-INSERT INTO `sumber_air` (`id_sumber`, `id_sumber_air`, `pdam`, `bor`, `pantek`, `air_sendiri`, `lainnya`) VALUES
-(1, 1, '1', '1', '1', '1', '1');
-
 -- --------------------------------------------------------
 
 --
--- Table structure for table `users`
+-- Struktur dari tabel `users`
 --
 
 CREATE TABLE `users` (
@@ -425,185 +471,201 @@ CREATE TABLE `users` (
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
--- Dumping data for table `users`
+-- Dumping data untuk tabel `users`
 --
 
 INSERT INTO `users` (`id`, `username`, `email`, `password`, `created_at`) VALUES
-(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '0000-00-00');
+(1, 'admin', 'admin@gmail.com', '21232f297a57a5a743894a0e4a801fc3', '0000-00-00'),
+(2, 'melvi', 'melvi@melvi.com', '1234', '0000-00-00');
 
 --
 -- Indexes for dumped tables
 --
 
 --
--- Indexes for table `data_admin`
+-- Indeks untuk tabel `data_admin`
 --
 ALTER TABLE `data_admin`
   ADD PRIMARY KEY (`id_admin`);
 
 --
--- Indexes for table `data_air`
+-- Indeks untuk tabel `data_air`
 --
 ALTER TABLE `data_air`
   ADD PRIMARY KEY (`id_air`);
 
 --
--- Indexes for table `data_imb`
+-- Indeks untuk tabel `data_imb`
 --
 ALTER TABLE `data_imb`
   ADD PRIMARY KEY (`id_imb`);
 
 --
--- Indexes for table `data_konsumsi`
+-- Indeks untuk tabel `data_konsumsi`
 --
 ALTER TABLE `data_konsumsi`
   ADD PRIMARY KEY (`id_konsumsi`);
 
 --
--- Indexes for table `data_pemilik`
+-- Indeks untuk tabel `data_pemilik`
 --
 ALTER TABLE `data_pemilik`
   ADD PRIMARY KEY (`id_pemilik`);
 
 --
--- Indexes for table `data_pengelola`
+-- Indeks untuk tabel `data_pengelola`
 --
 ALTER TABLE `data_pengelola`
   ADD PRIMARY KEY (`id_pengelola`);
 
 --
--- Indexes for table `data_sumur`
+-- Indeks untuk tabel `data_sumur`
 --
 ALTER TABLE `data_sumur`
   ADD PRIMARY KEY (`id_sumur`);
 
 --
--- Indexes for table `data_teknis`
+-- Indeks untuk tabel `data_teknis`
 --
 ALTER TABLE `data_teknis`
   ADD PRIMARY KEY (`id_teknis`);
 
 --
--- Indexes for table `info_bangunan`
+-- Indeks untuk tabel `info_bangunan`
 --
 ALTER TABLE `info_bangunan`
   ADD PRIMARY KEY (`id_info`);
 
 --
--- Indexes for table `jenis_bangunan`
+-- Indeks untuk tabel `jenis_bangunan`
 --
 ALTER TABLE `jenis_bangunan`
   ADD PRIMARY KEY (`id_jenis`);
 
 --
--- Indexes for table `penggunan_bangunan`
+-- Indeks untuk tabel `penggunan_bangunan`
 --
 ALTER TABLE `penggunan_bangunan`
   ADD PRIMARY KEY (`id_penggunaan`);
 
 --
--- Indexes for table `permasalahan`
+-- Indeks untuk tabel `permasalahan`
 --
 ALTER TABLE `permasalahan`
   ADD PRIMARY KEY (`id_masalah`);
 
 --
--- Indexes for table `sketsa_lokasi`
+-- Indeks untuk tabel `sketsa_lokasi`
 --
 ALTER TABLE `sketsa_lokasi`
   ADD PRIMARY KEY (`id_sketsa`);
 
 --
--- Indexes for table `sumber_air`
+-- Indeks untuk tabel `sumber_air`
 --
 ALTER TABLE `sumber_air`
   ADD PRIMARY KEY (`id_sumber`);
 
 --
--- Indexes for table `users`
+-- Indeks untuk tabel `users`
 --
 ALTER TABLE `users`
   ADD PRIMARY KEY (`id`);
 
 --
--- AUTO_INCREMENT for dumped tables
+-- AUTO_INCREMENT untuk tabel yang dibuang
 --
 
 --
--- AUTO_INCREMENT for table `data_admin`
+-- AUTO_INCREMENT untuk tabel `data_admin`
 --
 ALTER TABLE `data_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `data_air`
+-- AUTO_INCREMENT untuk tabel `data_air`
 --
 ALTER TABLE `data_air`
-  MODIFY `id_air` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_air` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `data_imb`
+-- AUTO_INCREMENT untuk tabel `data_imb`
 --
 ALTER TABLE `data_imb`
-  MODIFY `id_imb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+  MODIFY `id_imb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+
 --
--- AUTO_INCREMENT for table `data_konsumsi`
+-- AUTO_INCREMENT untuk tabel `data_konsumsi`
 --
 ALTER TABLE `data_konsumsi`
-  MODIFY `id_konsumsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_konsumsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `data_pemilik`
+-- AUTO_INCREMENT untuk tabel `data_pemilik`
 --
 ALTER TABLE `data_pemilik`
-  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `data_pengelola`
+-- AUTO_INCREMENT untuk tabel `data_pengelola`
 --
 ALTER TABLE `data_pengelola`
-  MODIFY `id_pengelola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_pengelola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `data_sumur`
+-- AUTO_INCREMENT untuk tabel `data_sumur`
 --
 ALTER TABLE `data_sumur`
-  MODIFY `id_sumur` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sumur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=48;
+
 --
--- AUTO_INCREMENT for table `data_teknis`
+-- AUTO_INCREMENT untuk tabel `data_teknis`
 --
 ALTER TABLE `data_teknis`
-  MODIFY `id_teknis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_teknis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `info_bangunan`
+-- AUTO_INCREMENT untuk tabel `info_bangunan`
 --
 ALTER TABLE `info_bangunan`
-  MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `jenis_bangunan`
+-- AUTO_INCREMENT untuk tabel `jenis_bangunan`
 --
 ALTER TABLE `jenis_bangunan`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `penggunan_bangunan`
+-- AUTO_INCREMENT untuk tabel `penggunan_bangunan`
 --
 ALTER TABLE `penggunan_bangunan`
-  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
 --
--- AUTO_INCREMENT for table `permasalahan`
+-- AUTO_INCREMENT untuk tabel `permasalahan`
 --
 ALTER TABLE `permasalahan`
   MODIFY `id_masalah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `sketsa_lokasi`
+-- AUTO_INCREMENT untuk tabel `sketsa_lokasi`
 --
 ALTER TABLE `sketsa_lokasi`
   MODIFY `id_sketsa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+
 --
--- AUTO_INCREMENT for table `sumber_air`
+-- AUTO_INCREMENT untuk tabel `sumber_air`
 --
 ALTER TABLE `sumber_air`
-  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT;
+
 --
--- AUTO_INCREMENT for table `users`
+-- AUTO_INCREMENT untuk tabel `users`
 --
 ALTER TABLE `users`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;COMMIT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
