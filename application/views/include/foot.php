@@ -1,5 +1,6 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/jq.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap-datepicker.min.js'); ?>"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 <script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
@@ -73,17 +74,56 @@ function checkAll(bx) {
 		$(".date-picker-year").focus(function () {
 			$(".ui-datepicker-month").hide();
 		});
+
+
 	});
 
 	$( function() {
 		$( "#datepicker" ).datepicker();
-		$( "#date_imb" ).datepicker();
-		$( "#date_imb2" ).datepicker();
-		$( "#date_kmb" ).datepicker();
-		$( "#date_bor" ).datepicker();
-		$( "#date_bor2" ).datepicker();
-		$( "#date_bor3" ).datepicker();
-		$( "#date_bor4" ).datepicker();
+		$( "#date_imb" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_imb2" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_kmb" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_bor" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_bor2" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_bor3" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_bor4" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_jet" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_jet2" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_jet3" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
+		$( "#date_jet4" ).datepicker({
+			changeMonth: true,
+			changeYear: true
+		});
 	} );
 </script>
 <script type="text/javascript">
