@@ -857,8 +857,8 @@
 															</div>
 															<div class="col-md-6">
 																<div class="funkyradio-primary">
-																	<input type="checkbox"  <?=($datasumber->lainnya==NULL)?'':'checked'?> id="lainnya_sumberair"/>
-																	<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="<?=($datasumber->lainnya==NULL)?'':$datasumber->lainnya?>" style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control" name="lainnya_sumberair"></label>
+																	<input type="checkbox" <?=($datasumber->lainnya==NULL)?'':'checked'?> id="lainnya_sumberair"/>
+																	<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="<?=($datasumber->lainnya==NULL)?'':$datasumber->lainnya?>" style="padding-left: 45px;border-color: #ccc;box-shadow: none;" readonly id="txtsumberair" type="text" class="form-control"></label>
 																</div>
 															</div>	
 														</div>
@@ -880,98 +880,30 @@
 								</div>
 								<?php foreach ($sumur as $datasumur): ?>
 									<?php if ($datasumur->jenis=='sumur bor'): ?>
-										
 										<?php if ($datasumur->unit!=NULL): ?>
 											<div class="form-group margin-input">
 												<label class="col-sm-2">Jumlah Sumur Bor :</label>
 												<div class="col-sm-10">
 													<div class="input-group">
-														<input name="jumlah_sumur" type="number" value="<?=$datasumur->unit?>" min="0" max="6" id="jumlahsumur" class="form-control" placeholder="Masukan Jumlah Titik">
+														<input name="jumlah_sumur" type="number" value="<?=$datasumur->unit?>" min="0" max="6" class="form-control" placeholder="Masukan Jumlah Titik">
+														<input type="hidden" value="<?=$datasumur->id_sumur?>" name="id_bor">
 														<span class="input-group-addon" id="basic-addon2">Titik</span>
 													</div>
 												</div>
-											</div>
-										<?php endif ?>
-										<div class="form-group margin-input">
-											<label class="col-sm-2"></label>
-											<label class="col-sm-2">SIPA 1 NO:</label>
-											<div class="col-sm-3">
-												<input  name="no_sipa[]" value="<?=$datasumur->sipa?>" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-											</div>
-											<label class="col-sm-1">Tanggal</label>
-											<div class="col-sm-4">
-												<input name="tgl_sipa[]" value="<?=$datasumur->tanggal?>" type="text" id="date_bor" class="form-control" placeholder="Masukan Tanggal"/>
+											<?php endif ?>
+											<div class="form-group margin-input">
+												<label class="col-sm-2"></label>
+												<label class="col-sm-2">SIPA:</label>
+												<div class="col-sm-3">
+													<input  name="no_sipa[]" value="<?=$datasumur->sipa?>" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+												</div>
+												<label class="col-sm-1">Tanggal</label>
+												<div class="col-sm-4">
+													<input name="tgl_sipa[]" value="<?=$datasumur->tanggal?>" type="text" id="date_bor" class="form-control" placeholder="Masukan Tanggal"/>
+												</div>
 											</div>
 										</div>
-
 									<?php endif ?>
-									<div class="form-group margin-input" id="sipa1">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 1 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-									<div class="form-group margin-input" id="sipa2">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 2 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor2" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-									<div class="form-group margin-input" id="sipa3">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 3 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor3" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-									<div class="form-group margin-input" id="sipa4">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 4 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-									<div class="form-group margin-input" id="sipa5">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 5 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-									<div class="form-group margin-input" id="sipa6">
-										<label class="col-sm-2"></label>
-										<label class="col-sm-2">SIPA 6 NO:</label>
-										<div class="col-sm-3">
-											<input  name="no_sipa[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
-										</div>
-										<label class="col-sm-1">Tanggal</label>
-										<div class="col-sm-4">
-											<input name="tgl_sipa[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
-										</div>
-									</div>
-
 									<?php if ($datasumur->jenis=='sumur pantek'): ?>
 
 										<?php if ($datasumur->unit!=NULL): ?>
@@ -979,220 +911,327 @@
 												<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Jumlah Sumur Pantek (Jet Pump) :</label>
 												<div class="col-sm-10">
 													<div class="input-group">
-														<input name="jumlah_pantek" type="number" value="<?=$datasumur->unit?>" min="0" max="6" id="jumlahsumurpantek" class="form-control" placeholder="Masukan Jumlah Titik">
+														<input name="jumlah_pantek" type="number" value="<?=$datasumur->unit?>" min="0" max="6" class="form-control" placeholder="Masukan Jumlah Titik">
+														<input type="hidden" value="<?=$datasumur->id_sumur?>" name="id_pantek">
 														<span class="input-group-addon" id="basic-addon2">Titik</span>
 													</div>
 												</div>
-											</div>
-										<?php endif ?>
-										<div class="form-group margin-input">
-											<label class="col-sm-2"></label>
-											<label class="col-sm-2">SIPA 1 NO:</label>
-											<div class="col-sm-3">
-												<input name="no_sipa_pantek[]" value="<?=$datasumur->sipa?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
-											</div>
-											<label class="col-sm-1">Tanggal</label>
-											<div class="col-sm-4">
-												<input name="tgl_sipa_pantek[]" value="<?=$datasumur->tanggal?>" type="text" id="date_jet"  class="form-control" placeholder="Masukan Tanggal"/>
+											<?php endif ?>
+											<div class="form-group margin-input">
+												<label class="col-sm-2"></label>
+												<label class="col-sm-2">SIPA 1 NO:</label>
+												<div class="col-sm-3">
+													<input name="no_sipa_pantek[]" value="<?=$datasumur->sipa?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+												</div>
+												<label class="col-sm-1">Tanggal</label>
+												<div class="col-sm-4">
+													<input name="tgl_sipa_pantek[]" value="<?=$datasumur->tanggal?>" type="text" id="date_jet"  class="form-control" placeholder="Masukan Tanggal"/>
+												</div>
 											</div>
 										</div>
 									<?php endif ?>
+									<?php if ($datasumur->jenis=='GROUND'): ?>
+
+										<?php if ($datasumur->unit!=NULL): ?>
+											<div class="form-group margin-input">
+												<label class="col-sm-2">Jumlah Ground Tank :</label>
+												<div class="col-sm-10">
+													<div class="input-group">
+														<input name="jumlah_ground" value="<?=$datasumur->unit?>" type="number" min="0" max="6" class="form-control" placeholder="Masukan Jumlah Unit">
+														<input type="hidden" value="<?=$datasumur->id_sumur?>" name="id_ground">
+														<span class="input-group-addon" id="basic-addon2">Unit</span>
+													</div>
+												</div>
+											<?php endif ?>
+											<div class="form-group margin-input" >
+												<label class="col-sm-2"></label>
+												<label class="col-sm-3">Kapasitas Ground Tank</label>
+												<div class="col-sm-7">
+													<input name="kaps_ground[]" value="<?=$datasumur->kapasitas?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+												</div>
+											</div>
+										</div>
+									<?php endif ?>
+									<?php if ($datasumur->jenis=='Roof Tank'): ?>
+										<?php if ($datasumur->unit!=NULL): ?>
+
+											<div class="form-group margin-input">
+												<label class="col-sm-2">Jumlah Roof Tank:</label>
+												<div class="col-sm-10">
+													<div class="input-group">
+														<input name="jumlah_roof" value="<?=$datasumur->unit?>" type="number" min="0" max="6" class="form-control" placeholder="Masukan Jumlah Unit">
+														<input type="hidden" value="<?=$datasumur->id_sumur?>" name="id_roof">
+														<span class="input-group-addon" id="basic-addon2">Unit</span>
+													</div>
+												</div>
+											<?php endif ?>									
+											<div class="form-group margin-input" >
+												<label class="col-sm-2"></label>
+												<label class="col-sm-3">Kapasitas Roof Tank</label>
+												<div class="col-sm-7">
+													<input name="kaps_roof[]" value="<?=$datasumur->kapasitas?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+												</div>
+											</div>
+										</div>
+									<?php endif ?>
+								<?php endforeach ?>
+								<a href="#" class="btn btn-primary" id="btnshow" onclick="showsumur()">Tambah Data Sumur</a>
+								<a href="#" class="btn btn-primary" id="btnhide" onclick="hidesumur()">Tutup Data Sumur</a>
+								<div id="sumurinput">
+									<div class="form-group margin-input">
+										<div class="col-sm-12">
+											<label class="col-sm-2">Jumlah Sumur Bor:</label>
+											<div class="input-group">
+												<input name="edit_sumur" type="number" min="0" max="6" id="jumlahsumur" class="form-control" placeholder="Masukan Jumlah Titik">
+												<span class="input-group-addon" id="basic-addon2">Titik</span>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa1">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 1 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa2">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 2 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor2" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa3">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 3 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor3" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa4">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 4 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa5">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 5 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+										<div class="form-group margin-input" id="sipa6">
+											<label class="col-sm-2"></label>
+											<label class="col-sm-2">SIPA 6 NO:</label>
+											<div class="col-sm-3">
+												<input  name="no_sipa_sumur[]" maxlength="100" type="text" class="form-control" placeholder="Masukan Nomor"/>
+											</div>
+											<label class="col-sm-1">Tanggal</label>
+											<div class="col-sm-4">
+												<input name="tgl_sipa_sumur[]" type="text" id="date_bor4" class="form-control" placeholder="Masukan Tanggal"/>
+											</div>
+										</div>
+									</div>
+									<div class="form-group margin-input">
+										<div class="col-sm-12">
+											<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Jumlah Sumur Pantek (Jet Pump) :</label>
+											<div class="input-group">
+												<input name="edit_pantek" type="number" min="0" max="6" id="jumlahsumurpantek" class="form-control" placeholder="Masukan Jumlah Titik">
+												<span class="input-group-addon" id="basic-addon2">Titik</span>
+											</div>
+										</div>
+									</div>
 									<div class="form-group margin-input" id="sipapantek1">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 1 NO:</label>
 										<div class="col-sm-3">
-											<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="sipapantek2">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 2 NO:</label>
 										<div class="col-sm-3">
-											<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet2"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet2"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="sipapantek3">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 3 NO:</label>
 										<div class="col-sm-3">
-											<input  name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet3"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet3"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="sipapantek4">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 4 NO:</label>
 										<div class="col-sm-3">
-											<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="sipapantek5">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 5 NO:</label>
 										<div class="col-sm-3">
-											<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="sipapantek6">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-2">SIPA 6 NO:</label>
 										<div class="col-sm-3">
-											<input name="no_sipa_pantek[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="no_pantek_sipa[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 										<label class="col-sm-1">Tanggal</label>
 										<div class="col-sm-4">
-											<input name="tgl_sipa_pantek[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
+											<input name="tgl_pantek_sipa[]" type="text" id="date_jet4"  class="form-control" placeholder="Masukan Tanggal"/>
 										</div>
-										</div><?php if ($datasumur->jenis=='GROUND'): ?>
-										
-										<?php if ($datasumur->unit!=NULL): ?>
-											<div class="form-group margin-input">
-												<label class="col-sm-2">Jumlah Ground Tank :</label>
-												<div class="col-sm-10">
-													<div class="input-group">
-														<input name="jumlah_ground" value="<?=$datasumur->unit?>" type="number" min="0" max="6" id="jumlahground"  class="form-control" placeholder="Masukan Jumlah Unit">
-														<span class="input-group-addon" id="basic-addon2">Unit</span>
-													</div>
-												</div>
-											</div>
-										<?php endif ?>
-										<div class="form-group margin-input" >
-											<label class="col-sm-2"></label>
-											<label class="col-sm-3">Kapasitas Ground Tank</label>
-											<div class="col-sm-7">
-												<input name="kaps_ground[]" value="<?=$datasumur->kapasitas?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									</div>
+									<div class="form-group margin-input">
+										<label class="col-sm-2">Jumlah Ground Tank :</label>
+										<div class="col-sm-10">
+											<div class="input-group">
+												<input name="edit_ground" type="number" min="0" max="6" id="jumlahground"  class="form-control" placeholder="Masukan Jumlah Unit">
+												<span class="input-group-addon" id="basic-addon2">Unit</span>
 											</div>
 										</div>
-									<?php endif ?>
+									</div>
 									<div class="form-group margin-input" id="ground1">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 1 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="ground2">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 2 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
-
 									<div class="form-group margin-input" id="ground3">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 3 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="ground4">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 4 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="ground5">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 5 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="ground6">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Ground Tank 6 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_ground[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_ground_edit[]" type="number"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
-									<?php if ($datasumur->jenis=='Roof Tank'): ?>
-										<?php if ($datasumur->unit!=NULL): ?>
-											
-											<div class="form-group margin-input">
-												<label class="col-sm-2">Jumlah Roof Tank:</label>
-												<div class="col-sm-10">
-													<div class="input-group">
-														<input name="jumlah_roof" value="<?=$datasumur->unit?>" type="number" min="0" max="6" id="jumlahroof"  class="form-control" placeholder="Masukan Jumlah Unit">
-														<span class="input-group-addon" id="basic-addon2">Unit</span>
-													</div>
-												</div>
-											</div>
 
-										<?php endif ?>
-										<div class="form-group margin-input">
-											<label class="col-sm-2"></label>
-											<label class="col-sm-3">Kapasitas Roof Tank 1 NO:</label>
-											<div class="col-sm-7">
-												<input name="kaps_roof[]" value="<?=$datasumur->kapasitas?>" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+									<div class="form-group margin-input">
+										<label class="col-sm-2">Jumlah Roof Tank:</label>
+										<div class="col-sm-10">
+											<div class="input-group">
+												<input name="edit_roof" type="number" min="0" max="6" id="jumlahroof"  class="form-control" placeholder="Masukan Jumlah Unit">
+												<span class="input-group-addon" id="basic-addon2">Unit</span>
 											</div>
 										</div>
-
-									<?php endif ?>
+									</div>
 									<div class="form-group margin-input" id="roof1">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 1 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="  []" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof2">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 2 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof3">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 3 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof4">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 4 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof5">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 5 NO:</label>
 										<div class="col-sm-7">
-											<input name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof6">
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 6 NO:</label>
 										<div class="col-sm-7">
-											<input  name="kaps_roof[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input  name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
-
-								<?php endforeach ?>
+								</div>
 								<div class="col-md-12">
 									<div class="table-responsive">
 										<table class="table table table-striped table-bordered" style="margin-top: 20px;">
@@ -1210,7 +1249,7 @@
 													</tr>
 												</thead>
 												<?php foreach ($bulan as $databulan): ?>
-													
+
 													<?php $januari = explode(',', $databulan->januari) ?>
 													<?php $febuari = explode(',', $databulan->febuari) ?>
 													<?php $maret = explode(',', $databulan->maret) ?>
@@ -1720,11 +1759,11 @@
 						<h3> SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h3>
 						<div class="row">
 							<?php foreach ($sketsa as $datasketsa): ?>
-								 
+
 								<div class="form-group margin-input">
 									<div class="col-md-12" style="margin-top: 20px">
-									<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
-								</div>
+										<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
+									</div>
 									<label class="col-sm-2" style="margin-top: 14px;margin-bottom: 0;">Ubah File Sketsa</label>
 									<div class="col-sm-10">
 										<div class="input-group">

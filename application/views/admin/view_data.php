@@ -1106,11 +1106,11 @@ span.round-tab:hover {
 									<div class="row">
 										<div class="col-md-6">
 											<label>A. Occupant Area :</label>
-											<div class="lbl"><?=($rata[0]==NULL)?'NULL':$rata[0]?> M<sup>3</sup>/org/hari</div>
+											<div class="lbl"><?=($rata[0]==NULL)?'':$rata[0]?> M<sup>3</sup>/org/hari</div>
 										</div>
 										<div class="col-md-6">
 											<label>B. Service Area :</label>
-											<div class="lbl"><?=($rata[1]==NULL)?'NULL':$rata[1]?> M<sup>3</sup>/hari</div>
+											<div class="lbl"><?=($rata[1]==NULL)?'':$rata[1]?> M<sup>3</sup>/hari</div>
 										</div>
 									</div>
 								</div>
@@ -1247,7 +1247,7 @@ span.round-tab:hover {
 					</div>
 
 					<div class="clearfix"></div>
-					<a href="<?= site_url('main/editdata') ?>" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
+					<a href="<?= site_url('main/editdata/'.$this->uri->segment(3)) ?>" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
 				</div>
 			</form>
 		</div>

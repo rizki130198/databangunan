@@ -18,7 +18,7 @@ class M_back extends CI_Model {
 		$nop = $this->input->post('nop');
 		$nbt = $this->input->post('startYear');
 		$tanggal = date('Y-m-d H:i:s');
-		$this->db->insert('info_bangunan',array(
+		$info = $this->db->insert('info_bangunan',array(
 			'id_user'=>$this->session->userdata('id'),
 			'nama_bangunan'=>$nama_bang,
 			'lokasi'=>$lokasi,
@@ -32,8 +32,7 @@ class M_back extends CI_Model {
 			'mulai_operasi'=>date('Y',strtotime($nbt)),
 			'created_at'=>$tanggal
 		));
-
-		// Data Kepemilikan 
+			// Data Kepemilikan 
 		$nama_pemilik = $this->input->post('nama_pemilik');
 		$alamat = $this->input->post('alamat');
 		$rt_pemilik = $this->input->post('rt_pemilik');
@@ -52,7 +51,7 @@ class M_back extends CI_Model {
 		$no_jabatan = $this->input->post('no_jabatan');
 		$email_jabatan = $this->input->post('email_jabatan');
 		$id = $this->db->insert_id();
-		$this->db->insert('data_pemilik', array(
+		$pemilik = $this->db->insert('data_pemilik', array(
 			'id_user'=>$this->session->userdata('id'),
 			'id_info_unik'=>$id,
 			'nama_pemilik'=>$nama_pemilik,
@@ -74,7 +73,6 @@ class M_back extends CI_Model {
 			'email_jabatan'=>$email_jabatan,
 			'created_at'=>$tanggal,
 		));
-
 		//Data Pengelola
 		$kat_pengelola = $this->input->post('kat_pengelola');
 		$pengelola = $this->input->post('pengelola');
@@ -91,7 +89,7 @@ class M_back extends CI_Model {
 		$no_telp_peng = $this->input->post('no_telp_peng');
 		$no_hp_peng = $this->input->post('no_hp_peng');
 		$email_peng = $this->input->post('email_peng');
-		$this->db->insert('data_pengelola', array(
+		$datapengelola = $this->db->insert('data_pengelola', array(
 			'id_users'=>$this->session->userdata('id'),
 			'id_peng_unik'=>$id,
 			'kategori_pengelola'=>$kat_pengelola,
@@ -135,12 +133,20 @@ class M_back extends CI_Model {
 		if ($queryimb==TRUE) {
 			$idimb = $this->db->insert_id();
 			for ($i=0; $i < count($no_imb) ; $i++) { 
-				$this->db->insert('data_imb', array(
+				$imb = $this->db->insert('data_imb', array(
 					'id_admin_imb'=>$idimb,
 					'no_imb'=> $no_imb[$i],
 					'tanggal_imb'=>date('Y-m-d',strtotime($tgl_imb[$i])),
 				));
 			}
+			if ($imb!=TRUE) {
+				$this->db->delete('data_admin',array('id_admin_unik'=>$id));
+				$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
+				redirect($_SERVER['HTTP_REFERER']);
+			}
+		}else{
+			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 		// Data Teknis
 		$jml_tower = $this->input->post('tower');
@@ -197,7 +203,8 @@ class M_back extends CI_Model {
 			$hotel = $this->input->post('hotel');
 			$lainnya2 = $this->input->post('lainnya2');
 
-			$this->db->insert('jenis_bangunan', array(
+			$jen_bang = $this->db->insert('jenis_bangunan', array(
+				'id_admin_teknis'=> $penggunaan,
 				'perkantoran'=>$kantor,
 				'apartemen'=>$apart,
 				'hunian'=>$huni,
@@ -207,18 +214,32 @@ class M_back extends CI_Model {
 				'lainnya'=>$lainnya,
 				'lainnya2'=>$lainnya2,
 			));
+			if ($jen_bang==TRUE) {
+				$peng_bang = $this->db->insert('penggunan_bangunan', array(
+					'id_join'=>$penggunaan,
+					'senin'=>$senin1.','.$senin2,
+					'selasa'=>$selasa1.','.$selasa2,
+					'rabu'=>$rabu1.','.$rabu2,
+					'kamis'=>$kamis1.','.$kamis2,
+					'jumat'=>$jumat1.','.$jumat2,
+					'sabtu'=>$sabtu1.','.$sabtu2,
+					'minggu'=>$minggu1.','.$minggu2,
+					'total'=>$total_minggu.','.$total_minggu1,
+				));
+				if ($peng_bang!=TRUE) {
+					$this->db->delete('jenis_bangunan',array('id_admin_teknis'=>$penggunaan));
+					$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Jenis Bangunan error');
+					redirect($_SERVER['HTTP_REFERER']);
+				}
+			}else{
+				$this->db->delete('data_teknis',array('id_teknis_unik'=>$id));
+				$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data Teknis Error');
+				redirect($_SERVER['HTTP_REFERER']);
+			}
 
-			$this->db->insert('penggunan_bangunan', array(
-				'id_join'=>$penggunaan,
-				'senin'=>$senin1.','.$senin2,
-				'selasa'=>$selasa1.','.$selasa2,
-				'rabu'=>$rabu1.','.$rabu2,
-				'kamis'=>$kamis1.','.$kamis2,
-				'jumat'=>$jumat1.','.$jumat2,
-				'sabtu'=>$sabtu1.','.$sabtu2,
-				'minggu'=>$minggu1.','.$minggu2,
-				'total'=>$tot_minggu,
-			));
+		}else{
+			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 
 		//Data Konsumsi
@@ -282,7 +303,7 @@ class M_back extends CI_Model {
 			$no_sipa = $this->input->post('no_sipa');
 			$tgl_sipa = $this->input->post('tgl_sipa');
 			for ($i=0; $i < $jml_smr; $i++) { 
-				$this->db->insert('data_sumur', array(
+				$bor = $this->db->insert('data_sumur', array(
 					'id_data_sumur'=>$idair,
 					'jenis'=>'sumur bor',
 					'unit'=>$jml_smr,
@@ -290,48 +311,74 @@ class M_back extends CI_Model {
 					'tanggal'=>date('Y-m-d',strtotime($tgl_sipa[$i]))
 				));
 			}
+			if ($bor==TRUE) {
+				//Sumur Pantek
+				$jml_pantek = $this->input->post('jumlah_pantek');
+				$no_sipa_pantek = $this->input->post('no_sipa_pantek');
+				$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
+				for ($i=0; $i < $jml_pantek; $i++) { 
+					$pantek = $this->db->insert('data_sumur', array(
+						'id_data_sumur'=>$idair,
+						'jenis'=>'sumur pantek',
+						'unit'=>$jml_pantek,
+						'sipa'=>$no_sipa_pantek[$i],
+						'tanggal'=>date('Y-m-d',strtotime($tgl_sipa_pantek[$i]))
+					));
+				}
+				if ($pantek==TRUE) {
+					//Ground Tank
+					$jml_ground = $this->input->post('jumlah_ground');
+					$kaps_ground = $this->input->post('kaps_ground');
+					for ($i=0; $i < $jml_ground; $i++) { 
+						$ground = $this->db->insert('data_sumur', array(
+							'id_data_sumur'=>$idair,
+							'jenis'=>'GROUND',
+							'unit'=>$jml_ground,
+							'kapasitas'=>$kaps_ground[$i],
+						));
+					}
+					if ($ground==TRUE) {
+							//Roof Tank
+						$jml_roof = $this->input->post('jumlah_roof');
+						$kaps_roof = $this->input->post('kaps_roof');
+						for ($i=0; $i < $jml_roof; $i++) { 
+							$this->db->insert('data_sumur', array(
+								'id_data_sumur'=>$idair,
+								'jenis'=>'Roof Tank',
+								'unit'=>$jml_roof,
+								'kapasitas'=>$kaps_roof[$i],
+							));
+							$this->db->insert('sumber_air', array(
+								'id_sumber_air'=>$idair,
+								'pdam'=>$this->input->post('pdam'),
+								'bor'=>$this->input->post('dalam'),
+								'pantek'=>$this->input->post('pantek'),
+								'air_sendiri'=>$this->input->post('sendiri'),
+								'lainnya'=>$this->input->post('sumberlainnya')
+							));
 
-			//Sumur Pantek
-			$jml_pantek = $this->input->post('jumlah_pantek');
-			$no_sipa_pantek = $this->input->post('no_sipa_pantek');
-			$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
-			for ($i=0; $i < $jml_pantek; $i++) { 
-				$this->db->insert('data_sumur', array(
-					'id_data_sumur'=>$idair,
-					'jenis'=>'sumur pantek',
-					'unit'=>$jml_pantek,
-					'sipa'=>$no_sipa_pantek[$i],
-					'tanggal'=>date('Y-m-d',strtotime($tgl_sipa_pantek[$i]))
-				));
+						}
+					}else{
+						$this->db->delete('data_air',array('id_air_unik'=>$id));
+						$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data GROUND Di delete');
+						redirect($_SERVER['HTTP_REFERER']);
+					}
+				}else{
+					$this->db->delete('data_air',array('id_air_unik'=>$id));
+					$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data Pantek Di delete');
+					redirect($_SERVER['HTTP_REFERER']);
+				}
+			}else{
+				$this->db->delete('data_air',array('id_air_unik'=>$id));
+				$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data BOR di Delete');
+				redirect($_SERVER['HTTP_REFERER']);
 			}
-
-			//Ground Tank
-			$jml_ground = $this->input->post('jumlah_ground');
-			$kaps_ground = $this->input->post('kaps_ground');
-			for ($i=0; $i < $jml_ground; $i++) { 
-				$this->db->insert('data_sumur', array(
-					'id_data_sumur'=>$idair,
-					'jenis'=>'GROUND',
-					'unit'=>$jml_ground,
-					'kapasitas'=>$kaps_ground[$i],
-				));
-			}
-
-			//Roof Tank
-			$jml_roof = $this->input->post('jumlah_roof');
-			$kaps_roof = $this->input->post('kaps_roof');
-			for ($i=0; $i < $jml_roof; $i++) { 
-				$this->db->insert('data_sumur', array(
-					'id_data_sumur'=>$idair,
-					'jenis'=>'Roof Tank',
-					'unit'=>$jml_roof,
-					'kapasitas'=>$kaps_roof[$i],
-				));
-			}
+		}else{
+			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
+			redirect($_SERVER['HTTP_REFERER']);
 		}
 
 			//Bulan 
-
 		$janurpd = $this->input->post('januaripdam');
 		$janursum = $this->input->post('januarisumurbor');
 		$janurrec = $this->input->post('januarirecycle');
@@ -387,7 +434,7 @@ class M_back extends CI_Model {
 			$iop .=$das;
 		}
 		$sumsi = substr($iop, 0, -1);
-		$this->db->insert('data_konsumsi', array(
+		$konsumsi = $this->db->insert('data_konsumsi', array(
 			'id_data_air'=>$idair,
 			'januari'=>$janurpd.','.$janursum.','.$janurrec.','.$janurlain,
 			'febuari'=>$febpd.','.$fbsum.','.$febrec.','.$feblain,
@@ -421,7 +468,7 @@ class M_back extends CI_Model {
 		}
 		$nama_bang_sketsa = $this->input->post('nama_bang_sketsa');
 		$lokasi_sketsa = $this->input->post('lokasi_sketsa');
-		$this->db->insert('sketsa_lokasi', array(
+		$sketsa = $this->db->insert('sketsa_lokasi', array(
 			'id_sketsa_unik'=>$id,
 			'id_user'=>$this->session->userdata('id'),
 			'nama_bangunan'=>$nama_bang_sketsa,
@@ -435,7 +482,7 @@ class M_back extends CI_Model {
 		$smr_dalam =  $this->input->post('sumur_dalam');
 		$peng_air =  $this->input->post('peng_air');
 
-		$this->db->insert('permasalahan', array(
+		$masalah = $this->db->insert('permasalahan', array(
 			'id_unik_masalah'=>$id,
 			'id_user'=>$this->session->userdata('id'),
 			'sumur_resapan'=>$smr_resap,
@@ -444,10 +491,22 @@ class M_back extends CI_Model {
 			'persetujuan'=>1,
 			'created_at'=>$tanggal
 		));
-		redirect($_SERVER['HTTP_REFERER']);
+		if ($info!= TRUE OR $sketsa!= TRUE OR $masalah!= TRUE OR $pemilik!= TRUE OR $datapengelola!= TRUE) {
+			$this->db->delete('info_bangunan',array('id_info'=>$id));
+			$this->db->delete('sketsa_lokasi',array('id_sketsa_unik'=>$id));
+			$this->db->delete('permasalahan',array('id_unik_masalah'=>$id));
+			$this->db->delete('data_pemilik',array('id_info_unik'=>$id));
+			$this->db->delete('data_pengelola',array('id_peng_unik'=>$id));
+			$this->session->set_flashdata('gagal', 'Server Terlalu Lama');
+			redirect($_SERVER['HTTP_REFERER']);
+		}else{
+			$this->session->set_flashdata('sukses', 'Data Berhasil Di Simpan');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
 		//}
 
 	}
+
 	public function jenis()
 	{
 		$id = $this->session->userdata('id');
@@ -588,10 +647,8 @@ class M_back extends CI_Model {
 			'created_at' => $tanggal
 		),array('id_admin'=>$idinput));
 		if ($queryimb==TRUE) {
-			$idimb = $this->db->insert_id();
 			for ($i=0; $i < count($no_imb) ; $i++) { 
 				$this->db->update('data_imb', array(
-					'id_admin_imb'=>$idimb,
 					'no_imb'=> $no_imb[$i],
 					'tanggal_imb'=>date('Y-m-d',strtotime($tgl_imb[$i])),
 				),array('id_admin_imb'=>$idinput));
@@ -671,7 +728,7 @@ class M_back extends CI_Model {
 				'jumat'=>$jumat1.','.$jumat2,
 				'sabtu'=>$sabtu1.','.$sabtu2,
 				'minggu'=>$minggu1.','.$minggu2,
-				'total'=>$tot_minggu,
+				'total'=>$total_minggu.','.$total_minggu1,
 			),array('id_penggunaan'=>$idinput));
 		}
 
@@ -730,19 +787,21 @@ class M_back extends CI_Model {
 		),array('id_air'=>$idinput));
 		if ($queryair==TRUE) {
 			//Sumur Bor
+			$idsumur = $this->input->post('id_bor');
 			$jml_smr = $this->input->post('jumlah_sumur');
 			$no_sipa = $this->input->post('no_sipa');
-			$tgl_sipa = $this->input->post('tgl_sipa');
+			$tglsipa = $this->input->post('tgl_sipa');
 			for ($i=0; $i < $jml_smr; $i++) { 
 				$this->db->update('data_sumur', array(
 					'jenis'=>'sumur bor',
 					'unit'=>$jml_smr,
 					'sipa'=>$no_sipa[$i],
-					'tanggal'=>date('Y-m-d',strtotime($tgl_sipa[$i]))
-				),array('id_data_sumur'=>$idinput));
+					'tanggal'=>date('Y-m-d',strtotime($tglsipa[$i]))
+				),array('id_sumur'=>$idsumur));
 			}
 
 			//Sumur Pantek
+			$idpantek = $this->input->post('id_pantek');
 			$jml_pantek = $this->input->post('jumlah_pantek');
 			$no_sipa_pantek = $this->input->post('no_sipa_pantek');
 			$tgl_sipa_pantek = $this->input->post('tgl_sipa_pantek');
@@ -752,10 +811,11 @@ class M_back extends CI_Model {
 					'unit'=>$jml_pantek,
 					'sipa'=>$no_sipa_pantek[$i],
 					'tanggal'=>date('Y-m-d',strtotime($tgl_sipa_pantek[$i]))
-				),array('id_data_sumur'=>$idinput));
+				),array('id_sumur'=>$idpantek));
 			}
 
 			//Ground Tank
+			$idground = $this->input->post('id_ground');
 			$jml_ground = $this->input->post('jumlah_ground');
 			$kaps_ground = $this->input->post('kaps_ground');
 			for ($i=0; $i < $jml_ground; $i++) { 
@@ -763,10 +823,11 @@ class M_back extends CI_Model {
 					'jenis'=>'GROUND',
 					'unit'=>$jml_ground,
 					'kapasitas'=>$kaps_ground[$i],
-				),array('id_data_sumur'=>$idinput));
+				),array('id_sumur'=>$idground));
 			}
 
 			//Roof Tank
+			$idroof = $this->input->post('id_roof');
 			$jml_roof = $this->input->post('jumlah_roof');
 			$kaps_roof = $this->input->post('kaps_roof');
 			for ($i=0; $i < $jml_roof; $i++) { 
@@ -774,12 +835,75 @@ class M_back extends CI_Model {
 					'jenis'=>'Roof Tank',
 					'unit'=>$jml_roof,
 					'kapasitas'=>$kaps_roof[$i],
-				),array('id_data_sumur'=>$idinput));
+				),array('id_sumur'=>$idroof));
 			}
 		}
 
-			//Bulan 
+		//SUmber AIr
+		$this->db->update('sumber_air', array(
+			'pdam'=>$this->input->post('pdam'),
+			'bor'=>$this->input->post('dalam'),
+			'pantek'=>$this->input->post('pantek'),
+			'air_sendiri'=>$this->input->post('sendiri'),
+			'lainnya'=>$this->input->post('sumberlainnya')
+		),array('id_sumber_air'=>$idinput));
 
+		//Tambah Sumur
+		$editbor = $this->input->post('edit_sumur');
+		$nosipabor = $this->input->post('no_sipa_sumur');
+		$tglbor = $this->input->post('tgl_sipa_sumur');
+		$editpantek = $this->input->post('edit_pantek');
+		$nosipapantek = $this->input->post('no_pantek_sipa');
+		$tglpantek = $this->input->post('tgl_pantek_sipa');
+		$editground = $this->input->post('edit_ground');
+		$kapsground = $this->input->post('kaps_ground_edit');
+		$editroof = $this->input->post('edit_roof');
+		$kapsroof = $this->input->post('kaps_roof_edit');
+		if ($editroof!=NULL OR $editground!=NULL OR $editpantek!=NULL OR $editbor!=NULL) {
+
+				//Sumur Bor
+			for ($i=0; $i < $editbor; $i++) { 
+				$pantek = $this->db->insert('data_sumur', array(
+					'id_data_sumur'=>$idinput,
+					'jenis'=>'sumur bor',
+					'unit'=>$editbor,
+					'sipa'=>$nosipabor[$i],
+					'tanggal'=>date('Y-m-d',strtotime($tglbor[$i]))
+				));
+			}
+
+				//Sumur Pantek
+			for ($i=0; $i < $editpantek; $i++) { 
+				$pantek = $this->db->insert('data_sumur', array(
+					'id_data_sumur'=>$idinput,
+					'jenis'=>'sumur pantek',
+					'unit'=>$editpantek,
+					'sipa'=>$nosipapantek[$i],
+					'tanggal'=>date('Y-m-d',strtotime($tglpantek[$i]))
+				));
+			}
+					//Ground Tank
+			for ($i=0; $i < $editground; $i++) { 
+				$ground = $this->db->insert('data_sumur', array(
+					'id_data_sumur'=>$idinput,
+					'jenis'=>'GROUND',
+					'unit'=>$editground,
+					'kapasitas'=>$kapsground[$i],
+				));
+			}
+			//Roof Tank
+			for ($i=0; $i < $editroof; $i++) { 
+				$this->db->insert('data_sumur', array(
+					'id_data_sumur'=>$idinput,
+					'jenis'=>'Roof Tank',
+					'unit'=>$editroof,
+					'kapasitas'=>$kapsroof[$i],
+				));
+			}
+		}
+
+
+		//Bulan 
 		$janurpd = $this->input->post('januaripdam');
 		$janursum = $this->input->post('januarisumurbor');
 		$janurrec = $this->input->post('januarirecycle');

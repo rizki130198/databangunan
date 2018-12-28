@@ -74,13 +74,13 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<!-- <select required="" id="kel" class="form-control" name="kelurahan_info" onchange="getKecInfo();">
+											<select required="" id="kel" class="form-control" onchange="getKecInfo();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
-												<?php //foreach ($kelurahan as $kel): ?>
+												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
-												<?php //endforeach ?>
-											</select> -->
-											<input  maxlength="100" name="kelurahan_info" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
+												<?php endforeach ?>
+											</select>
+											<input name="kelurahan_info" id="inputkelinf" type="hidden"  class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -90,11 +90,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<!-- <select required="" id="kec" class="form-control" name="kecamatan_info" onchange="getKotaInfo()">
+											<select required="" id="kec" class="form-control" onchange="getKotaInfo()">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
-											</select> -->
-											<input  maxlength="100" name="kecamatan_info" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
+											</select>
+											<input  maxlength="100" name="kecamatan_info" id="inputkecinf" type="hidden"  class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -104,11 +104,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<!-- <select required="" id="kota" class="form-control" name="kota_info" onchange="">
+											<select required="" id="kota" class="form-control" onchange="getNameInfo()">
 												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
-											</select> -->
-											<input  maxlength="100" name="kota_info" type="text"  class="form-control" placeholder="Masukan Kota"/>
+											</select>
+											<input  maxlength="100" name="kota_info" id="inputkotainf" type="hidden"  class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -177,7 +177,13 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
+											<select required="" id="kelmilik" class="form-control" onchange="getKecMilik();">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
+												<?php foreach ($kelurahan as $kel): ?>
+													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
+												<?php endforeach ?>
+											</select>
+											<input  name="kelurahan_pemilik" maxlength="100" id="inputkelmilik" type="hidden"  class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -187,7 +193,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input  name="kecamatan_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
+											<select required="" id="kecmilik" class="form-control" onchange="getKotaMilik()">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
+											<input  name="kecamatan_pemilik" maxlength="100" type="hidden" id="inputkecmilik" class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -197,7 +207,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_pemilik" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kota"/>
+											<select required="" id="kotamilik" class="form-control" onchange="getNameMilik()">
+												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
+											<input  name="kota_pemilik" maxlength="100" type="hidden" id="inputkotamilik" class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -217,7 +231,10 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi" maxlength="100" type="text"  class="form-control" placeholder="Masukan Provinsi"/>
+											<select required="" id="provinsimilik" class="form-control" name="provinsi">
+												<option value="" >-- SILAHKAN PILIH KOTA TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -351,7 +368,13 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<input  name="kelurahan_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kelurahan"/>
+											<select required="" id="kelpeng" class="form-control" onchange="getKecPeng();">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
+												<?php foreach ($kelurahan as $kel): ?>
+													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
+												<?php endforeach ?>
+											</select>
+											<input  name="kelurahan_peng" maxlength="100" type="hidden" id="inputkelpeng" class="form-control" placeholder="Masukan Kelurahan"/>
 										</div>
 									</div>
 								</div>
@@ -361,7 +384,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<input name="kecamatan_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kecamatan"/>
+											<select required="" id="kecpeng" class="form-control" onchange="getKotaPeng()">
+												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
+											<input name="kecamatan_peng" maxlength="100" type="hidden" id="inputkecpeng" class="form-control" placeholder="Masukan Kecamatan"/>
 										</div>
 									</div>
 								</div>
@@ -371,7 +398,11 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<input  name="kota_peng" maxlength="100" type="text"  class="form-control" placeholder="Masukan Kota"/>
+											<select required="" id="kotapeng" class="form-control" onchange="getNamePeng()">
+												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
+											<input  name="kota_peng" maxlength="100" type="hidden" id="inputkotapeng" class="form-control" placeholder="Masukan Kota"/>
 										</div>
 									</div>
 								</div>
@@ -391,7 +422,10 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<input name="provinsi_peng" type="text"  class="form-control" placeholder="Masukan Provinsi"/>
+											<select required="" id="provinsipeng" class="form-control" name="provinsi_peng">
+												<option value="" >-- SILAHKAN PILIH KOTA TERLEBIH DAHULU --</option>
+												<option value="" disabled></option>
+											</select>
 										</div>
 									</div>
 								</div>
@@ -414,7 +448,7 @@
 							<div class="form-group margin-input">
 								<label class="col-sm-2">Email :</label>
 								<div class="col-sm-10">
-									<input  name="email_peng" maxlength="100" type="Email"  class="form-control" placeholder="Masukan Email"/>
+									<input  name="email_peng" maxlength="100" type="email"  class="form-control" placeholder="Masukan Email"/>
 								</div> 
 							</div>
 						</div>
@@ -842,7 +876,7 @@
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
 															<input type="checkbox"id="lainnya_sumberair"/>
-															<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="Lain-lain, sebutkan ..." style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control" name="lainnya_sumberair"></label>
+															<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="Lain-lain, sebutkan ..." style="padding-left: 45px;border-color: #ccc;box-shadow: none;" disabled id="txtsumberair" type="text" class="form-control"></label>
 														</div>
 													</div>	
 												</div>
@@ -851,7 +885,7 @@
 												<div class="row">
 													<div class="col-md-6">
 														<div class="funkyradio-primary">
-															<input type="checkbox"  name="kons_air[]"  value="Sumur Pantek" id="sumur_pantek" />
+															<input type="checkbox"  name="pantek"  value="Sumur Pantek" id="sumur_pantek" />
 															<label for="sumur_pantek">Sumur Pantek</label>
 														</div>
 													</div>

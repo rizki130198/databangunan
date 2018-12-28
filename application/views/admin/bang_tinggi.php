@@ -66,8 +66,8 @@
 								<td><?=$key->NOP?></td>
 								<td><?=$key->mulai_operasi?></td>
 							<td>
-								<a href="<?php echo site_url('main/editdata'); ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
-								<a href="<?php echo site_url('main/viewdata'); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></button></a>
+								<a href="<?php echo site_url('main/editdata/'.$key->id_info); ?>"><button class="btn btn-primary"><span class="glyphicon glyphicon-pencil"></span></button></a>
+								<a href="<?php echo site_url('main/viewdata/'.$key->id_info); ?>"><button class="btn btn-info"><span class="glyphicon glyphicon-eye-open"></span></button></a>
 							</td>
 
 						</tr>
