@@ -29,7 +29,7 @@ class M_back extends CI_Model {
 			'kota'=>$kota_info,
 			'kode_pos'=>$kode_info,
 			'NOP'=>$nop,
-			'mulai_operasi'=>date('Y',strtotime($nbt)),
+			'mulai_operasi'=>$nbt,
 			'created_at'=>$tanggal
 		));
 			// Data Kepemilikan 
@@ -547,7 +547,7 @@ class M_back extends CI_Model {
 			'kota'=>$kota_info,
 			'kode_pos'=>$kode_info,
 			'NOP'=>$nop,
-			'mulai_operasi'=>date('Y',strtotime($nbt)),
+			'mulai_operasi'=>$nbt,
 			'created_at'=>$tanggal
 		),array('id_info'=>$idinput));
 
