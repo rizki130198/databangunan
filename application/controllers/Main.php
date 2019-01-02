@@ -151,6 +151,7 @@ class Main extends CI_Controller {
 			}
 			$data['sketsa'] = $this->db->get_where('sketsa_lokasi',array('id_sketsa_unik'=>$id))->result();
 			$data['permasalahan'] = $this->db->get_where('permasalahan',array('id_unik_masalah'=>$id))->result();
+			$data['kelurahan'] = $this->M_front->getkel();
 			$this->load->view('include/head',$data);
 			$this->load->view('admin/edit',$data);
 			$this->load->view('include/foot');

@@ -177,7 +177,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kelmilik" class="form-control" onchange="getKecMilik();">
+											<select required=""  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelmilik" onchange="getKecMilik();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
@@ -368,7 +368,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kelpeng" class="form-control" onchange="getKecPeng();">
+											<select required=""  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelpeng" onchange="getKecPeng();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
