@@ -111,8 +111,7 @@
 												<!-- <input  maxlength="100" value="<?=$datainfo->kota?>" name="kota_info" type="text" class="form-control" placeholder="Masukan Kota"/> -->
 												<select required="" id="kota" name="kota_info" class="form-control" onchange="getNameInfo()">
 													<option value="<?=$datainfo->kota?>"><?=$datainfo->kota?></option>
-													<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
-													<option value="" disabled></option>
+													<option value="" disabled="">-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												</select>
 											</div>
 										</div>
