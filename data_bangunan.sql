@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2018 at 05:06 PM
+-- Generation Time: Jan 02, 2019 at 04:30 PM
 -- Server version: 10.1.25-MariaDB
 -- PHP Version: 5.6.31
 
@@ -38,6 +38,13 @@ CREATE TABLE `data_admin` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `data_admin`
+--
+
+INSERT INTO `data_admin` (`id_admin`, `id_user`, `id_admin_unik`, `sippt`, `luas_tanah`, `kmb`, `created_at`) VALUES
+(1, 1, 1, '1,2018-12-19', '12', '12,2018-12-26', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -63,6 +70,13 @@ CREATE TABLE `data_air` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `data_air`
+--
+
+INSERT INTO `data_air` (`id_air`, `id_air_unik`, `konsumsi_air`, `konsumsi_bulan`, `rata_konsumsi`, `air_bersih`, `sistem_water`, `kapasitas_bersih`, `air_hujan`, `jml_hujan`, `kapasitas_hujan`, `air_bekas`, `kapasitas_bekas`, `air_limbah`, `kapasitas_limbah`, `created_at`) VALUES
+(1, 1, '0', 0, '1,', 'Water Treatment Plant,', '1', ',', ',,', ',', ',', ',', ',', 'IPAL/Sewage Treatment Plant (STP),', ',', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -75,6 +89,14 @@ CREATE TABLE `data_imb` (
   `no_imb` varchar(225) NOT NULL,
   `tanggal_imb` date NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_imb`
+--
+
+INSERT INTO `data_imb` (`id_imb`, `id_admin_imb`, `no_imb`, `tanggal_imb`) VALUES
+(1, 1, '12', '2018-12-12'),
+(2, 1, '12', '2018-12-12');
 
 -- --------------------------------------------------------
 
@@ -99,6 +121,13 @@ CREATE TABLE `data_konsumsi` (
   `desember` varchar(50) NOT NULL,
   `total` varchar(200) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_konsumsi`
+--
+
+INSERT INTO `data_konsumsi` (`id_konsumsi`, `id_data_air`, `januari`, `febuari`, `maret`, `april`, `mei`, `juni`, `juli`, `agustus`, `september`, `oktober`, `november`, `desember`, `total`) VALUES
+(1, 1, '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,1,1', '1,1,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', ',,,', '5,5,4,4');
 
 -- --------------------------------------------------------
 
@@ -130,6 +159,13 @@ CREATE TABLE `data_pemilik` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `data_pemilik`
+--
+
+INSERT INTO `data_pemilik` (`id_pemilik`, `id_user`, `id_info_unik`, `nama_pemilik`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_kantor`, `no_hp`, `email`, `tanggung_jawab`, `jabatan`, `no_jabatan`, `telp_jabatan`, `email_jabatan`, `created_at`) VALUES
+(1, 1, 1, 'Rizki', 'Pondok Kelapa', '01', '01', 'PULAU TIDUNG', 'KEPULAUAN SERIBU SELATAN', 'KABUPATEN KEPULAUAN SERIBU', '19453', 'JAKARTA', '821127389098', '021987654321', 'fauzifahmi55@gmail.com', 'Rizki', 'CEO', '089617281', '022178301', 'fauzifahmi55@gmail.com', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -159,6 +195,13 @@ CREATE TABLE `data_pengelola` (
   `created_at` datetime NOT NULL DEFAULT '0000-00-00 00:00:00'
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `data_pengelola`
+--
+
+INSERT INTO `data_pengelola` (`id_pengelola`, `id_users`, `id_peng_unik`, `kategori_pengelola`, `pengelola`, `tanggung_jawab`, `jabatan`, `alamat`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `provinsi`, `no_rumah`, `no_kantor`, `no_hp`, `email`, `created_at`) VALUES
+(1, 1, 1, 'inhouse', 'Rikzi', 'Rizki', 'CEO', 'Pondok terong', 81, 91, 'PULAU TIDUNG', 'KEPULAUAN SERIBU SELATAN', 'KABUPATEN KEPULAUAN SERIBU', '19861', 'JAKARTA', '', '08211289201', '0896751201', 'fauzifahmi55@gmail.com', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -174,6 +217,16 @@ CREATE TABLE `data_sumur` (
   `tanggal` date NOT NULL,
   `kapasitas` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_sumur`
+--
+
+INSERT INTO `data_sumur` (`id_sumur`, `id_data_sumur`, `jenis`, `unit`, `sipa`, `tanggal`, `kapasitas`) VALUES
+(2, 1, 'sumur pantek', '1', '3', '2018-12-24', ''),
+(3, 1, 'GROUND', '1', '', '0000-00-00', '3'),
+(4, 1, 'Roof Tank', '1', '', '0000-00-00', '3'),
+(5, 1, 'sumur bor', '1', '3', '2018-12-05', '');
 
 -- --------------------------------------------------------
 
@@ -197,6 +250,13 @@ CREATE TABLE `data_teknis` (
   `total_penghuni` tinyint(9) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `data_teknis`
+--
+
+INSERT INTO `data_teknis` (`id_teknis`, `id_user`, `id_teknis_unik`, `jumlah_tower`, `jumlah_unit`, `ketinggian`, `luas_lantai`, `luas_total`, `tingkat_okupansi`, `ket_okupansi`, `operasional_gedung`, `peng_bangunan`, `total_penghuni`, `created_at`) VALUES
+(1, 1, 1, 1, 1, '1,', '1', '', '1', 'Apabila berbentuk gedung', '1,,,1', '1,1,,1,1,11,,,,1,,,11,,13,14', 12, '0000-00-00 00:00:00');
 
 -- --------------------------------------------------------
 
@@ -7314,6 +7374,14 @@ CREATE TABLE `info_bangunan` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `info_bangunan`
+--
+
+INSERT INTO `info_bangunan` (`id_info`, `id_user`, `nama_bangunan`, `lokasi`, `rt`, `rw`, `kelurahan`, `kecamatan`, `kota`, `kode_pos`, `NOP`, `mulai_operasi`, `type_bangunan`, `created_at`) VALUES
+(1, 1, 'Rizki', 'Pondok Cabe', '01', '01', 'PULAU TIDUNG', 'KEPULAUAN SERIBU SELATAN', 'KABUPATEN KEPULAUAN SERIBU', '98199', '09876543210', '1970', '', '2018-12-27 17:13:35'),
+(2, 2, 'Rizki', 'Pondok Cabe', '01', '01', 'PULAU TIDUNG', 'KEPULAUAN SERIBU SELATAN', 'KABUPATEN KEPULAUAN SERIBU', '98199', '09876543210', '1970', '', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -7334,6 +7402,13 @@ CREATE TABLE `jenis_bangunan` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `jenis_bangunan`
+--
+
+INSERT INTO `jenis_bangunan` (`id_jenis`, `id_admin_teknis`, `perkantoran`, `apartemen`, `hunian`, `hotel`, `sarana_kesehatan`, `sarana_perdagangan`, `lainnya`, `lainnya2`, `created_at`) VALUES
+(1, 1, 'perkantoran', 'apartemen', 'hunian', NULL, NULL, NULL, NULL, NULL, '0000-00-00 00:00:00');
+
 -- --------------------------------------------------------
 
 --
@@ -7353,6 +7428,13 @@ CREATE TABLE `penggunan_bangunan` (
   `total` varchar(9) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `penggunan_bangunan`
+--
+
+INSERT INTO `penggunan_bangunan` (`id_penggunaan`, `id_join`, `senin`, `selasa`, `rabu`, `kamis`, `jumat`, `sabtu`, `minggu`, `total`) VALUES
+(1, 0, '1,1', ',1', '1,11', ',', ',1', ',', '11,', '13,14');
+
 -- --------------------------------------------------------
 
 --
@@ -7369,6 +7451,13 @@ CREATE TABLE `permasalahan` (
   `persetujuan` tinyint(1) NOT NULL,
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `permasalahan`
+--
+
+INSERT INTO `permasalahan` (`id_masalah`, `id_user`, `id_unik_masalah`, `sumur_resapan`, `sumur_dalam`, `pengelolaan_limbah`, `persetujuan`, `created_at`) VALUES
+(1, 1, 1, '12121', '121', '121', 1, '2018-12-27 17:13:35');
 
 -- --------------------------------------------------------
 
@@ -7969,6 +8058,13 @@ CREATE TABLE `sketsa_lokasi` (
   `created_at` datetime NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
+--
+-- Dumping data for table `sketsa_lokasi`
+--
+
+INSERT INTO `sketsa_lokasi` (`id_sketsa`, `id_user`, `id_sketsa_unik`, `nama_bangunan`, `lokasi`, `file_sketsa`, `created_at`) VALUES
+(1, 1, 1, '1', '1', '9756a67de5e9161f68032b684a8ed861.JPG', '2018-12-27 17:13:35');
+
 -- --------------------------------------------------------
 
 --
@@ -7984,6 +8080,13 @@ CREATE TABLE `sumber_air` (
   `air_sendiri` varchar(225) NOT NULL,
   `lainnya` varchar(225) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
+
+--
+-- Dumping data for table `sumber_air`
+--
+
+INSERT INTO `sumber_air` (`id_sumber`, `id_sumber_air`, `pdam`, `bor`, `pantek`, `air_sendiri`, `lainnya`) VALUES
+(1, 1, 'pdam', 'sumur dalam', '', '', '');
 
 -- --------------------------------------------------------
 
@@ -90152,72 +90255,72 @@ ALTER TABLE `villages`
 -- AUTO_INCREMENT for table `data_admin`
 --
 ALTER TABLE `data_admin`
-  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_admin` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_air`
 --
 ALTER TABLE `data_air`
-  MODIFY `id_air` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_air` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_imb`
 --
 ALTER TABLE `data_imb`
-  MODIFY `id_imb` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_imb` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `data_konsumsi`
 --
 ALTER TABLE `data_konsumsi`
-  MODIFY `id_konsumsi` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_konsumsi` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_pemilik`
 --
 ALTER TABLE `data_pemilik`
-  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pemilik` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_pengelola`
 --
 ALTER TABLE `data_pengelola`
-  MODIFY `id_pengelola` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_pengelola` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `data_sumur`
 --
 ALTER TABLE `data_sumur`
-  MODIFY `id_sumur` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sumur` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
 --
 -- AUTO_INCREMENT for table `data_teknis`
 --
 ALTER TABLE `data_teknis`
-  MODIFY `id_teknis` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_teknis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `info_bangunan`
 --
 ALTER TABLE `info_bangunan`
-  MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_info` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
 --
 -- AUTO_INCREMENT for table `jenis_bangunan`
 --
 ALTER TABLE `jenis_bangunan`
-  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_jenis` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `penggunan_bangunan`
 --
 ALTER TABLE `penggunan_bangunan`
-  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_penggunaan` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `permasalahan`
 --
 ALTER TABLE `permasalahan`
-  MODIFY `id_masalah` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_masalah` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sketsa_lokasi`
 --
 ALTER TABLE `sketsa_lokasi`
-  MODIFY `id_sketsa` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sketsa` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `sumber_air`
 --
 ALTER TABLE `sumber_air`
-  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id_sumber` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 --
 -- AUTO_INCREMENT for table `users`
 --
