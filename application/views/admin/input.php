@@ -74,7 +74,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kel" class="form-control" onchange="getKecInfo();">
+											<select required="" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kel" onchange="getKecInfo();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>

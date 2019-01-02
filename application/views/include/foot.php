@@ -1,10 +1,11 @@
 <script type="text/javascript" src="<?php echo base_url('assets/js/jq.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/bootstrap-select/1.6.3/js/bootstrap-select.min.js"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bootstrap-datepicker.min.js'); ?>"></script>
 <script src="http://code.jquery.com/ui/1.9.1/jquery-ui.js"></script>
 <script src="https://cdn.datatables.net/1.10.8/js/jquery.dataTables.min.js"></script>
 <script src="https://cdn.datatables.net/1.10.8/js/dataTables.bootstrap.min.js"></script>
-    <script type="text/javascript" src="<?php echo base_url('assets/js/toastr.js'); ?>"></script>
+<script type="text/javascript" src="<?php echo base_url('assets/js/toastr.js'); ?>"></script>
 <script type="text/javascript" src="<?php echo base_url('assets/js/bangunan.js'); ?>"></script>
 <!-- <script type="text/javascript">
 	(function() {
