@@ -78,7 +78,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<select required="" name="kelurahan_info" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kel" onchange="getKecInfo();">
+												<select name="kelurahan_info" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kel" onchange="getKecInfo();">
 													<option value="<?=$datainfo->kelurahan?>"><?=$datainfo->kelurahan?></option>
 													<option value="" disabled>-- SILAHKAN PILIH KELURAHAN --</option>
 													<?php foreach ($kelurahan as $kel): ?>
@@ -95,7 +95,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<select required="" id="kec" class="form-control" onchange="getKotaInfo()" name="kecamatan_info">
+												<select id="kec" class="form-control" onchange="getKotaInfo()" name="kecamatan_info">
 													<option  value="<?=$datainfo->kecamatan?>"><?=$datainfo->kecamatan?></option>
 													<option value="" disabled>-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												</select>
@@ -109,7 +109,7 @@
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
 												<!-- <input  maxlength="100" value="<?=$datainfo->kota?>" name="kota_info" type="text" class="form-control" placeholder="Masukan Kota"/> -->
-												<select required="" id="kota" name="kota_info" class="form-control" onchange="getNameInfo()">
+												<select id="kota" name="kota_info" class="form-control" onchange="getNameInfo()">
 													<option value="<?=$datainfo->kota?>"><?=$datainfo->kota?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												</select>
@@ -183,7 +183,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<select required="" name="kelurahan_pemilik" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelmilik" onchange="getKecMilik();">
+												<select name="kelurahan_pemilik" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelmilik" onchange="getKecMilik();">
 													<option value="<?=$datamilik->kelurahan?>"><?=$datamilik->kelurahan?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KELURAHAN --</option>
 													<?php foreach ($kelurahan as $kel): ?>
@@ -199,7 +199,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<select required="" name="kecamatan_pemilik" id="kecmilik" class="form-control" onchange="getKotaMilik()">
+												<select name="kecamatan_pemilik" id="kecmilik" class="form-control" onchange="getKotaMilik()">
 													<option value="<?=$datamilik->kecamatan?>"><?=$datamilik->kecamatan?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												</select>
@@ -212,7 +212,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
-												<select required="" id="kotamilik" class="form-control" onchange="getNameMilik()">
+												<select id="kotamilik" class="form-control" onchange="getNameMilik()">
 													<option value="<?=$datamilik->kota?>"><?=$datamilik->kota?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												</select>
@@ -374,7 +374,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kelurahan :</label>
 											<div class="col-sm-10">
-												<select required="" name="kelurahan_peng" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelpeng" onchange="getKecPeng();">
+												<select name="kelurahan_peng" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelpeng" onchange="getKecPeng();">
 													<option value="<?=$datapeng->kelurahan?>"><?=$datapeng->kelurahan?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KELURAHAN --</option>
 													<?php foreach ($kelurahan as $kel): ?>
@@ -390,7 +390,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kecamatan :</label>
 											<div class="col-sm-10">
-												<select required="" id="kecpeng" name="kecamatan_peng" class="form-control" onchange="getKotaPeng()">
+												<select id="kecpeng" name="kecamatan_peng" class="form-control" onchange="getKotaPeng()">
 													<option value="<?=$datapeng->kecamatan?>"><?=$datapeng->kecamatan?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												</select>
@@ -403,7 +403,7 @@
 										<div class="row">
 											<label class="col-sm-2">Kota :</label>
 											<div class="col-sm-10">
-												<select required="" name="kota_peng" id="kotapeng" class="form-control" onchange="getNamePeng()">
+												<select name="kota_peng" id="kotapeng" class="form-control" onchange="getNamePeng()">
 													<option value="<?=$datapeng->kota?>"><?=$datapeng->kota?></option>
 													<option value="" disabled="">-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 													<option value="" disabled></option>
@@ -1232,7 +1232,7 @@
 										<label class="col-sm-2"></label>
 										<label class="col-sm-3">Kapasitas Roof Tank 1 NO:</label>
 										<div class="col-sm-7">
-											<input name="  []" type="text"  class="form-control" placeholder="Masukan Nomor"/>
+											<input name="kaps_roof_edit[]" type="text"  class="form-control" placeholder="Masukan Nomor"/>
 										</div>
 									</div>
 									<div class="form-group margin-input" id="roof2">
@@ -1792,6 +1792,7 @@
 					</div>
 				</div>
 			</div>
+		</div>
 			<div class="row setup-content" id="step-7">
 				<div class="col-xs-12">
 					<div class="col-md-12">

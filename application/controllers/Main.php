@@ -114,11 +114,21 @@ class Main extends CI_Controller {
 	}
 	public function proses_input()
 	{
-		$this->M_back->proses_input();
+		if ($this->session->userdata('id')==NULL) {
+			redirect('/');
+		}else{
+
+			$this->M_back->proses_input();
+		}
 	}
 	public function proses_edit()
-	{
-		$this->M_back->proses_edit();
+	{		
+		if ($this->session->userdata('id')==NULL) {
+			redirect('/');
+		}else{
+
+			$this->M_back->proses_edit();
+		}
 	}
 	public function editdata($id)
 	{

@@ -2,7 +2,18 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class M_back extends CI_Model {
-
+	// public function daftar()
+	// {
+	// 	$username = $this->input->post('user');
+	// 	$email = $this->input->post('email');
+	// 	$password = $this->input->post('password');
+	// 	$this->db->insert('users', array(
+	// 		'username'=>$username,
+	// 		'email'=>$email,
+	// 		'password'=>md5($password),
+	// 		'created_at'=>date('Y-m-d')
+	// 	));
+	// }
 	public function proses_input()
 	{
 
@@ -148,6 +159,7 @@ class M_back extends CI_Model {
 			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
+
 		// Data Teknis
 		$jml_tower = $this->input->post('tower');
 		$jml_unit = $this->input->post('unit');
@@ -241,77 +253,127 @@ class M_back extends CI_Model {
 			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
+		//Data Sketsa
+		if ($jen_bang==TRUE) {
+			$this->load->library('upload');
+			$config['upload_path']          = './assets/images/';
+			$config['allowed_types']        = 'gif|jpg|png|jpeg';
+			$config['remove_spaces']        = TRUE;
+			$config['encrypt_name']        = TRUE;
+			$this->upload->initialize($config);
+			if( ! $this->upload->do_upload('foto_sketsa'))
+			{
+				$error = array('error' => $this->upload->display_errors());
+			}else{
+				$this->upload->do_upload('foto_sketsa');
+				$f = $this->upload->data();
+				$file_sketsa = $f['file_name'];
+			}
+			$nama_bang_sketsa = $this->input->post('nama_bang_sketsa');
+			$lokasi_sketsa = $this->input->post('lokasi_sketsa');
+			$sketsa = $this->db->insert('sketsa_lokasi', array(
+				'id_sketsa_unik'=>$id,
+				'id_user'=>$this->session->userdata('id'),
+				'nama_bangunan'=>$nama_bang_sketsa,
+				'lokasi'=>$lokasi_sketsa,
+				'file_sketsa'=>$file_sketsa,
+				'created_at' =>$tanggal,
+			));
+		}else{
+			$this->session->set_flashdata('gagal', 'konsumsi Maaf Server Sibuk');
+			redirect($_SERVER['HTTP_REFERER']);
+		}
+		
+
+		// Permasalahan 
+		if ($sketsa!=TRUE) {
+			$this->session->set_flashdata('gagal', 'sketsa Maaf Server Sibuk');
+			redirect($_SERVER['HTTP_REFERER']);
+		}else{
+			$smr_resap =  $this->input->post('sumur_resap');
+			$smr_dalam =  $this->input->post('sumur_dalam');
+			$peng_air =  $this->input->post('peng_air');
+
+			$masalah = $this->db->insert('permasalahan', array(
+				'id_unik_masalah'=>$id,
+				'id_user'=>$this->session->userdata('id'),
+				'sumur_resapan'=>$smr_resap,
+				'sumur_dalam'=>$smr_dalam,
+				'pengelolaan_limbah'=>$peng_air,
+				'persetujuan'=>1,
+				'created_at'=>$tanggal
+			));
+		}
 
 		//Data Konsumsi
-		$kon_air = $this->input->post('kons_air');
-		$rata_kon = $this->input->post('rata_kon');
-		$jkl = "";
-		$fgh = "";
-		for ($i=0; $i < count($kon_air) ; $i++) { 
-			$def = $kon_air[$i].',';
-			$fgh .=$def;
-		}
-		for ($i=0; $i < count($rata_kon) ; $i++) { 
-			$fih = $rata_kon[$i].',';
-			$jkl .=$fih;
-		}
-		$kons_air = substr($fgh, 0, -1);
-		$rata_air = substr($jkl, 0, -1);
-
-		$air_bersih = $this->input->post('air_bersih');
-		$air_bersih2 = $this->input->post('air_bersih2');
-		$sistem = $this->input->post('sistem_air');
-		$kaps_bersih = $this->input->post('kaps_bersih');
-		$kaps_bersih2 = $this->input->post('kaps_bersih2');
-		$air_hujan = $this->input->post('air_hujan');
-		$air_hujan2 = $this->input->post('air_hujan2');
-		$air_hujan3 = $this->input->post('air_hujan3');
-		$jml_hujan = $this->input->post('jumlah_hujan');
-		$jml_hujan2 = $this->input->post('jumlah_hujan');
-		$kaps_hujan = $this->input->post('kaps_hujan');
-		$kaps_hujan2 = $this->input->post('kaps_hujan2');
-		$air_bekas = $this->input->post('air_bekas');
-		$air_bekas2 = $this->input->post('air_bekas2');
-		$kaps_bekas = $this->input->post('kaps_bekas');
-		$kaps_bekas2 = $this->input->post('kaps_bekas2');
-		$limbah = $this->input->post('air_limbah');
-		$limbah2 = $this->input->post('air_limbah2');
-		$kaps_limbah = $this->input->post('kaps_limbah');
-		$kaps_limbah2 = $this->input->post('kaps_limbah2');
-
-		$queryair = $this->db->insert('data_air', array(
-			'id_air_unik'=>$id,
-			'konsumsi_air'=>$kons_air,
-			'rata_konsumsi'=>$rata_air,
-			// 'kapasitas_konsumsi'=>$kaps_kon.','.$kaps_kon2,
-			'air_bersih'=>$air_bersih.','.$air_bersih2,
-			'sistem_water'=>$sistem,
-			'kapasitas_bersih'=>$kaps_bersih.','.$kaps_bersih2,
-			'air_hujan'=>$air_hujan.','.$air_hujan2.','.$air_hujan3,
-			'jml_hujan'=>$jml_hujan.','.$jml_hujan2,
-			'kapasitas_hujan'=>$kaps_hujan.','.$kaps_hujan2,
-			'air_bekas'=>$air_bekas.','.$air_bekas2,
-			'kapasitas_bekas'=>$kaps_bekas.','.$kaps_bekas2,
-			'air_limbah'=>$limbah.','.$limbah2,
-			'kapasitas_limbah'=>$kaps_limbah.','.$kaps_limbah2,
-			'created_at'=>$tanggal
-		));
-		if ($queryair==TRUE) {
-			//Sumur Bor
-			$idair = $this->db->insert_id();
-			$jml_smr = $this->input->post('jumlah_sumur');
-			$no_sipa = $this->input->post('no_sipa');
-			$tgl_sipa = $this->input->post('tgl_sipa');
-			for ($i=0; $i < $jml_smr; $i++) { 
-				$bor = $this->db->insert('data_sumur', array(
-					'id_data_sumur'=>$idair,
-					'jenis'=>'sumur bor',
-					'unit'=>$jml_smr,
-					'sipa'=>$no_sipa[$i],
-					'tanggal'=>date('Y-m-d',strtotime($tgl_sipa[$i]))
-				));
+		if ($masalah==TRUE) {
+			$kon_air = $this->input->post('kons_air');
+			$rata_kon = $this->input->post('rata_kon');
+			$jkl = "";
+			$fgh = "";
+			for ($i=0; $i < count($kon_air) ; $i++) { 
+				$def = $kon_air[$i].',';
+				$fgh .=$def;
 			}
-			if ($bor==TRUE) {
+			for ($i=0; $i < count($rata_kon) ; $i++) { 
+				$fih = $rata_kon[$i].',';
+				$jkl .=$fih;
+			}
+			$kons_air = substr($fgh, 0, -1);
+			$rata_air = substr($jkl, 0, -1);
+
+			$air_bersih = $this->input->post('air_bersih');
+			$air_bersih2 = $this->input->post('air_bersih2');
+			$sistem = $this->input->post('sistem_air');
+			$kaps_bersih = $this->input->post('kaps_bersih');
+			$kaps_bersih2 = $this->input->post('kaps_bersih2');
+			$air_hujan = $this->input->post('air_hujan');
+			$air_hujan2 = $this->input->post('air_hujan2');
+			$air_hujan3 = $this->input->post('air_hujan3');
+			$jml_hujan = $this->input->post('jumlah_hujan');
+			$jml_hujan2 = $this->input->post('jumlah_hujan');
+			$kaps_hujan = $this->input->post('kaps_hujan');
+			$kaps_hujan2 = $this->input->post('kaps_hujan2');
+			$air_bekas = $this->input->post('air_bekas');
+			$air_bekas2 = $this->input->post('air_bekas2');
+			$kaps_bekas = $this->input->post('kaps_bekas');
+			$kaps_bekas2 = $this->input->post('kaps_bekas2');
+			$limbah = $this->input->post('air_limbah');
+			$limbah2 = $this->input->post('air_limbah2');
+			$kaps_limbah = $this->input->post('kaps_limbah');
+			$kaps_limbah2 = $this->input->post('kaps_limbah2');
+			$queryair = $this->db->insert('data_air', array(
+				'id_air_unik'=>$id,
+				'konsumsi_air'=>$kons_air,
+				'rata_konsumsi'=>$rata_air,
+			// 'kapasitas_konsumsi'=>$kaps_kon.','.$kaps_kon2,
+				'air_bersih'=>$air_bersih.','.$air_bersih2,
+				'sistem_water'=>$sistem,
+				'kapasitas_bersih'=>$kaps_bersih.','.$kaps_bersih2,
+				'air_hujan'=>$air_hujan.','.$air_hujan2.','.$air_hujan3,
+				'jml_hujan'=>$jml_hujan.','.$jml_hujan2,
+				'kapasitas_hujan'=>$kaps_hujan.','.$kaps_hujan2,
+				'air_bekas'=>$air_bekas.','.$air_bekas2,
+				'kapasitas_bekas'=>$kaps_bekas.','.$kaps_bekas2,
+				'air_limbah'=>$limbah.','.$limbah2,
+				'kapasitas_limbah'=>$kaps_limbah.','.$kaps_limbah2,
+				'created_at'=>$tanggal
+			));
+			if ($queryair==TRUE) {
+			//Sumur Bor
+				$idair = $this->db->insert_id();
+				$jml_smr = $this->input->post('jumlah_sumur');
+				$no_sipa = $this->input->post('no_sipa');
+				$tgl_sipa = $this->input->post('tgl_sipa');
+				for ($i=0; $i < $jml_smr; $i++) { 
+					$bor = $this->db->insert('data_sumur', array(
+						'id_data_sumur'=>$idair,
+						'jenis'=>'sumur bor',
+						'unit'=>$jml_smr,
+						'sipa'=>$no_sipa[$i],
+						'tanggal'=>date('Y-m-d',strtotime($tgl_sipa[$i]))
+					));
+				}
 				//Sumur Pantek
 				$jml_pantek = $this->input->post('jumlah_pantek');
 				$no_sipa_pantek = $this->input->post('no_sipa_pantek');
@@ -325,172 +387,119 @@ class M_back extends CI_Model {
 						'tanggal'=>date('Y-m-d',strtotime($tgl_sipa_pantek[$i]))
 					));
 				}
-				if ($pantek==TRUE) {
 					//Ground Tank
-					$jml_ground = $this->input->post('jumlah_ground');
-					$kaps_ground = $this->input->post('kaps_ground');
-					for ($i=0; $i < $jml_ground; $i++) { 
-						$ground = $this->db->insert('data_sumur', array(
-							'id_data_sumur'=>$idair,
-							'jenis'=>'GROUND',
-							'unit'=>$jml_ground,
-							'kapasitas'=>$kaps_ground[$i],
-						));
-					}
-					if ($ground==TRUE) {
-							//Roof Tank
-						$jml_roof = $this->input->post('jumlah_roof');
-						$kaps_roof = $this->input->post('kaps_roof');
-						for ($i=0; $i < $jml_roof; $i++) { 
-							$this->db->insert('data_sumur', array(
-								'id_data_sumur'=>$idair,
-								'jenis'=>'Roof Tank',
-								'unit'=>$jml_roof,
-								'kapasitas'=>$kaps_roof[$i],
-							));
-							$this->db->insert('sumber_air', array(
-								'id_sumber_air'=>$idair,
-								'pdam'=>$this->input->post('pdam'),
-								'bor'=>$this->input->post('dalam'),
-								'pantek'=>$this->input->post('pantek'),
-								'air_sendiri'=>$this->input->post('sendiri'),
-								'lainnya'=>$this->input->post('sumberlainnya')
-							));
-
-						}
-					}else{
-						$this->db->delete('data_air',array('id_air_unik'=>$id));
-						$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data GROUND Di delete');
-						redirect($_SERVER['HTTP_REFERER']);
-					}
-				}else{
-					$this->db->delete('data_air',array('id_air_unik'=>$id));
-					$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data Pantek Di delete');
-					redirect($_SERVER['HTTP_REFERER']);
+				$jml_ground = $this->input->post('jumlah_ground');
+				$kaps_ground = $this->input->post('kaps_ground');
+				for ($i=0; $i < $jml_ground; $i++) { 
+					$ground = $this->db->insert('data_sumur', array(
+						'id_data_sumur'=>$idair,
+						'jenis'=>'GROUND',
+						'unit'=>$jml_ground,
+						'kapasitas'=>$kaps_ground[$i],
+					));
 				}
+							//Roof Tank
+				$jml_roof = $this->input->post('jumlah_roof');
+				$kaps_roof = $this->input->post('kaps_roof');
+				for ($i=0; $i < $jml_roof; $i++) { 
+					$this->db->insert('data_sumur', array(
+						'id_data_sumur'=>$idair,
+						'jenis'=>'Roof Tank',
+						'unit'=>$jml_roof,
+						'kapasitas'=>$kaps_roof[$i],
+					));
+				}
+				$sumber = $this->db->insert('sumber_air', array(
+					'id_sumber_air'=>$idair,
+					'pdam'=>$this->input->post('pdam'),
+					'bor'=>$this->input->post('dalam'),
+					'pantek'=>$this->input->post('pantek'),
+					'air_sendiri'=>$this->input->post('sendiri'),
+					'lainnya'=>$this->input->post('sumberlainnya')
+				));
+
 			}else{
-				$this->db->delete('data_air',array('id_air_unik'=>$id));
-				$this->session->set_flashdata('gagal', 'Maaf Server Sibuk Data BOR di Delete');
+				$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
 				redirect($_SERVER['HTTP_REFERER']);
 			}
+			//Bulan 
+			$janurpd = $this->input->post('januaripdam');
+			$janursum = $this->input->post('januarisumurbor');
+			$janurrec = $this->input->post('januarirecycle');
+			$janurlain = $this->input->post('januarilain');
+			$febpd = $this->input->post('febuaripdam');
+			$fbsum = $this->input->post('febuarisumurbor');
+			$febrec = $this->input->post('febuarirecycle');
+			$feblain = $this->input->post('febuarilain');
+			$marpd = $this->input->post('maretpdam');
+			$marsum = $this->input->post('maretsumurbor');
+			$marrec = $this->input->post('maretrecycle');
+			$marlain = $this->input->post('maretlain');
+			$aprilpd = $this->input->post('aprilpdam');
+			$aprilsum = $this->input->post('aprilsumurbor');
+			$aprilrec = $this->input->post('aprilrecycle');
+			$aprillain = $this->input->post('aprillain');
+			$meipdam = $this->input->post('meipdam');
+			$meisum = $this->input->post('meisumurbor');
+			$meirec = $this->input->post('meirecycle');
+			$meilain = $this->input->post('meilain');
+			$junipdam = $this->input->post('junipdam');
+			$junisum = $this->input->post('junisumurbor');
+			$junirec = $this->input->post('junirecycle');
+			$junilain = $this->input->post('junilain');
+			$julipd = $this->input->post('julipdam');
+			$julisum = $this->input->post('julisumurbor');
+			$julirec = $this->input->post('julirecycle');
+			$julilain = $this->input->post('julilain');
+			$aguspd = $this->input->post('agustuspdam');
+			$agussum = $this->input->post('agustussumurbor');
+			$agusrec = $this->input->post('agustusrecycle');
+			$aguslain = $this->input->post('agustuslain');
+			$seppd = $this->input->post('septemberpdam');
+			$sepsum = $this->input->post('septembersumurbor');
+			$seprec = $this->input->post('septemberrecycle');
+			$seplain = $this->input->post('septemberlain');
+			$oktopd = $this->input->post('oktoberpdam');
+			$oktosum = $this->input->post('oktobersumurbor');
+			$oktorec = $this->input->post('oktoberrecycle');
+			$oktolain = $this->input->post('oktoberlain');
+			$novpd = $this->input->post('novemberpdam');
+			$novsum = $this->input->post('novembersumurbor');
+			$novrec = $this->input->post('novemberrecycle');
+			$novlain = $this->input->post('novemberlain');
+			$despd = $this->input->post('desemberpdam');
+			$dessum = $this->input->post('desembersumurbor');
+			$desrec = $this->input->post('desemberrecycle');
+			$deslain = $this->input->post('desemberlain');
+			$totsumsin = $this->input->post('totalkonsumsi');
+			$iop="";
+			for ($i=0; $i <count($totsumsin) ; $i++) { 
+				$das = $totsumsin[$i].',';
+				$iop .=$das;
+			}
+			$sumsi = substr($iop, 0, -1);
+			$konsumsi = $this->db->insert('data_konsumsi', array(
+				'id_data_air'=>$idair,
+				'januari'=>$janurpd.','.$janursum.','.$janurrec.','.$janurlain,
+				'febuari'=>$febpd.','.$fbsum.','.$febrec.','.$feblain,
+				'maret'=>$marpd.','.$marsum.','.$marrec.','.$marlain,
+				'april'=>$aprilpd.','.$aprilsum.','.$aprilrec.','.$aprillain,
+				'mei'=>$meipdam.','.$meisum.','.$meirec.','.$meilain,
+				'juni'=>$junipdam.','.$junisum.','.$junirec.','.$junilain,
+				'juli'=>$julipd.','.$julisum.','.$julirec.','.$julilain,
+				'agustus'=>$aguspd.','.$agussum.','.$agusrec.','.$aguslain,
+				'september'=>$seppd.','.$sepsum.','.$seprec.','.$seplain,
+				'oktober'=>$oktopd.','.$oktosum.','.$oktorec.','.$oktolain,
+				'november'=>$novpd.','.$novsum.','.$novrec.','.$novlain,
+				'desember'=>$despd.','.$dessum.','.$desrec.','.$deslain,
+				'total'=>$sumsi,
+			));
 		}else{
-			$this->session->set_flashdata('gagal', 'Maaf Server Sibuk');
+
+			$this->session->set_flashdata('gagal', 'penggunan_bangunan Maaf Server Sibuk');
 			redirect($_SERVER['HTTP_REFERER']);
 		}
 
-			//Bulan 
-		$janurpd = $this->input->post('januaripdam');
-		$janursum = $this->input->post('januarisumurbor');
-		$janurrec = $this->input->post('januarirecycle');
-		$janurlain = $this->input->post('januarilain');
-		$febpd = $this->input->post('febuaripdam');
-		$fbsum = $this->input->post('febuarisumurbor');
-		$febrec = $this->input->post('febuarirecycle');
-		$feblain = $this->input->post('febuarilain');
-		$marpd = $this->input->post('maretpdam');
-		$marsum = $this->input->post('maretsumurbor');
-		$marrec = $this->input->post('maretrecycle');
-		$marlain = $this->input->post('maretlain');
-		$aprilpd = $this->input->post('aprilpdam');
-		$aprilsum = $this->input->post('aprilsumurbor');
-		$aprilrec = $this->input->post('aprilrecycle');
-		$aprillain = $this->input->post('aprillain');
-		$meipdam = $this->input->post('meipdam');
-		$meisum = $this->input->post('meisumurbor');
-		$meirec = $this->input->post('meirecycle');
-		$meilain = $this->input->post('meilain');
-		$junipdam = $this->input->post('junipdam');
-		$junisum = $this->input->post('junisumurbor');
-		$junirec = $this->input->post('junirecycle');
-		$junilain = $this->input->post('junilain');
-		$julipd = $this->input->post('julipdam');
-		$julisum = $this->input->post('julisumurbor');
-		$julirec = $this->input->post('julirecycle');
-		$julilain = $this->input->post('julilain');
-		$aguspd = $this->input->post('agustuspdam');
-		$agussum = $this->input->post('agustussumurbor');
-		$agusrec = $this->input->post('agustusrecycle');
-		$aguslain = $this->input->post('agustuslain');
-		$seppd = $this->input->post('septemberpdam');
-		$sepsum = $this->input->post('septembersumurbor');
-		$seprec = $this->input->post('septemberrecycle');
-		$seplain = $this->input->post('septemberlain');
-		$oktopd = $this->input->post('oktoberpdam');
-		$oktosum = $this->input->post('oktobersumurbor');
-		$oktorec = $this->input->post('oktoberrecycle');
-		$oktolain = $this->input->post('oktoberlain');
-		$novpd = $this->input->post('novemberpdam');
-		$novsum = $this->input->post('novembersumurbor');
-		$novrec = $this->input->post('novemberrecycle');
-		$novlain = $this->input->post('novemberlain');
-		$despd = $this->input->post('desemberpdam');
-		$dessum = $this->input->post('desembersumurbor');
-		$desrec = $this->input->post('desemberrecycle');
-		$deslain = $this->input->post('desemberlain');
-		$totsumsin = $this->input->post('totalkonsumsi');
-		$iop="";
-		for ($i=0; $i <count($totsumsin) ; $i++) { 
-			$das = $totsumsin[$i].',';
-			$iop .=$das;
-		}
-		$sumsi = substr($iop, 0, -1);
-		$konsumsi = $this->db->insert('data_konsumsi', array(
-			'id_data_air'=>$idair,
-			'januari'=>$janurpd.','.$janursum.','.$janurrec.','.$janurlain,
-			'febuari'=>$febpd.','.$fbsum.','.$febrec.','.$feblain,
-			'maret'=>$marpd.','.$marsum.','.$marrec.','.$marlain,
-			'april'=>$aprilpd.','.$aprilsum.','.$aprilrec.','.$aprillain,
-			'mei'=>$meipdam.','.$meisum.','.$meirec.','.$meilain,
-			'juni'=>$junipdam.','.$junisum.','.$junirec.','.$junilain,
-			'juli'=>$julipd.','.$julisum.','.$julirec.','.$julilain,
-			'agustus'=>$aguspd.','.$agussum.','.$agusrec.','.$aguslain,
-			'september'=>$seppd.','.$sepsum.','.$seprec.','.$seplain,
-			'oktober'=>$oktopd.','.$oktosum.','.$oktorec.','.$oktolain,
-			'november'=>$novpd.','.$novsum.','.$novrec.','.$novlain,
-			'desember'=>$despd.','.$dessum.','.$desrec.','.$deslain,
-			'total'=>$sumsi,
-		));
-		//Data Sketsa
-		$this->load->library('upload');
-		$config['upload_path']          = './assets/images/';
-		$config['allowed_types']        = 'gif|jpg|png|jpeg';
-		$config['remove_spaces']        = TRUE;
-		$config['encrypt_name']        = TRUE;
-
-		$this->upload->initialize($config);
-		if( ! $this->upload->do_upload('foto_sketsa'))
-		{
-			$error = array('error' => $this->upload->display_errors());
-		}else{
-			$this->upload->do_upload('foto_sketsa');
-			$f = $this->upload->data();
-			$file_sketsa = $f['file_name'];
-		}
-		$nama_bang_sketsa = $this->input->post('nama_bang_sketsa');
-		$lokasi_sketsa = $this->input->post('lokasi_sketsa');
-		$sketsa = $this->db->insert('sketsa_lokasi', array(
-			'id_sketsa_unik'=>$id,
-			'id_user'=>$this->session->userdata('id'),
-			'nama_bangunan'=>$nama_bang_sketsa,
-			'lokasi'=>$lokasi_sketsa,
-			'file_sketsa'=>$file_sketsa,
-			'created_at' =>$tanggal,
-		));
-
-		// Permasalahan 
-		$smr_resap =  $this->input->post('sumur_resap');
-		$smr_dalam =  $this->input->post('sumur_dalam');
-		$peng_air =  $this->input->post('peng_air');
-
-		$masalah = $this->db->insert('permasalahan', array(
-			'id_unik_masalah'=>$id,
-			'id_user'=>$this->session->userdata('id'),
-			'sumur_resapan'=>$smr_resap,
-			'sumur_dalam'=>$smr_dalam,
-			'pengelolaan_limbah'=>$peng_air,
-			'persetujuan'=>1,
-			'created_at'=>$tanggal
-		));
 		if ($info!= TRUE OR $sketsa!= TRUE OR $masalah!= TRUE OR $pemilik!= TRUE OR $datapengelola!= TRUE) {
 			$this->db->delete('info_bangunan',array('id_info'=>$id));
 			$this->db->delete('sketsa_lokasi',array('id_sketsa_unik'=>$id));
@@ -863,7 +872,7 @@ class M_back extends CI_Model {
 
 				//Sumur Bor
 			for ($i=0; $i < $editbor; $i++) { 
-				$pantek = $this->db->insert('data_sumur', array(
+				$bor = $this->db->insert('data_sumur', array(
 					'id_data_sumur'=>$idinput,
 					'jenis'=>'sumur bor',
 					'unit'=>$editbor,

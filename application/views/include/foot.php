@@ -43,5 +43,40 @@
 
 })(document, window);
 </script> -->
+<div class="main-panel">
+    <div class="col-md-12">
+        <?php if ($this->session->flashdata('gagal')) { ?>
+            <div id="error" class="card-panel" style="background: #3D4242;color:#FFF;margin:20px 0;">
+                <div  class="card-content">
+                    <script type="text/javascript" charset="utf-8" >
+                        $.toast({
+                            heading: 'Warning',
+                            text: "<?=$this->session->flashdata('gagal')?>",
+                            position: 'top-right',
+                            stack: false,
+                            hideAfter: 5000, 
+                            icon: 'warning'
+                        });
+                    </script>
+                </div>
+            </div>
+        <?php }elseif($this->session->flashdata('sukses')){ ?>
+            <div id="error" class="card-panel" style="background: #4CAF50;color:#FFF;margin:20px 0;">
+                <div  class="card-content">
+                    <script type="text/javascript" charset="utf-8" >
+                        $.toast({
+                            heading: 'Success',
+                            text: "<?=$this->session->flashdata('sukses')?>",
+                            position: 'top-right',
+                            stack: false,
+                            hideAfter: 5000, 
+                            icon: 'success'
+                        });
+                    </script>
+                </div>
+            </div>
+        <?php } ?>
+        </div>
+    </div>
 </body>
 </html>

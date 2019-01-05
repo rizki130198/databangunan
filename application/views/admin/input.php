@@ -74,7 +74,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required="" class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kel" onchange="getKecInfo();">
+											<select class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kel" onchange="getKecInfo();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
@@ -90,7 +90,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kec" class="form-control" onchange="getKotaInfo()">
+											<select id="kec" class="form-control" onchange="getKotaInfo()">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -104,7 +104,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<select required="" id="kota" class="form-control" onchange="getNameInfo()">
+											<select id="kota" class="form-control" onchange="getNameInfo()">
 												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -177,7 +177,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required=""  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelmilik" onchange="getKecMilik();">
+											<select  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelmilik" onchange="getKecMilik();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
@@ -193,7 +193,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kecmilik" class="form-control" onchange="getKotaMilik()">
+											<select id="kecmilik" class="form-control" onchange="getKotaMilik()">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -207,7 +207,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<select required="" id="kotamilik" class="form-control" onchange="getNameMilik()">
+											<select id="kotamilik" class="form-control" onchange="getNameMilik()">
 												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -231,7 +231,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<select required="" id="provinsimilik" class="form-control" name="provinsi">
+											<select id="provinsimilik" class="form-control" name="provinsi">
 												<option value="" >-- SILAHKAN PILIH KOTA TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -368,7 +368,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kelurahan :</label>
 										<div class="col-sm-10">
-											<select required=""  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelpeng" onchange="getKecPeng();">
+											<select  class="selectpicker form-control" data-show-subtext="true" data-live-search="true" id="kelpeng" onchange="getKecPeng();">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN --</option>
 												<?php foreach ($kelurahan as $kel): ?>
 													<option value="<?=$kel->id?>"><?=$kel->kel?></option>
@@ -384,7 +384,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kecamatan :</label>
 										<div class="col-sm-10">
-											<select required="" id="kecpeng" class="form-control" onchange="getKotaPeng()">
+											<select id="kecpeng" class="form-control" onchange="getKotaPeng()">
 												<option value="" >-- SILAHKAN PILIH KELURAHAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -398,7 +398,7 @@
 									<div class="row">
 										<label class="col-sm-2">Kota :</label>
 										<div class="col-sm-10">
-											<select required="" id="kotapeng" class="form-control" onchange="getNamePeng()">
+											<select id="kotapeng" class="form-control" onchange="getNamePeng()">
 												<option value="" >-- SILAHKAN PILIH KECAMATAN TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>
@@ -422,7 +422,7 @@
 									<div class="row">
 										<label class="col-sm-2">Provinsi :</label>
 										<div class="col-sm-10">
-											<select required="" id="provinsipeng" class="form-control" name="provinsi_peng">
+											<select id="provinsipeng" class="form-control" name="provinsi_peng">
 												<option value="" >-- SILAHKAN PILIH KOTA TERLEBIH DAHULU --</option>
 												<option value="" disabled></option>
 											</select>

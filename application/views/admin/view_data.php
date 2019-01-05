@@ -475,11 +475,11 @@ span.round-tab:hover {
 										<div class="row">
 											<div class="col-md-6">
 												<label>No.</label>
-												<div class="lbl"><?=($sippt[0]==NULL)?NULL:$sippt[0]?></div>
+												<div class="lbl"><?=($sippt[0]==NULL OR $sippt[0]=='1970-01-01')?NULL:$sippt[0]?></div>
 											</div>
 											<div class="col-md-6">
 												<label>Tanggal.</label>
-												<div class="lbl"><?=($sippt[1]==NULL)?NULL:$sippt[1]?></div>
+												<div class="lbl"><?=($sippt[1]==NULL OR $sippt[1]=='1970-01-01')?NULL:$sippt[1]?></div>
 											</div>
 										</div>
 									</div> 
@@ -498,7 +498,7 @@ span.round-tab:hover {
 												</div>
 												<div class="col-md-6">
 													<label>Tanggal.</label>
-													<div class="lbl"><?=$dataimb->tanggal_imb?></div>
+													<div class="lbl"><?=($dataimb->tanggal_imb==NULL OR $dataimb->tanggal_imb=='1970-01-01')?NULL:$dataimb->tanggal_imb?></div>
 												</div>
 
 											<?php endforeach ?>
@@ -513,7 +513,7 @@ span.round-tab:hover {
 											</div>
 											<div class="col-md-6">
 												<label>Tanggal.</label>
-												<div class="lbl"><?=($kmb[1]==NULL)?NULL:$kmb[1]?></div>
+												<div class="lbl"><?=($kmb[1]=='1970-01-01')?NULL:$kmb[1]?></div>
 											</div>
 										</div>
 									</div>
@@ -772,22 +772,49 @@ span.round-tab:hover {
 								</div>
 								<div class="col-md-12" style="margin-bottom: 20px;">
 									<label>Sumber air yang digunakan</label>
-									<div class="row funkyradio">
-										<div class="col-md-6">
-											<div class="funkyradio-primary">
-												<input checked type="checkbox" id="pdam" disabled="">
-												<label for="pdam">PDAM</label>
+									<?php foreach ($sumber as $datasumber): ?>
+										<div class="funkyradio">
+											<div class="col-md-6">
+												<div class="funkyradio-primary">
+													<input type="checkbox" name="pdam" <?=($datasumber->pdam==NULL)?'':'checked'?> value="pdam" id="pdam"/>
+													<label for="pdam">PDAM</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<div class="funkyradio-primary">
+													<input type="checkbox" name="sendiri" <?=($datasumber->air_sendiri==NULL)?'':'checked'?> value="pengelola_sendiri" id="pengelola_sendiri"/>
+													<label for="pengelola_sendiri">Pengolahan air sendiri</label>
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="funkyradio-primary">
+															<input type="checkbox" name="dalam" <?=($datasumber->bor==NULL)?'':'checked'?> value="sumur dalam" id="sumur"/>
+															<label for="sumur">Sumur Bor/ Sumur Dalam</label>
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="funkyradio-primary">
+															<input type="checkbox" <?=($datasumber->lainnya==NULL)?'':'checked'?> id="lainnya_sumberair"/>
+															<label for="lainnya_sumberair"><input  name="sumberlainnya"  value="<?=($datasumber->lainnya==NULL)?'':$datasumber->lainnya?>" style="padding-left: 45px;border-color: #ccc;box-shadow: none;" readonly id="txtsumberair" type="text" class="form-control"></label>
+														</div>
+													</div>	
+												</div>
+											</div>
+											<div class="col-md-12">
+												<div class="row">
+													<div class="col-md-6">
+														<div class="funkyradio-primary">
+															<input type="checkbox"  name="pantek" <?=($datasumber->pantek==NULL)?'':'checked'?> value="Sumur Pantek" id="sumur_pantek" />
+															<label for="sumur_pantek">Sumur Pantek</label>
+														</div>
+													</div>
+												</div>
 											</div>
 										</div>
-										<div class="col-md-6">
-											<div class="funkyradio-primary">
-												<input checked type="checkbox" id="sumur" disabled="">
-												<label for="sumur">Sumur Pantek</label>
-											</div>
-										</div>
-									</div>
+									<?php endforeach ?>
 								</div>
-
 								<?php foreach ($sumur as $datasumur): ?>
 									<?php if ($datasumur->jenis=="sumur bor"){ ?>
 										<div class="col-md-12" style="margin-bottom: 20px">
@@ -861,396 +888,396 @@ span.round-tab:hover {
 												</thead>
 												<tbody>
 													<?php foreach ($bulan as $databulan): ?>
-													
-													<?php $januari = explode(',', $databulan->januari) ?>
-													<?php $febuari = explode(',', $databulan->febuari) ?>
-													<?php $maret = explode(',', $databulan->maret) ?>
-													<?php $april = explode(',', $databulan->april) ?>
-													<?php $mei = explode(',', $databulan->mei) ?>
-													<?php $juni = explode(',', $databulan->juni) ?>
-													<?php $juli = explode(',', $databulan->juli) ?>
-													<?php $agustus = explode(',', $databulan->agustus) ?>
-													<?php $september = explode(',', $databulan->september) ?>
-													<?php $oktober = explode(',', $databulan->oktober) ?>
-													<?php $november = explode(',', $databulan->november) ?>
-													<?php $desember = explode(',', $databulan->desember) ?>
-													<?php $total = explode(',', $databulan->total) ?>
-													<tr>
-													<td style="text-align: center;">
-														Januari
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($januari[0]==NULL)?NULL:$januari[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($januari[1]==NULL)?NULL:$januari[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($januari[2]==NULL)?NULL:$januari[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($januari[3]==NULL)?NULL:$januari[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Febuari
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($febuari[0]==NULL)?NULL:$febuari[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($febuari[1]==NULL)?NULL:$febuari[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($febuari[2]==NULL)?NULL:$febuari[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($febuari[3]==NULL)?NULL:$febuari[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Maret
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($maret[0]==NULL)?NULL:$maret[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($maret[1]==NULL)?NULL:$maret[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($maret[2]==NULL)?NULL:$maret[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($maret[3]==NULL)?NULL:$maret[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														April
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($april[0]==NULL)?NULL:$april[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($april[1]==NULL)?NULL:$april[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($april[2]==NULL)?NULL:$april[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($april[3]==NULL)?NULL:$april[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Mei
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($mei[0]==NULL)?NULL:$mei[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($mei[1]==NULL)?NULL:$mei[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($mei[2]==NULL)?NULL:$mei[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($mei[3]==NULL)?NULL:$mei[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Juni
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($juni[0]==NULL)?NULL:$juni[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($juni[1]==NULL)?NULL:$juni[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($juni[2]==NULL)?NULL:$juni[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($juni[3]==NULL)?NULL:$juni[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Juli
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($juli[0]==NULL)?NULL:$juli[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($juli[1]==NULL)?NULL:$juli[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($juli[2]==NULL)?NULL:$juli[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($juli[3]==NULL)?NULL:$juli[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Agustus
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($agustus[0]==NULL)?NULL:$agustus[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($agustus[1]==NULL)?NULL:$agustus[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($agustus[2]==NULL)?NULL:$agustus[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($agustus[3]==NULL)?NULL:$agustus[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														September
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($september[0]==NULL)?NULL:$september[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($september[1]==NULL)?NULL:$september[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($september[2]==NULL)?NULL:$september[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($september[3]==NULL)?NULL:$september[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Oktober
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($oktober[0]==NULL)?NULL:$oktober[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($oktober[1]==NULL)?NULL:$oktober[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($oktober[2]==NULL)?NULL:$oktober[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($oktober[3]==NULL)?NULL:$oktober[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														November
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($november[0]==NULL)?NULL:$november[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($november[1]==NULL)?NULL:$november[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($november[2]==NULL)?NULL:$november[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($november[3]==NULL)?NULL:$november[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Desember
-													</td>
-													<td class="rowpdam">
-														<div class="lbl"><?=($desember[0]==NULL)?NULL:$desember[0]?></div>
-													</td>
-													<td class="rowbor">
-														<div class="lbl"><?=($desember[1]==NULL)?NULL:$desember[1]?></div>
-													</td>
-													<td class="rowrecycle">
-														<div class="lbl"><?=($desember[2]==NULL)?NULL:$desember[2]?></div>
-													</td>
-													<td class="rowlain">
-														<div class="lbl"><?=($desember[3]==NULL)?NULL:$desember[3]?></div>
-													</td>
-												</tr>
-												<tr>
-													<td style="text-align: center;">
-														Total Konsumsi (M<sup>3</sup>)
-													</td>
-													<td>
-														<div class="lbl"><?=($total[0]==NULL)?NULL:$total[0]?></div>
-													</td>
-													<td>
-														<div class="lbl"><?=($total[1]==NULL)?NULL:$total[1]?></div>
-													</td>
-													<td>
-														<div class="lbl"><?=($total[2]==NULL)?NULL:$total[2]?></div>
-													</td>
-													<td>
-														<div class="lbl"><?=($total[3]==NULL)?NULL:$total[3]?></div>
-													</td>
-												</tr>
-											<?php endforeach ?>
-											</tbody>
-										</table>
-									</div>	
-								</div>
-								<div class="col-md-12" style="margin-bottom: 20px">
-									<label>Konsumsi Air Rata-rata :</label>
-									<div class="row">
-										<div class="col-md-6">
-											<label>A. Occupant Area :</label>
-											<div class="lbl"><?=($rata[0]==NULL)?'':$rata[0]?> M<sup>3</sup>/org/hari</div>
-										</div>
-										<div class="col-md-6">
-											<label>B. Service Area :</label>
-											<div class="lbl"><?=($rata[1]==NULL)?'':$rata[1]?> M<sup>3</sup>/hari</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-top: 20px">
-									<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
-										<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
-											PENGOLAHAN AIR
-										</span>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-bottom: 20px">
-									<label>Air Bersih :</label>
-									<div class="row funkyradio">
-										<div class="col-md-6">
-											<div class="funkyradio-primary">
-												<input <?=($air[0]=='Water Treatment Plant')?'checked':''?>  type="checkbox" id="water" disabled="">
-												<label for="water">Water Treatment Plant</label>
-											</div>
-										</div>
-									</div>
-									<div class="row">
-										<div class="col-md-6">
-											<label>Sistem yang digunakan :</label>
-											<div class="lbl"><?=$datakonsumsi->sistem_water;?></div>
-										</div>
-										<div class="col-md-6">
-											<label>Kapasitas :</label>
-											<div class="lbl"><?=($kapasitas[0]!=NULL)?$kapasitas[0]:''?> M<sup>3</sup>/Hari</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-bottom: 20px">
-									<label>Air Hujan :</label>
-									<div class="row funkyradio">
-										<div class="col-md-6">
-											<div class="funkyradio-primary">
-												<input <?=($hujan[0]=='Sumur Resapan')?'checked':''?> type="checkbox" id="sumur" disabled="">
-												<label for="sumur">Sumur Resapan</label>
-											</div>
-										</div>
-									</div>
-									<div class="row" style="margin-bottom: 10px;">
-										<div class="col-md-6">
-											<label>Jumlah :</label>
-											<div class="lbl"><?=($jml[0]==NULL)?'':$jml[0]?> Titik</div>
-										</div>
-										<div class="col-md-6">
-											<label>Kapasitas Total :</label>
-											<div class="lbl"><?=($kaps[0]==NULL)?'':$kaps[0]?> M<sup>3</sup></div>
-										</div>
-									</div>
-									<div class="row funkyradio">
-										<div class="col-md-6">
-											<div class="funkyradio-primary">
-												<input <?=($hujan[1]=='Kolam Resapan')?'checked':''?>  type="checkbox" id="sumur" disabled="">
-												<label for="sumur">Kolam Resapan</label>
-											</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-bottom: 20px">
-									<div class="row ">
-										<div class="col-md-6">
-											<label>Air Bekas / Recycle :</label>
-											<div class="funkyradio-primary funkyradio">
-												<input  <?=($bekas[0]==NULL)?'':'checked'?> type="checkbox" id="water" disabled="">
-												<label for="water">Water Treatment Plant</label>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<label>Kapasitas :</label>
-											<div class="lbl"><?=($kaps_bekas[0]==NULL)?'':$kaps_bekas[0]?> M<sup>3</sup>/Hari</div>
-										</div>
-									</div>
-								</div>
-								<div class="col-md-12" style="margin-bottom: 20px">
-									<div class="row ">
-										<div class="col-md-6">
-											<label>Air Limbah :</label>
-											<div class="funkyradio-primary funkyradio">
-												<input <?=($limbah[0]=='PD PAL')?'checked':''?> type="checkbox" id="water" disabled="">
-												<label for="water">PD PAL</label>
-											</div>
-										</div>
-										<div class="col-md-6">
-											<label>Kapasitas :</label>
-											<div class="lbl"><?=($kaps_limbah[1]==NULL)?'':$kaps_limbah[1]?> M<sup>3</sup>/Hari</div>
-										</div>
-									</div>
-								</div>
 
-							<?php endforeach ?>
+														<?php $januari = explode(',', $databulan->januari) ?>
+														<?php $febuari = explode(',', $databulan->febuari) ?>
+														<?php $maret = explode(',', $databulan->maret) ?>
+														<?php $april = explode(',', $databulan->april) ?>
+														<?php $mei = explode(',', $databulan->mei) ?>
+														<?php $juni = explode(',', $databulan->juni) ?>
+														<?php $juli = explode(',', $databulan->juli) ?>
+														<?php $agustus = explode(',', $databulan->agustus) ?>
+														<?php $september = explode(',', $databulan->september) ?>
+														<?php $oktober = explode(',', $databulan->oktober) ?>
+														<?php $november = explode(',', $databulan->november) ?>
+														<?php $desember = explode(',', $databulan->desember) ?>
+														<?php $total = explode(',', $databulan->total) ?>
+														<tr>
+															<td style="text-align: center;">
+																Januari
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($januari[0]==NULL)?NULL:$januari[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($januari[1]==NULL)?NULL:$januari[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($januari[2]==NULL)?NULL:$januari[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($januari[3]==NULL)?NULL:$januari[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Febuari
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($febuari[0]==NULL)?NULL:$febuari[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($febuari[1]==NULL)?NULL:$febuari[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($febuari[2]==NULL)?NULL:$febuari[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($febuari[3]==NULL)?NULL:$febuari[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Maret
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($maret[0]==NULL)?NULL:$maret[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($maret[1]==NULL)?NULL:$maret[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($maret[2]==NULL)?NULL:$maret[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($maret[3]==NULL)?NULL:$maret[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																April
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($april[0]==NULL)?NULL:$april[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($april[1]==NULL)?NULL:$april[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($april[2]==NULL)?NULL:$april[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($april[3]==NULL)?NULL:$april[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Mei
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($mei[0]==NULL)?NULL:$mei[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($mei[1]==NULL)?NULL:$mei[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($mei[2]==NULL)?NULL:$mei[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($mei[3]==NULL)?NULL:$mei[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Juni
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($juni[0]==NULL)?NULL:$juni[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($juni[1]==NULL)?NULL:$juni[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($juni[2]==NULL)?NULL:$juni[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($juni[3]==NULL)?NULL:$juni[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Juli
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($juli[0]==NULL)?NULL:$juli[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($juli[1]==NULL)?NULL:$juli[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($juli[2]==NULL)?NULL:$juli[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($juli[3]==NULL)?NULL:$juli[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Agustus
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($agustus[0]==NULL)?NULL:$agustus[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($agustus[1]==NULL)?NULL:$agustus[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($agustus[2]==NULL)?NULL:$agustus[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($agustus[3]==NULL)?NULL:$agustus[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																September
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($september[0]==NULL)?NULL:$september[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($september[1]==NULL)?NULL:$september[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($september[2]==NULL)?NULL:$september[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($september[3]==NULL)?NULL:$september[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Oktober
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($oktober[0]==NULL)?NULL:$oktober[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($oktober[1]==NULL)?NULL:$oktober[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($oktober[2]==NULL)?NULL:$oktober[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($oktober[3]==NULL)?NULL:$oktober[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																November
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($november[0]==NULL)?NULL:$november[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($november[1]==NULL)?NULL:$november[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($november[2]==NULL)?NULL:$november[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($november[3]==NULL)?NULL:$november[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Desember
+															</td>
+															<td class="rowpdam">
+																<div class="lbl"><?=($desember[0]==NULL)?NULL:$desember[0]?></div>
+															</td>
+															<td class="rowbor">
+																<div class="lbl"><?=($desember[1]==NULL)?NULL:$desember[1]?></div>
+															</td>
+															<td class="rowrecycle">
+																<div class="lbl"><?=($desember[2]==NULL)?NULL:$desember[2]?></div>
+															</td>
+															<td class="rowlain">
+																<div class="lbl"><?=($desember[3]==NULL)?NULL:$desember[3]?></div>
+															</td>
+														</tr>
+														<tr>
+															<td style="text-align: center;">
+																Total Konsumsi (M<sup>3</sup>)
+															</td>
+															<td>
+																<div class="lbl"><?=($total[0]==NULL)?NULL:$total[0]?></div>
+															</td>
+															<td>
+																<div class="lbl"><?=($total[1]==NULL)?NULL:$total[1]?></div>
+															</td>
+															<td>
+																<div class="lbl"><?=($total[2]==NULL)?NULL:$total[2]?></div>
+															</td>
+															<td>
+																<div class="lbl"><?=($total[3]==NULL)?NULL:$total[3]?></div>
+															</td>
+														</tr>
+													<?php endforeach ?>
+												</tbody>
+											</table>
+										</div>	
+									</div>
+									<div class="col-md-12" style="margin-bottom: 20px">
+										<label>Konsumsi Air Rata-rata :</label>
+										<div class="row">
+											<div class="col-md-6">
+												<label>A. Occupant Area :</label>
+												<div class="lbl"><?=($rata[0]==NULL)?'':$rata[0]?> M<sup>3</sup>/org/hari</div>
+											</div>
+											<div class="col-md-6">
+												<label>B. Service Area :</label>
+												<div class="lbl"><?=($rata[1]==NULL)?'':$rata[1]?> M<sup>3</sup>/hari</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-top: 20px">
+										<div style="width: 100%; height: 13px; border-bottom: 2px solid #999; text-align: center;margin-bottom: 18px;">
+											<span style="font-size:18px;background-color:#fff;padding: 0 15px;">
+												PENGOLAHAN AIR
+											</span>
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-bottom: 20px">
+										<label>Air Bersih :</label>
+										<div class="row funkyradio">
+											<div class="col-md-6">
+												<div class="funkyradio-primary">
+													<input <?=($air[0]=='Water Treatment Plant')?'checked':''?>  type="checkbox" id="water" disabled="">
+													<label for="water">Water Treatment Plant</label>
+												</div>
+											</div>
+										</div>
+										<div class="row">
+											<div class="col-md-6">
+												<label>Sistem yang digunakan :</label>
+												<div class="lbl"><?=$datakonsumsi->sistem_water;?></div>
+											</div>
+											<div class="col-md-6">
+												<label>Kapasitas :</label>
+												<div class="lbl"><?=($kapasitas[0]!=NULL)?$kapasitas[0]:''?> M<sup>3</sup>/Hari</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-bottom: 20px">
+										<label>Air Hujan :</label>
+										<div class="row funkyradio">
+											<div class="col-md-6">
+												<div class="funkyradio-primary">
+													<input <?=($hujan[0]=='Sumur Resapan')?'checked':''?> type="checkbox" id="sumur" disabled="">
+													<label for="sumur">Sumur Resapan</label>
+												</div>
+											</div>
+										</div>
+										<div class="row" style="margin-bottom: 10px;">
+											<div class="col-md-6">
+												<label>Jumlah :</label>
+												<div class="lbl"><?=($jml[0]==NULL)?'':$jml[0]?> Titik</div>
+											</div>
+											<div class="col-md-6">
+												<label>Kapasitas Total :</label>
+												<div class="lbl"><?=($kaps[0]==NULL)?'':$kaps[0]?> M<sup>3</sup></div>
+											</div>
+										</div>
+										<div class="row funkyradio">
+											<div class="col-md-6">
+												<div class="funkyradio-primary">
+													<input <?=($hujan[1]=='Kolam Resapan')?'checked':''?>  type="checkbox" id="sumur" disabled="">
+													<label for="sumur">Kolam Resapan</label>
+												</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-bottom: 20px">
+										<div class="row ">
+											<div class="col-md-6">
+												<label>Air Bekas / Recycle :</label>
+												<div class="funkyradio-primary funkyradio">
+													<input  <?=($bekas[0]==NULL)?'':'checked'?> type="checkbox" id="water" disabled="">
+													<label for="water">Water Treatment Plant</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<label>Kapasitas :</label>
+												<div class="lbl"><?=($kaps_bekas[0]==NULL)?'':$kaps_bekas[0]?> M<sup>3</sup>/Hari</div>
+											</div>
+										</div>
+									</div>
+									<div class="col-md-12" style="margin-bottom: 20px">
+										<div class="row ">
+											<div class="col-md-6">
+												<label>Air Limbah :</label>
+												<div class="funkyradio-primary funkyradio">
+													<input <?=($limbah[0]=='PD PAL')?'checked':''?> type="checkbox" id="water" disabled="">
+													<label for="water">PD PAL</label>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<label>Kapasitas :</label>
+												<div class="lbl"><?=($kaps_limbah[1]==NULL)?'':$kaps_limbah[1]?> M<sup>3</sup>/Hari</div>
+											</div>
+										</div>
+									</div>
+
+								<?php endforeach ?>
+							</div>
 						</div>
-					</div>
-					<div class="tab-pane" role="tabpanel" id="step7">
-						<h3>SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h3>
-						<div class="row" style="margin-bottom: 20px;">
+						<div class="tab-pane" role="tabpanel" id="step7">
+							<h3>SKETSA LOKASI SUMUR RESAPAN, KOLAM RESAPAN, SUMUR BOR, SUMUR PANTEK DAN WATERTRAP PADA SITEPLAN</h3>
+							<div class="row" style="margin-bottom: 20px;">
 
-							<?php foreach ($sketsa as $datasketsa): ?>
-								<div class="col-md-12" style="margin-top: 20px">
-									<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
-								</div>
-								<div class="col-md-12" style="margin-top: 20px">
-									<label>Nama Bangunan :</label>
-									<div class="lbl"><?=$datasketsa->nama_bangunan?></div>
-								</div>
-								<div class="col-md-12" style="margin-top: 20px">
-									<label>Lokasi Bangunan :</label>
-									<div class="lbl"><?=$datasketsa->lokasi?></div>
-								</div>
+								<?php foreach ($sketsa as $datasketsa): ?>
+									<div class="col-md-12" style="margin-top: 20px">
+										<img src="<?= base_url('assets/images/'.$datasketsa->file_sketsa); ?>" width="50%">
+									</div>
+									<div class="col-md-12" style="margin-top: 20px">
+										<label>Nama Bangunan :</label>
+										<div class="lbl"><?=$datasketsa->nama_bangunan?></div>
+									</div>
+									<div class="col-md-12" style="margin-top: 20px">
+										<label>Lokasi Bangunan :</label>
+										<div class="lbl"><?=$datasketsa->lokasi?></div>
+									</div>
 
-							<?php endforeach ?>
+								<?php endforeach ?>
+							</div>
 						</div>
-					</div>
-					<div class="tab-pane" role="tabpanel" id="step8">
-						<h3>PERMASALAHAN / KENDALA</h3>
-						<div class="row" style="margin-bottom: 20px;">
-							<?php foreach ($permasalahan as $masalah):?>
-								<div class="col-md-12" style="margin-top: 20px">
-									<label>Sumur Resapan / Kolam Resapan</label>
-									<div class="lbl"><?=$masalah->sumur_resapan?></div>	
-								</div>
-								<div class="col-md-12" style="margin-top: 20px">
-									<label>Sumur Dalam / Sumur Pantek</label>
-									<div class="lbl"><?=$masalah->sumur_dalam?></div>	
-								</div>
-								<div class="col-md-12" style="margin-top: 20px">
-									<label>Pengolahan Air Limbah</label>
-									<div class="lbl"><?=$masalah->pengelolaan_limbah?></div>	
-								</div>
+						<div class="tab-pane" role="tabpanel" id="step8">
+							<h3>PERMASALAHAN / KENDALA</h3>
+							<div class="row" style="margin-bottom: 20px;">
+								<?php foreach ($permasalahan as $masalah):?>
+									<div class="col-md-12" style="margin-top: 20px">
+										<label>Sumur Resapan / Kolam Resapan</label>
+										<div class="lbl"><?=$masalah->sumur_resapan?></div>	
+									</div>
+									<div class="col-md-12" style="margin-top: 20px">
+										<label>Sumur Dalam / Sumur Pantek</label>
+										<div class="lbl"><?=$masalah->sumur_dalam?></div>	
+									</div>
+									<div class="col-md-12" style="margin-top: 20px">
+										<label>Pengolahan Air Limbah</label>
+										<div class="lbl"><?=$masalah->pengelolaan_limbah?></div>	
+									</div>
 
-							<?php endforeach ?>
+								<?php endforeach ?>
+							</div>
 						</div>
-					</div>
 
-					<div class="clearfix"></div>
-					<a href="<?= site_url('main/editdata/'.$this->uri->segment(3)) ?>" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
-				</div>
-			</form>
-		</div>
-	</section>
-</div>
+						<div class="clearfix"></div>
+						<a href="<?= site_url('main/editdata/'.$this->uri->segment(3)) ?>" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
+					</div>
+				</form>
+			</div>
+		</section>
+	</div>
 </div>
