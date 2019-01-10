@@ -557,37 +557,37 @@ span.round-tab:hover {
 											<?php foreach ($jenis as $jenisbang): ?>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->perkantoran!=NULL)?'checked':''?> value="perkantoran" id="jenisbang" disabled="">
+														<input type="checkbox" <?=($jenisbang->perkantoran!=NULL)?'checked':''?> value="perkantoran" id="jenisbang" disabled="">
 														<label for="jenisbang">Perkantoran</label>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->sarana_kesehatan!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
+														<input type="checkbox" <?=($jenisbang->sarana_kesehatan!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
 														<label for="kesehatan">Sarana Kesehatan</label>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->apartemen!=NULL)?'checked':''?> value="perkantoran" id="jenisbang" disabled="">
+														<input type="checkbox" <?=($jenisbang->apartemen!=NULL)?'checked':''?> value="perkantoran" id="jenisbang" disabled="">
 														<label for="jenisbang">Apartemen</label>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->sarana_perdagangan!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
+														<input type="checkbox" <?=($jenisbang->sarana_perdagangan!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
 														<label for="kesehatan">Sarana Perdagangan</label>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->hunian!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
+														<input type="checkbox" <?=($jenisbang->hunian!=NULL)?'checked':''?> value="kesehatan" id="kesehatan" disabled="">
 														<label for="kesehatan">Sarana Perdagangan</label>
 													</div>
 												</div>
 												<div class="col-md-6">
 													<div class="funkyradio-primary">
-														<input checked type="checkbox" <?=($jenisbang->lainnya!=NULL)?'checked':''?>value="kesehatan" id="kesehatan" disabled="">
+														<input type="checkbox" <?=($jenisbang->lainnya!=NULL)?'checked':''?>value="kesehatan" id="kesehatan" disabled="">
 														<label for="kesehatan">Sarana Perdagangan</label>
 													</div>
 												</div>
@@ -1274,7 +1274,7 @@ span.round-tab:hover {
 						</div>
 
 						<div class="clearfix"></div>
-						<a href="<?= site_url('main/editdata/'.$this->uri->segment(3)) ?>" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
+						<a href="https://jakartasatu.jakarta.go.id/pengawasanair/main/editdata/'.$this->uri->segment(3))" class="btn btn-warning btn-block" style="margin-bottom: 30px;">Ubah</a>
 					</div>
 				</form>
 			</div>

@@ -37,7 +37,7 @@
 				</div>
 			</div>
 		</div>
-		<form role="form" method="post" action="<?php echo site_url('main/proses_edit') ?>"  enctype="multipart/form-data">
+		<form role="form" method="post" action="https://jakartasatu.jakarta.go.id/pengawasanair/main/proses_edit"  enctype="multipart/form-data">
 			<div class="row setup-content" id="step-1">
 				<div class="col-xs-12">
 					<div class="col-md-12">

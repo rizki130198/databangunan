@@ -71,7 +71,7 @@ body#LoginForm{ background-color:#FFFAFA;padding:10px;}
           <h2>Sistem Registrasi Bangunan</h2>
           <p>Pengawasan Terpadu Sumur Resapan dan Instalasi Pengolahan Air Limbah serta Pemanfaaan Air Tanah</p>
        </div>
-       <form id="Login" method="post" action="<?php echo site_url('welcome/act_log') ?>">
+       <form id="Login" method="post" action="https://jakartasatu.jakarta.go.id/pengawasanair/welcome/act_log">
         <div class="form-group">
           <input type="text" name="username" class="form-control" id="inputEmail" placeholder="Username">
         </div>
